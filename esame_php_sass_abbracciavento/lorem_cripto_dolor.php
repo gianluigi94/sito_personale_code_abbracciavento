@@ -4,9 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Progetto Space Chess Dolor">
-  <title>Space Chess Dolor</title>
-  <link rel="stylesheet" href="css/style.min.css">
+  <meta name="description" content="Progetto Lorem Cripto Dolor">
+  <title>Lorem Cripto Dolor</title>
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="css/style.min.css">
@@ -16,7 +15,7 @@
 <body>
   <span class="bordoMenu"></span>
   <!-- <span class="animate"></span> -->
-  <span class="sfondoimgquattro"></span>
+  <span class="sfondoimgtre"></span>
   <a href="index.html" title="Home">
   <img class="nascosto mainImage" loading="eager" src="assets/bianco.png" alt="Logo regina" draggable="false" >
   </a>
@@ -29,28 +28,28 @@
     <div class="navbig" >
         <div class="firstmenu">
             <ul class="firstlist">
-                <li><a href="index.html" title="Home">Home</a></li>
-                <li class="special"><a href="progetti.html" title="progetti">Progetti  <i class="fas fa-caret-down"></i></a>
+                <li><a href="index.php" title="Home" id="uru">Home</a></li>
+                <li class="special"><a href="progetti.php" title="progetti">Progetti  <i class="fas fa-caret-down"></i></a>
                 <ul class="subMenu">
-                    <li><a href="progetti.html" title="progetti" >Tutti i Progetti</a></li>
-                    <li><a href="portfolioGrafico.html" title="portfoglio grafico">Porfolio Grafico</a></li>
-                    <li><a href="ipsumCommerce.html" title="progetto Ipsum-Commerce">Ipsum-Commerce</a></li>
-                    <li><a href="sociaLorem.html" title="progetto sociaLorem">SociaLorem</a></li>
-                    <li><a href="loremCriptoDolor.html" title="progetto Lorem Cripto Dolor">Lorem Cripto Dolor</a></li>
-                    <li class="lastChild"><a href="spaceChessDolor.html" title="progetto space Chess Dolor" id="uru">Space Chess Dolor</a></li>
+                    <li><a href="progetti.php" title="progetti" >Tutti i Progetti</a></li>
+                    <li><a href="portfolio_grafico.php" title="portfoglio grafico">Porfolio Grafico</a></li>
+                    <li><a href="ipsum_commerce.php" title="progetto Ipsum-Commerce">Ipsum-Commerce</a></li>
+                    <li><a href="socialorem.php" title="progetto sociaLorem">SociaLorem</a></li>
+                    <li><a href="lorem_cripto_dolor.php" title="progetto Lorem Cripto Dolor">Lorem Cripto Dolor</a></li>
+                    <li class="lastChild"><a href="space_chess_dolor.php" title="progetto space Chess Dolor">Space Chess Dolor</a></li>
                 </ul>
                 </li>
             </ul>
         </div>
         <div class="secondmenu">
-          <a href="index.html" id="logo" title="Home" >
+          <a href="index.php" id="logo" title="Home" >
         <img src="assets/bianco.png" alt="Logo regina" loading="eager" draggable="false" class="mainImage">
       </a>
     </div>
         <div class="thirdmenu">
             <ul class="secondlist">
-                <li><a href="recensioni.html" title="Pagina recensioni">Recensioni</a></li>
-                <li><a href="contatti.html" title="pagina contatti">Contatti</a></li>
+                <li><a href="recensioni.php" title="Pagina recensioni">Recensioni</a></li>
+                <li><a href="contatti.php" title="pagina contatti">Contatti</a></li>
             </ul>
         </div>
     </div>
@@ -66,25 +65,25 @@
         </div>
         <ul class="navList">
           <li class="navItem">
-            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.php" class="nav-link" id="ur">Home</a>
           </li>
           <li class="navItem navprogect">
             Progetti <i class="fas fa-caret-down"></i>
             <ul class="sottomini">
-              <li><a href="progetti.html" title="Pagina progetti">Tutti i Progetti</a></li>
-              <li><a href="portfolioGrafico.html" title="portfolio grafico">Porfolio Grafico</a></li>
-              <li><a href="ipsumCommerce.html" title="Progetto Ipsum-Commerce">Ipsum-Commerce</a></li>
-              <li><a href="sociaLorem.html" title="Progetto SociaLorem">SociaLorem</a></li>
-              <li><a href="loremCriptoDolor.html" title="Progetto lorem Cripto Dolor">Lorem Cripto Dolor</a></li>
-              <li><a href="spaceChessDolor.html" title="Progetto Space Chess Dolor" id="ur">Space Chess Dolor</a></li>
+              <li><a href="progetti.php" title="Pagina progetti">Tutti i Progetti</a></li>
+              <li><a href="portfolio_grafico.php" title="portfolio grafico">Porfolio Grafico</a></li>
+              <li><a href="ipsum_commerce.php" title="Progetto Ipsum-Commerce">Ipsum-Commerce</a></li>
+              <li><a href="socialorem.php" title="Progetto SociaLorem">SociaLorem</a></li>
+              <li><a href="lorem_cripto_dolor.php" title="Progetto lorem Cripto Dolor">Lorem Cripto Dolor</a></li>
+              <li><a href="space_chess_dolor.php" title="Progetto Space Chess Dolor">Space Chess Dolor</a></li>
   
             </ul>
           </li>
           <li class="navItem">
-            <a href="recensioni.html" title="pagina recensioni" class="nav-link">Recensioni</a>
+            <a href="recensioni.php" title="pagina recensioni" class="nav-link">Recensioni</a>
           </li>
           <li class="navItem">
-            <a href="contatti.html" class="nav-link" title="pagina contatti">Contatti</a>
+            <a href="contatti.php" class="nav-link" title="pagina contatti">Contatti</a>
           </li>
   
         </ul>
@@ -93,19 +92,13 @@
     </div>
 </nav>
 
-  <!-- <button onclick="cambiaCol()" id="cambiaColore" aria-label="bottone Darkmode">
-    <img src="assets/cavalloNero.png" alt="" class="mun">
-    <img src="assets/cavalloBianco.png" alt="" class="sun">
-  </button> -->
-
-
   <!-- MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN  -->
 
 
 
   <div class="container">
     <main class="box uno">
-      <h1 class="title" >Space Chess Dolor</h1>
+      <h1 class="title" >Lorem Cripto Dolor</h1>
       <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem adipisci totam aliquam
         ab
         velit illum provident itaque nostrum modi, labore quia asperiores sed. Dolorum reiciendis sequi culpa
@@ -130,7 +123,7 @@
       </p>
     </main>
     <figure class="box due">
-      <img src="assets/scacchispaziali.png" alt="Scacchi immagine" title="Immagine scacchi"
+      <img src="assets/grafico.png" alt="Grafico immagine" title="Immagine grafico"
         draggable="false">
       </figure>
 
@@ -141,10 +134,10 @@
 
       <h3>Altri progetti:</h3>
       <ul>
-        <li><a href="portfolioGrafico.html" title="Porfolio Grafico">Portfolio grafico</a></li>
-        <li><a href="IpsumCommerce.html" title="Progetto IpsumCommerce">Ipsum-Commerce</a></li>
-        <li><a href="sociaLorem.html" title="Pagina SociaLorem">SociaLorem</a></li>
-        <li><a href="LoremCriptoDolor.html" title="Pagina Lorem Cripto Dolor">Lorem Cripto Dolor</a></li>
+        <li><a href="portfolio_grafico.php" title="Porfolio grafico">Portfolio grafico</a></li>
+        <li><a href="ipsum_commerce.php" title="Progetto IpsumCommerce">Ipsum-Commerce</a></li>
+        <li><a href="socialorem.php" title="Pagina SociaLorem">SociaLorem</a></li>
+        <li><a href="space_chess_dolor.php" title="Pagina Space Chess Dolor">Space Chess Dolor</a></li>
       </ul>
 
     </aside>
@@ -170,7 +163,7 @@
       <a aria-label="Linkedin" href="http://www.linkedin.com/in/gianluigi-abbracciavento-b661a8284" title="social"
         target="_blank" class="link">
         <img
-          src="assets/kisspng-united-states-hilton-hotels-resorts-organization-linkedin-white-5b39721a0b09e5.9500994915304914180452.png"
+          src="assets/linkedin.png"
           alt="Icona social" class="icona"  draggable="false" loading="lazy"></a>
     </div>
     <div class="box footerthree">

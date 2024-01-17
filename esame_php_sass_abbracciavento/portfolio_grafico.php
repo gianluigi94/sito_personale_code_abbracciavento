@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Porfolio grafico">
   <title>Porfolio grafico</title>
-  <link rel="stylesheet" href="css/style.min.css">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="css/style.min.css">
@@ -29,28 +28,28 @@
     <div class="navbig" >
         <div class="firstmenu">
             <ul class="firstlist">
-                <li><a href="index.html" title="Home">Home</a></li>
-                <li class="special"><a href="progetti.html" title="progetti">Progetti  <i class="fas fa-caret-down"></i></a>
+                <li><a href="index.php" title="Home" id="uru">Home</a></li>
+                <li class="special"><a href="progetti.php" title="progetti">Progetti  <i class="fas fa-caret-down"></i></a>
                 <ul class="subMenu">
-                    <li><a href="progetti.html" title="progetti" >Tutti i Progetti</a></li>
-                    <li><a href="portfolioGrafico.html" id="uru" title="portfoglio grafico">Porfolio Grafico</a></li>
-                    <li><a href="ipsumCommerce.html" title="progetto Ipsum-Commerce">Ipsum-Commerce</a></li>
-                    <li><a href="sociaLorem.html" title="progetto sociaLorem">SociaLorem</a></li>
-                    <li><a href="loremCriptoDolor.html" title="progetto Lorem Cripto Dolor">Lorem Cripto Dolor</a></li>
-                    <li class="lastChild"><a href="spaceChessDolor.html" title="progetto space Chess Dolor">Space Chess Dolor</a></li>
+                    <li><a href="progetti.php" title="progetti" >Tutti i Progetti</a></li>
+                    <li><a href="portfolio_grafico.php" title="portfoglio grafico">Porfolio Grafico</a></li>
+                    <li><a href="ipsum_commerce.php" title="progetto Ipsum-Commerce">Ipsum-Commerce</a></li>
+                    <li><a href="socialorem.php" title="progetto sociaLorem">SociaLorem</a></li>
+                    <li><a href="lorem_cripto_dolor.php" title="progetto Lorem Cripto Dolor">Lorem Cripto Dolor</a></li>
+                    <li class="lastChild"><a href="space_chess_dolor.php" title="progetto space Chess Dolor">Space Chess Dolor</a></li>
                 </ul>
                 </li>
             </ul>
         </div>
         <div class="secondmenu">
-          <a href="index.html" id="logo" title="Home" >
+          <a href="index.php" id="logo" title="Home" >
         <img src="assets/bianco.png" alt="Logo regina" loading="eager" draggable="false" class="mainImage">
       </a>
     </div>
         <div class="thirdmenu">
             <ul class="secondlist">
-                <li><a href="recensioni.html" title="Pagina recensioni">Recensioni</a></li>
-                <li><a href="contatti.html" title="pagina contatti">Contatti</a></li>
+                <li><a href="recensioni.php" title="Pagina recensioni">Recensioni</a></li>
+                <li><a href="contatti.php" title="pagina contatti">Contatti</a></li>
             </ul>
         </div>
     </div>
@@ -66,25 +65,25 @@
         </div>
         <ul class="navList">
           <li class="navItem">
-            <a href="index.html" class="nav-link">Home</a>
+            <a href="index.php" class="nav-link" id="ur">Home</a>
           </li>
           <li class="navItem navprogect">
             Progetti <i class="fas fa-caret-down"></i>
             <ul class="sottomini">
-              <li><a href="progetti.html" title="Pagina progetti">Tutti i Progetti</a></li>
-              <li><a href="portfolioGrafico.html" id="ur" title="portfolio grafico">Porfolio Grafico</a></li>
-              <li><a href="ipsumCommerce.html" title="Progetto Ipsum-Commerce">Ipsum-Commerce</a></li>
-              <li><a href="sociaLorem.html" title="Progetto SociaLorem">SociaLorem</a></li>
-              <li><a href="loremCriptoDolor.html" title="Progetto lorem Cripto Dolor">Lorem Cripto Dolor</a></li>
-              <li><a href="spaceChessDolor.html" title="Progetto Space Chess Dolor">Space Chess Dolor</a></li>
+              <li><a href="progetti.php" title="Pagina progetti">Tutti i Progetti</a></li>
+              <li><a href="portfolio_grafico.php" title="portfolio grafico">Porfolio Grafico</a></li>
+              <li><a href="ipsum_commerce.php" title="Progetto Ipsum-Commerce">Ipsum-Commerce</a></li>
+              <li><a href="socialorem.php" title="Progetto SociaLorem">SociaLorem</a></li>
+              <li><a href="lorem_cripto_dolor.php" title="Progetto lorem Cripto Dolor">Lorem Cripto Dolor</a></li>
+              <li><a href="space_chess_dolor.php" title="Progetto Space Chess Dolor">Space Chess Dolor</a></li>
   
             </ul>
           </li>
           <li class="navItem">
-            <a href="recensioni.html" title="pagina recensioni" class="nav-link">Recensioni</a>
+            <a href="recensioni.php" title="pagina recensioni" class="nav-link">Recensioni</a>
           </li>
           <li class="navItem">
-            <a href="contatti.html" class="nav-link" title="pagina contatti">Contatti</a>
+            <a href="contatti.php" class="nav-link" title="pagina contatti">Contatti</a>
           </li>
   
         </ul>
@@ -92,12 +91,6 @@
       </div>
     </div>
 </nav>
-
-  <!-- <button onclick="cambiaCol()" id="cambiaColore" aria-label="bottone Darkmode">
-    <img src="assets/cavalloNero.png" alt="" class="mun">
-    <img src="assets/cavalloBianco.png" alt="" class="sun">
-  </button> -->
-
 
   <!-- MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN  -->
 
@@ -187,47 +180,47 @@
       </div>
       <div class="imgCon">
 
-          <a href="assets/portfolio/PostQuadrato.webp" class="card" title="Progetto Photoshop">
+          <a href="assets/portfolio/post_quadrato.webp" class="card" title="Progetto Photoshop">
               <h3 class="titoletto">Corso Diamond</h3>
               <p class="descrizioneimg">
                   Post di dimensioni quadrate realizzato con Photoshop
               </p>
-              <img src="assets/portfolio/PostQuadrato.webp" alt=" Corso Diamond" class="imgcard"
+              <img src="assets/portfolio/post_quadrato.webp" alt=" Corso Diamond" class="imgcard"
                   draggable="false">
           </a>
 
       </div>
       <div class="imgCon">
 
-          <a href="assets/portfolio/Spacetime.webp" class="card" title="Progetto misto">
+          <a href="assets/portfolio/spacetime.webp" class="card" title="Progetto misto">
               <h3 class="titoletto">Spacetime</h3>
               <p class="descrizioneimg">
                   Foto inserimento di diversi e elementi realizzato con Photoshop, ma terminato con scritte
                   vettoriali su Illustrator
               </p>
-              <img src="assets/portfolio/Spacetime.webp" alt="Spacetime" class="imgcard" draggable="false">
+              <img src="assets/portfolio/spacetime.webp" alt="Spacetime" class="imgcard" draggable="false">
           </a>
 
       </div>
       <div class="imgCon">
 
-          <a href="assets/portfolio/Torre.webp" class="card" title="Progetto Photoshop">
+          <a href="assets/portfolio/torre.webp" class="card" title="Progetto Photoshop">
               <h3 class="titoletto">Torre di acciaio </h3>
               <p class="descrizioneimg">
                   Disegno ricalcato con Photoshop partendo da un immagine digitale
               </p>
-              <img src="assets/portfolio/Torre.webp" alt="Torre di acciaio" class="imgcard" draggable="false">
+              <img src="assets/portfolio/torre.webp" alt="Torre di acciaio" class="imgcard" draggable="false">
           </a>
 
       </div>
       <div class="imgCon">
 
-          <a href="assets/portfolio/storiaVerticale.webp" class="card" title="Progetto Photoshop">
+          <a href="assets/portfolio/storia_verticale.webp" class="card" title="Progetto Photoshop">
               <h3 class="titoletto">Podcast, ma in verticale</h3>
               <p class="descrizioneimg">
                   Storia in formato verticale per social
               </p>
-              <img src="assets/portfolio/storiaVerticale.webp" alt="Esempio storia verticale" class="imgcard"
+              <img src="assets/portfolio/storia_verticale.webp" alt="Esempio storia verticale" class="imgcard"
                   draggable="false">
           </a>
 
@@ -245,24 +238,24 @@
       </div>
       <div class="imgCon">
 
-          <a href="assets/portfolio/Negativo.webp" class="card" title="Progetto Illustration">
+          <a href="assets/portfolio/negativo.webp" class="card" title="Progetto Illustration">
               <h3 class="titoletto">La Muntagnina</h3>
               <p class="descrizioneimg">
                   Disegno vettoriale realizzato per una cliente
               </p>
-              <img src="assets/portfolio/Negativo.webp" alt="Disegno fiori" class="imgcard" draggable="false">
+              <img src="assets/portfolio/negativo.webp" alt="Disegno fiori" class="imgcard" draggable="false">
           </a>
 
       </div>
       <div class="imgCon">
 
-          <a href="assets/portfolio/NaveLinee.webp" class="card" title="Progetto Illustration">
+          <a href="assets/portfolio/nave_linee.webp" class="card" title="Progetto Illustration">
               <h3 class="titoletto">Nave in linee art</h3>
               <p class="descrizioneimg">
                   Disegno realizzato su illustrator, successivamente animato su After Effects per l'header di
                   questo sito
               </p>
-              <img src="assets/portfolio/NaveLinee.webp" alt="Nave il linee art" class="imgcard"
+              <img src="assets/portfolio/nave_linee.webp" alt="Nave il linee art" class="imgcard"
                   draggable="false">
           </a>
 
@@ -292,12 +285,12 @@
       </div>
       <div class="imgCon">
 
-          <a href="assets/portfolio/Logoregina.webp" class="card" title="Progetto Illustration">
+          <a href="assets/portfolio/logoregina.webp" class="card" title="Progetto Illustration">
               <h3 class="titoletto">Logo MiddleGame</h3>
               <p class="descrizioneimg">
                   Il mio logo personale, realizzato in Illustration
               </p>
-              <img src="assets/portfolio/Logoregina.webp" alt="Regina scacchi" class="imgcard" draggable="false">
+              <img src="assets/portfolio/logoregina.webp" alt="Regina scacchi" class="imgcard" draggable="false">
           </a>
 
       </div>
@@ -362,24 +355,24 @@
 
       <div class="imgCon">
 
-          <a href="assets/portfolio/conterraneaMano.webp" class="card" title="Progetto Illustration">
+          <a href="assets/portfolio/conterranea_mano.webp" class="card" title="Progetto Illustration">
               <h3 class="titoletto">Conterranea</h3>
               <p class="descrizioneimg">
                   Quarta proposta di logo tra cui scegliere elaborata per un cliente
               </p>
-              <img src="assets/portfolio/conterraneaMano.webp" alt="Scritta Conterranea logo" class="imgcard"
+              <img src="assets/portfolio/conterranea_mano.webp" alt="Scritta Conterranea logo" class="imgcard"
                   draggable="false">
           </a>
 
       </div>
       <div class="imgCon">
 
-          <a href="assets/portfolio/conterraneaultimo.webp" class="card" title="Progetto Illustration">
+          <a href="assets/portfolio/conterranea_ultimo.webp" class="card" title="Progetto Illustration">
               <h3 class="titoletto">Conterranea definitivo</h3>
               <p class="descrizioneimg">
                   Quinta proposta di logo tra cui scegliere elaborata per un cliente
               </p>
-              <img src="assets/portfolio/conterraneaultimo.webp" alt="Scritta Conterranea logo" class="imgcard"
+              <img src="assets/portfolio/conterranea_ultimo.webp" alt="Scritta Conterranea logo" class="imgcard"
                   draggable="false">
           </a>
 
@@ -395,11 +388,11 @@
 
       <h3>Altri progetti:</h3>
       <ul>
-        <!-- <li><a href="portfolioGrafico.html" title="Porfolio grafico">Portfolio grafico</a></li> -->
-        <li><a href="ipsumCommerce.html" title="Progetto IpsumCommerce">Ipsum-Commerce</a></li>
-        <li><a href="sociaLorem.html" title="Pagina SociaLorem">SociaLorem</a></li>
-        <li><a href="loremCriptoDolor.html" title="Progetto lorem Cripto Dolor">Lorem Cripto Dolor</a></li>
-        <li><a href="spaceChessDolor.html" title="Pagina Space Chess Dolor">Space Chess Dolor</a></li>
+        <!-- <li><a href="portfolioGrafico.php" title="Porfolio grafico">Portfolio grafico</a></li> -->
+        <li><a href="ipsum_commerce.php" title="Progetto IpsumCommerce">Ipsum-Commerce</a></li>
+        <li><a href="socialorem.php" title="Pagina SociaLorem">SociaLorem</a></li>
+        <li><a href="lorem_cripto_dolor.php" title="Progetto lorem Cripto Dolor">Lorem Cripto Dolor</a></li>
+        <li><a href="space_chess_dolor.php" title="Pagina Space Chess Dolor">Space Chess Dolor</a></li>
       </ul>
 
     </aside>
@@ -425,7 +418,7 @@
       <a aria-label="Linkedin" href="http://www.linkedin.com/in/gianluigi-abbracciavento-b661a8284" title="social"
         target="_blank" class="link">
         <img
-          src="assets/kisspng-united-states-hilton-hotels-resorts-organization-linkedin-white-5b39721a0b09e5.9500994915304914180452.png"
+          src="assets/linkedin.png"
           alt="Icona social" class="icona"  draggable="false" loading="lazy"></a>
     </div>
     <div class="box footerthree">

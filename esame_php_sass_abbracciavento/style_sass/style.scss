@@ -1,13 +1,12 @@
-@import "Variabili";
-@import "Switch";
-@import "Container";
+@import "variabili";
+@import "container";
 @import "footer";
 @import "menu";
 @import "recensioni";
 @import "progetti";
 @import "galleria";
 @import "email";
-@import "Videoheader";
+@import "videoheader";
 
 %dwColorMenuOne {
   @if $template == dark {
@@ -132,7 +131,7 @@
   }
   .sfondoimgdue{
     @extend %immagineSfondoAd;
-    background: url(../assets/eCommerce.png);
+    background: url(../assets/e_commerce.png);
   }
   .sfondoimgtre{
     @extend %immagineSfondoAd;
@@ -140,7 +139,7 @@
   }
   .sfondoimgquattro{
     @extend %immagineSfondoAd;
-    background: url(../assets/scacchiSfondo.png);
+    background: url(../assets/scacchi_sfondo.png);
   }
   .sfondoimgcinque{
     @extend %immagineSfondoAd;
