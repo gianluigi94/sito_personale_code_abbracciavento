@@ -1,0 +1,210 @@
+.titles {
+  text-align: start;
+  padding-top: 130px;
+  margin-left: 60px;
+  margin-right: 60px;
+  @extend %dwColorMenuOne;
+  font-size: $dimensionprimary;
+  font-weight: bolder;
+  font-family: $fontprimary;
+  @media (min-width: 2200px) and (max-width: 2560px) {
+    margin-top: 120px;
+    font-size: 110px;
+    }
+  @media all and (max-Width:450px){
+    margin-left: 30px;
+    }
+}
+
+.twopage {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 60px;
+  align-items: center;
+  justify-content: space-between;
+  @media all and (max-Width:450px){
+    margin-left: 30px;
+    
+    }
+  form {
+    flex-basis: 45%;
+    margin-right: 50px;
+    @media all and (max-Width:850px){
+      flex-basis: 100%;
+      }
+    @media all and (max-Width:375px){
+      flex-basis: 50%;
+      }
+    fieldset {
+      display: flex;
+      flex-direction: column;
+      border: none;
+      textarea {
+        resize: none;
+        @extend %marginform;
+        border-radius: 10px;
+        transition: 0.4s ease-in-out;
+        padding: 10px;
+        @extend %dwColorMenutwo;
+        @extend %sfondorettangolo;
+        font-size: 18px;
+        font-family: $fontsecondary;
+        
+        @media (min-width: 2200px) and (max-width: 2560px) {
+          height: 400px;
+          font-size: 30px;
+          }
+
+        @media all and (max-Width:395px){
+          max-width: 300px;
+          }
+        @media all and (max-Width:375px){
+            max-width: 273px;
+            }
+        &:focus {
+          outline: none;
+          border: $greenprimary solid 2px;
+          @extend %focus;
+        }
+        
+      }
+
+      legend {
+        @extend %dwColorMenuOne;
+        font-family: $fontprimary;
+        font-weight: bolder;
+        font-size: 30px;
+      }
+      label {
+        @extend %dwColorMenutwo;
+        font-family: $fontsecondary;
+        font-size: $dimensionsecondary;
+        padding-top: 25px;
+        padding-bottom: 5px;
+        @media (min-width: 2200px) and (max-width: 2560px) {
+          
+          font-size: 30px;
+          }
+        .opzionale {
+          font-size: 15px;
+          color: $greenprimary;
+          @media (min-width: 2200px) and (max-width: 2560px) {
+          
+            font-size: 25px;
+            }
+        }
+      }
+
+      input {
+        height: 25px;
+        @extend %sfondorettangolo;
+        border-radius: 5px;
+        padding: 10px;
+        @extend %dwColorMenutwo;
+        font-size: 18px;
+        font-family: $fontsecondary;
+        transition: 0.4s ease-in-out;
+        @media (min-width: 2200px) and (max-width: 2560px) {
+          height: 70px;
+          font-size: 30px;
+
+          }
+        @media all and (max-Width:395px){
+          max-width: 300px;
+          }
+        @media all and (max-Width:375px){
+          max-width: 273px;
+          }
+        &:focus {
+          outline: none;
+          border: $greenprimary solid 2px;
+          @extend %focus;
+
+        }
+      }
+      button {
+        @extend %sfondorettangolo;
+        width: 80%;
+        margin: auto;
+        height: 45px;
+        @extend %dwColorMenutwo;
+        font-family: $fontsecondary;
+        font-weight: 500;
+        font-size: 19px;
+        margin-top: 20px;
+        @extend %marginform;
+        border-radius: 15px;
+        cursor: pointer;
+        &:hover{
+          border: 2px solid $greenprimary;
+        }
+        @media (min-width: 2200px) and (max-width: 2560px) {
+          height: 80px;
+          }
+        .airp {
+          width: 20px;
+          color: $greenprimary;
+          position: relative;
+          top: 4px;
+        }
+      }
+      .customChecbox {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        padding-left: 40px;
+        transition: 0.4s ease-in-out;
+        .hidenCheckbox {
+          position: absolute;
+          opacity: 0;
+        }
+        .checkmark {
+          position: absolute;
+          top: 35px;
+          left: 0;
+          height: 22px;
+          width: 22px;
+          @extend %marginform;
+          border-radius: 5px;
+          @extend %sfondorettangolo;
+        }
+      }
+    }
+  }
+}
+
+.sectiontwo {
+  flex-basis: 45%;
+  margin-top: -50px;
+  border-radius: 80px 200px 80px 200px;
+  height: 600px;
+  @media (min-width: 2200px) and (max-width: 2560px) {
+          
+    height: 700px;
+    flex-basis: 25%;
+    position: relative;
+    left: -300px;
+
+
+    }
+  @media all and (max-Width:850px){
+    flex-basis: 100%;
+    margin-top: 80px;
+    }
+    
+    
+}
+
+
+
+.hidenCheckbox:checked ~ .checkmark::before {
+  content: "\2713";
+  display: block;
+  text-align: center;
+  line-height: 16px;
+  color: $greenprimary;
+  font-weight: bold;
+  font-size: 28px;
+}
+

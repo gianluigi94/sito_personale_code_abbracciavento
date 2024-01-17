@@ -1,0 +1,176 @@
+@import "Variabili";
+@import "Switch";
+@import "Container";
+@import "footer";
+@import "menu";
+@import "recensioni";
+@import "progetti";
+@import "galleria";
+@import "email";
+@import "Videoheader";
+
+%dwColorMenuOne {
+  @if $template == dark {
+    color: $whiteprimary;
+  }
+    @else{
+      color: $dark
+    }  
+}
+%dwColorMenutwo {
+  @if $template == dark {
+    color: $whitesecondary;
+  }
+    @else{
+      color: $secondblack
+    }  
+}
+%dwsfondo {
+  @if $template == dark {
+    background-color: $dark;
+  }
+    @else{
+      background-color: $light;
+    }  
+}
+%dwsfondoMenuUno {
+  @if $template == dark {
+    background-color: $sfondosecondary;
+  }
+    @else{
+      background-color: $sfondoterzo;
+    }  
+}
+%dwsfondoMenuDue {
+  @if $template == dark {
+    background-color: $blacknav;
+  }
+    @else{
+      background-color: $whitenav;
+    }  
+}
+%dwshover {
+  @if $template == dark {
+    background-color: $colorhover;
+  }
+    @else{
+      background-color: $sfondoterzo;
+    }  
+}
+%borderrecens {
+  @if $template == dark {
+    border: 3px solid $whiteprimary;
+  }
+    @else{
+      border: 3px solid $dark;
+
+    }  
+}
+%sfondorettangolo {
+  @if $template == dark {
+    background-color: $superbottone;
+  }
+    @else{
+      background-color: $whitenavdue;
+
+    }  
+}
+%focus {
+  @if $template == dark {
+    background-color: $colorhover;
+  }
+    @else{
+      background-color: $whitesecondary;
+
+    }  
+}
+%bold {
+  @if $template == dark {
+    font-weight: 400;
+  }
+    @else{
+      font-weight: bold;
+
+
+    }  
+}
+%homelink {
+  @if $template == dark {
+    background-color: $homecursor;
+  }
+    @else{
+      background-color: $greentwo;
+
+    }  
+}
+
+
+* {
+    @extend %reset;
+  } 
+ 
+  
+  body {
+    @extend %body;
+  } 
+  html {
+    scroll-behavior: smooth;
+  }
+
+  %immagineSfondoAd{
+    position: absolute;
+    background-size:cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+  }
+  
+  .sfondoimg{
+    @extend %immagineSfondoAd;
+    background: url(../assets/socials.png);
+  }
+  .sfondoimgdue{
+    @extend %immagineSfondoAd;
+    background: url(../assets/eCommerce.png);
+  }
+  .sfondoimgtre{
+    @extend %immagineSfondoAd;
+    background: url(../assets/cripto.png);
+  }
+  .sfondoimgquattro{
+    @extend %immagineSfondoAd;
+    background: url(../assets/scacchiSfondo.png);
+  }
+  .sfondoimgcinque{
+    @extend %immagineSfondoAd;
+    background: url(../assets/cite@2x.png);
+  }
+  .sfondoimgsei{
+    @extend %immagineSfondoAd;
+    background: url(../assets/sfondolavori.png);
+  }
+  .sfondoimgsette{
+    @extend %immagineSfondoAd;
+    background: url(../assets/grafica.png);
+  }
+  .sfondoimgotto{
+    @extend %immagineSfondoAd;
+    background: url(../assets/email.png);
+  }
+  .sfondoimgnove{
+    position: absolute;
+    background-size:cover;
+    background-repeat: no-repeat;
+    width: 90%;
+    height: 100%;
+    z-index: -2;
+    background: url(../assets/homeb.png);
+    @media all and (max-Width:650px){
+      
+          width: 70%;
+      }
+  
+  }
+
+  

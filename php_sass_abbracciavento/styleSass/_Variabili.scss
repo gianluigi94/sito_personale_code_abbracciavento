@@ -1,0 +1,53 @@
+$template:dark; 
+// $template:light; 
+
+
+
+$dark:#111111;
+$light:#f6f6f6;
+$whiteprimary:#ffffff;
+$whitesecondary:#cdcdcd;
+$greenprimary: #088b17;
+$fontprimary: 'Courier New', Courier, monospace;
+$fontsecondary: Verdana, Geneva, Tahoma, sans-serif;
+$dimensionprimary: 60px;
+$dimensionsecondary: 20px;
+$sfondosecondary: #575757f2;
+$sfondoterzo: #ffffffd7;
+$secondblack:#262626;
+$greensfum:linear-gradient(45deg, #088b17, #111111);
+$dimensionspecial:25px;
+$whitenav:#e6e6e6eb;
+$blacknav:#575757fa;
+$colorhover:#26262682;
+$whitenavdue:#e6e6e6f9;
+$superbottone: #57575764;
+$lineetta: #8f8f8fb8;
+$homecursor:  #5757577d;
+$greentwo: #15b42d32;
+
+%marginform{
+        border-top: 2px solid $dark;
+        border-right: 2px solid $lineetta;
+        border-bottom: 2px solid $lineetta;
+        border-left: 2px solid $dark;
+}
+
+%reset{
+    margin: 0;
+    padding: 0;
+}
+
+%body{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    // background: $dark;
+    @extend %dwsfondo;
+    overflow-x: hidden;
+    @media all and (max-Width:350px){
+        width: 350px;
+    }
+      
+    
+}

@@ -1,0 +1,117 @@
+.recensione {
+    @extend %borderrecens;
+    border-radius: 5px 60px 5px 60px;
+    width: 55vw;
+    margin-left: 60px;
+    margin-top: 70px;
+    margin-bottom: 70px;
+
+    @media all and (max-Width:650px){
+    width: 75vw;
+    }
+    @media all and (max-Width:500px){
+    margin-left: 30px;
+    }
+    @media all and (max-Width:325px){
+    width: 90vw;
+    }
+    h2 {
+        @extend %dwColorMenuOne;
+        // color: $whiteprimary;
+        font-family: $fontprimary;
+        padding-top: 20px;
+        padding-left: 25px;
+        padding-right: 10px;
+        padding-bottom: 15px;
+        font-weight:900;
+        font-size: 30px;
+        @media (min-width: 2200px) and (max-width: 2560px) {
+            font-size: 62px;
+            }
+      }
+      .conteinerdue{
+        padding-bottom: 20px;
+      }
+      img{
+        width: 150px;
+        border-radius: 100%;
+        padding-left: 25px;
+        padding-bottom: 15px;
+        @media (min-width: 2200px) and (max-width: 2560px) {
+        width: 250px;
+            
+            }
+      }
+      p{
+        @extend  %dwColorMenutwo;
+        // color: $whitesecondary;
+        font-family: $fontsecondary;
+        font-size: $dimensionsecondary;
+        padding-left: 25px;
+        padding-right: 25px;
+        text-align: justify;
+        @media (min-width: 2200px) and (max-width: 2560px) {
+            font-size: 42px;
+            }
+      }
+      a{
+        color: $greenprimary;
+        font-family: $fontsecondary;
+        font-size: $dimensionsecondary;
+        padding-left: 25px;
+        @media (min-width: 2200px) and (max-width: 2560px) {
+            font-size: 42px;
+            }
+      }
+  }
+  
+  .titler{
+    text-align: start;
+    padding-top: 150px;
+    margin-left: 60px;
+    margin-right: 60px;
+    @extend %dwColorMenuOne;
+    // color: $whiteprimary;
+    font-family: $fontprimary;
+    font-weight:bolder;
+    font-size: $dimensionprimary;
+    @media (min-width: 2200px) and (max-width: 2560px) {
+        padding-top: 320px;
+        font-size: 110px;
+        }
+        @media all and (max-Width:516px){
+          max-width: 250px;
+          }
+    @media all and (max-Width:500px){
+        margin-left: 30px;
+        }
+    
+    @media all and (max-Width:315px){
+        font-size: 62px ;
+        }
+    
+        
+  }
+  .spiegazione{
+    @extend  %dwColorMenutwo;
+    // font-family: $fontsecondary;
+    color: $whitesecondary;
+    font-size: $dimensionsecondary;
+    margin-left: 60px;
+    padding-top: 80px;
+    width: 80vw;
+    text-align: justify;
+    @media (min-width: 2200px) and (max-width: 2560px) {
+        font-size: 42px;
+        }
+    @media all and (max-Width:500px){
+        margin-left: 30px;
+        }
+        @media all and (max-Width:325px){
+            width: 90vw;
+            }
+  }
+  
+  
+  
+  
