@@ -2,7 +2,7 @@
 .navbig{
     display: flex;
     width: 100%;
-    height: 16vh;
+    height: 150px;
     z-index: 100;
     @extend %dwsfondoMenuUno;
 
@@ -13,6 +13,10 @@
     
     @media all and (max-Width:835px){
             display: none;
+        }
+    @media all and (max-height:535px){
+         height: 100px;
+
         }
     .firstmenu{
         flex-basis: 45%;
@@ -39,8 +43,17 @@
         align-items: center;
         justify-content: center;
         img{
-            
-            height: 15vh;
+            height: 130px;
+            width: 114px;
+            @media all and (max-height:732px){
+                // height: 140px;
+                }
+            @media all and (max-height:535px){
+                height: 95px;
+                width: 84px;
+                clip-path: polygon(0% 0%, 100% 0%, 100% 79%, 0% 79%);
+                padding-top: 10px;
+                }
         }
     }
     .thirdmenu{
@@ -269,7 +282,7 @@
     // background-color: $sfondosecondary;
     // background-color: $sfondoterzo;
     position: fixed;
-    height: 16vh;
+    height: 150px;
     width: 100vw;
     z-index: 10;
     display: none;
@@ -280,27 +293,42 @@
         width: 350px;
 
     }
+    @media all and (max-height:620px){
+        height: 118px;
+
+    }
+    @media (max-height: 619px) and (max-width: 326px) {
+        height: 124px;
+      }
   }
 
   .nascosto{
-    height: 15vh;
+    height: 120px;
+    width: 105px;
     position: fixed;
-    right: 45%;
+    right: 40%;
     left: auto;
-    top:3px;
+    top:20px;
     display: none;
     z-index: 400;
     @media all and (max-Width:835px){
         display: block;
     }
-    @media all and (max-Width:596px){
-        right: 45%;
-
-    }
+    
     @media all and (max-Width:370px){
         right: 40%;
 
     }
+   
+    @media all and (max-height:620px){
+        height: 110px;
+        width: 95px;
+        top:5px;
+        right: 42%;
+    }
+    @media (max-height: 619px) and (max-width: 326px) {
+        height: 115px;
+      }
 
   }
   #ur{

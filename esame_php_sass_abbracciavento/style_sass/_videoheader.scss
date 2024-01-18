@@ -112,6 +112,10 @@ header{
                     font-size: 34px;
 
                 }
+                @media all and (max-height:380px){
+                    padding-top: 100px;
+                }
+                
 
                 
 
@@ -149,10 +153,24 @@ position: relative;
 padding-right:50px;
 }
 
-@media all and (max-Width:470px){
+@media all and (max-Width:650px){
     padding-left: 25px;
     padding-right: 25px;
 }
+@media all and (max-Width:350px){
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+@media all and (max-height:380px){
+    padding-left: 25px;
+    padding-right: 25px;
+}
+ @media (max-width: 1200px) and (max-height: 710px) {
+    padding-left: 15px;
+    padding-right: 15px;
+                    }
+
 
 .description {
     @extend %dwColorMenutwo;
@@ -166,6 +184,12 @@ padding-right:50px;
     flex-basis: 100%;
 
 }
+@media all and (max-height:710px){
+    flex-basis: 100%;
+    align-items: center;
+    
+}
+
         a {
             color: $greenprimary;
             text-decoration: none;
@@ -180,14 +204,24 @@ padding-right:50px;
                         font-size: 40px;
                         line-height: 50px;
                     }
-                    @media all and (max-Width:1020px){
-                    text-align: justify;                    
+                    
+                    @media all and (max-Width:650px){
+                        font-size: 17px;
+                        &:first-letter{
+                            font-size: 25px;
+                            }
+
                     }
                     @media all and (max-Width:540px){
                     padding-bottom: 50px;
-
+                        
                     }
 
+                    @media (max-width: 340px) and (max-height: 725px) {
+                        margin-top: -70px;
+                        padding-bottom: 100px;
+                    }
+                    
                 }
     
     }
@@ -207,6 +241,11 @@ padding-right:50px;
 @media all and (max-Width:600px){
     padding-right: 0;
 
+}
+@media all and (max-height:710px){
+    flex-basis: 100%;
+    align-items: center;
+    padding-top: 50px;
 }
         iframe{
             border: none;
@@ -250,6 +289,10 @@ padding-right:50px;
 
                 @media all and (max-Width:400px){
                 font-size: 15px;
+                }
+                @media all and (max-height:710px){
+                    text-align: center;
+
                 }
 
 
