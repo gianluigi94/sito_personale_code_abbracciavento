@@ -1,3 +1,5 @@
+// qui gestisco il form della pagina contatti
+
 .titles {
   text-align: start;
   padding-top: 130px;
@@ -10,12 +12,13 @@
   @media (min-width: 2200px) and (max-width: 2560px) {
     margin-top: 120px;
     font-size: 110px;
-    }
-  @media all and (max-Width:450px){
+  }
+  @media all and (max-width: 450px) {
     margin-left: 30px;
-    }
+  }
 }
 
+// qui sotto imposto il contentitore più grande che contiene form e mappa
 .twopage {
   display: flex;
   flex-wrap: wrap;
@@ -23,51 +26,37 @@
   margin: 60px;
   align-items: center;
   justify-content: space-between;
-  @media all and (max-Width:450px){
+  @media all and (max-width: 450px) {
     margin-left: 30px;
-    
-    }
+  }
+
+  // inizio form
+
   form {
     flex-basis: 45%;
     margin-right: 50px;
-    @media all and (max-Width:850px){
+    @media all and (max-width: 850px) {
       flex-basis: 100%;
-      }
-    @media all and (max-Width:375px){
+    }
+    @media all and (max-width: 375px) {
       flex-basis: 50%;
-      }
+    }
     fieldset {
       display: flex;
       flex-direction: column;
       border: none;
       textarea {
-        resize: none;
-        @extend %marginform;
-        border-radius: 10px;
-        transition: 0.4s ease-in-out;
-        padding: 10px;
-        @extend %dwColorMenutwo;
-        @extend %sfondorettangolo;
-        font-size: 18px;
-        font-family: $fontsecondary;
-        
+        @extend %textarea;
         @media (min-width: 2200px) and (max-width: 2560px) {
           height: 400px;
           font-size: 30px;
-          }
-
-        @media all and (max-Width:395px){
-          max-width: 300px;
-          }
-        @media all and (max-Width:375px){
-            max-width: 273px;
-            }
-        &:focus {
-          outline: none;
-          border: $greenprimary solid 2px;
-          @extend %focus;
         }
-        
+        @media all and (max-width: 395px) {
+          max-width: 300px;
+        }
+        @media all and (max-width: 375px) {
+          max-width: 273px;
+        }
       }
 
       legend {
@@ -83,17 +72,9 @@
         padding-top: 25px;
         padding-bottom: 5px;
         @media (min-width: 2200px) and (max-width: 2560px) {
-          
           font-size: 30px;
-          }
-        .opzionale {
-          font-size: 15px;
-          color: $greenprimary;
-          @media (min-width: 2200px) and (max-width: 2560px) {
-          
-            font-size: 25px;
-            }
         }
+        @extend %opzionale;
       }
 
       input {
@@ -104,26 +85,20 @@
         @extend %dwColorMenutwo;
         font-size: 18px;
         font-family: $fontsecondary;
-        transition: 0.4s ease-in-out;
+        @extend %hovereffect;
         @media (min-width: 2200px) and (max-width: 2560px) {
           height: 70px;
           font-size: 30px;
-
-          }
-        @media all and (max-Width:395px){
-          max-width: 300px;
-          }
-        @media all and (max-Width:375px){
-          max-width: 273px;
-          }
-        &:focus {
-          outline: none;
-          border: $greenprimary solid 2px;
-          @extend %focus;
-
         }
+        @media all and (max-width: 395px) {
+          max-width: 300px;
+        }
+        @media all and (max-width: 375px) {
+          max-width: 273px;
+        }
+        @extend %focusinput;
       }
-      select{
+      select {
         height: 47px;
         width: 100%;
         @extend %sfondorettangolo;
@@ -133,102 +108,63 @@
         @extend %dwColorMenutwo;
         font-size: 18px;
         font-family: $fontsecondary;
-        transition: 0.4s ease-in-out;
-        option{
-          background-color: rgb(67, 66, 66);
+        @extend %hovereffect;
+        option {
+          background-color: $optioncolor;
           color: $greenprimary;
         }
         @media (min-width: 2200px) and (max-width: 2560px) {
           height: 70px;
           font-size: 30px;
-          }
-        @media all and (max-Width:395px){
+        }
+        @media all and (max-width: 395px) {
           max-width: 300px;
-          }
-        @media all and (max-Width:375px){
+        }
+        @media all and (max-width: 375px) {
           max-width: 273px;
-          }
+        }
         &:focus {
           outline: none;
           border: $greenprimary solid 2px;
           @extend %focus;
-
         }
       }
       button {
-        @extend %sfondorettangolo;
         width: 80%;
         margin: auto;
-        height: 45px;
-        @extend %dwColorMenutwo;
-        font-family: $fontsecondary;
-        font-weight: 500;
-        font-size: 19px;
         margin-top: 20px;
-        @extend %marginform;
-        border-radius: 15px;
-        cursor: pointer;
-        &:hover{
-          border: 2px solid $greenprimary;
-        }
+        @extend %button;
         @media (min-width: 2200px) and (max-width: 2560px) {
           height: 80px;
-          }
-        .airp {
-          width: 20px;
-          color: $greenprimary;
-          position: relative;
-          top: 4px;
         }
       }
-      .customChecbox {
-        cursor: pointer;
-        display: inline-block;
-        position: relative;
-        padding-left: 40px;
-        transition: 0.4s ease-in-out;
-        .hidenCheckbox {
-          position: absolute;
-          opacity: 0;
-        }
-        .checkmark {
-          position: absolute;
-          top: 27px;
-          left: 0;
-          height: 22px;
-          width: 22px;
-          @extend %marginform;
-          border-radius: 5px;
-          @extend %sfondorettangolo;
-        }
+      @extend %checkbox;
+      .checkmark {
+        margin-top: 27px;
       }
+    }
+  }
+  // impostazioni mappa
+
+  .sectiontwo {
+    flex-basis: 45%;
+    margin-top: -50px;
+    border-radius: 32px 100px 40px 100px;
+    height: 600px;
+    @media (min-width: 2200px) and (max-width: 2560px) {
+      height: 700px;
+      flex-basis: 25%;
+      position: relative;
+      left: -300px;
+    }
+    @media all and (max-width: 850px) {
+      flex-basis: 100%;
+      margin-top: 80px;
     }
   }
 }
 
-.sectiontwo {
-  flex-basis: 45%;
-  margin-top: -50px;
-  border-radius: 32px 100px 40px 100px;
-  height: 600px;
-  @media (min-width: 2200px) and (max-width: 2560px) {
-          
-    height: 700px;
-    flex-basis: 25%;
-    position: relative;
-    left: -300px;
-
-
-    }
-  @media all and (max-Width:850px){
-    flex-basis: 100%;
-    margin-top: 80px;
-    }
-    
-    
-}
-
-
+// continuo la personalizazione della spunta nella checbox
 
 .hidenCheckbox:checked ~ .checkmark::before {
   content: "\2713";
@@ -239,4 +175,3 @@
   font-weight: bold;
   font-size: 28px;
 }
-

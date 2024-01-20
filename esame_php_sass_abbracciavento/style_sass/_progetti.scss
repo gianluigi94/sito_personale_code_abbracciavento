@@ -1,64 +1,57 @@
-.ppro{
+// in questa pagina gestisco la pagina dove elenco e presento i progetti, inizio dal contenitore che contiene tutti i progetti:
+.ppro {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap-reverse;
+  flex-direction: row-reverse;
+  margin-bottom: 60px;
+
+  // organizzo qui di sotto i singoli elementi con anche l'effetto hover
+
+  .progect {
+    position: relative;
+    margin: 80px 20px 0 20px;
+    flex-basis: 30%;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap-reverse;
-    flex-direction: row-reverse;
-    margin-bottom: 60px;
-    .progect {
-        position: relative;
-        margin-top: 80px;
-        margin-left: 20px;
-        margin-right: 20px;
-        flex-basis: 30%;
-        display: flex;
-        @media (max-width: 475px) and (max-height: 580px) {
-          flex-basis: 60%;
+    @media (max-width: 475px) and (max-height: 580px) {
+      flex-basis: 60%;
+    }
+    :hover img {
+      transform: scale(1.5);
+      filter: opacity(0.3);
+    }
+    :hover .imgdes {
+      opacity: 1;
+    }
 
-        }
-        :hover img{
-            transform: scale(1.5);
-            filter: opacity(0.3);
-        }
-        :hover .imgdes{
-            opacity: 1;
-          }
-        img{
-            width: 30vh;
-            transition: all 0.7s ease-in-out;
-            z-index: -2;        
-          }
-          a{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            overflow: hidden;        
-          }
-          h3{
-            font-size: 35px;
-            @extend %dwColorMenuOne;
-            font-family: 'Courier New', Courier, monospace;
-          }
-          .imgdes{
-            position: absolute;
-            left: 8%;
-            font-size: 20px;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            @extend %dwColorMenuOne;
-            opacity: 0;
-            transition: all 0.4s ease-in-out;
-            font-weight: bold;    
-          }
-          
+    // Ho reso cliccabile l'intero progetto, inserendo immagine, titolo e descrizione all'interno di un link
+
+    a {
+      @extend %flexcenter;
+      flex-direction: column;
+      overflow: hidden;
+      text-decoration-color: $greenprimary;
+      h3 {
+        font-size: 35px;
+        @extend %dwColorMenuOne;
+        font-family: $fontprimary;
       }
-
+      .imgdes {
+        position: absolute;
+        left: 8%;
+        font-size: $dimensionsecondary;
+        font-family: $fontsecondary;
+        @extend %dwColorMenuOne;
+        opacity: 0;
+        @extend %hovereffect;
+        font-weight: bold;
+      }
+      img {
+        width: 30vh;
+        transition: all 0.7s ease-in-out;
+        z-index: -2;
+      }
+    }
   }
-  
-  
-  
-  
-  
-  
-  
+}

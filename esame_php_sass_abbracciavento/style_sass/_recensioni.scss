@@ -1,4 +1,8 @@
-.recc{
+// in questa pagina gestisco lo stile delle recensioni e del secondo form presente nel mio sito
+
+// inizio con l'header:
+
+.recc {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -25,15 +29,14 @@
       width: 90vw;
     }
   }
-  
 }
+
+// qui sotto gestisco la recensione
 .recensione {
   @extend %borderrecens;
   border-radius: 5px 60px 5px 60px;
   width: 55vw;
-  margin-left: 60px;
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin: 40px 0 20px 60px;
 
   @media all and (max-width: 650px) {
     width: 75vw;
@@ -46,12 +49,8 @@
   }
   .tittledue {
     @extend %dwColorMenuOne;
-    // color: $whiteprimary;
     font-family: $fontprimary;
-    padding-top: 20px;
-    padding-left: 25px;
-    padding-right: 10px;
-    padding-bottom: 15px;
+    padding: 20px 10px 15px 25px;
     font-weight: 900;
     font-size: 30px;
     @media (min-width: 2200px) and (max-width: 2560px) {
@@ -72,12 +71,11 @@
   }
   p {
     @extend %dwColorMenutwo;
-    // color: $whitesecondary;
     font-family: $fontsecondary;
     font-size: $dimensionsecondary;
     padding-left: 25px;
     padding-right: 25px;
-    
+
     @media (min-width: 2200px) and (max-width: 2560px) {
       font-size: 42px;
     }
@@ -93,177 +91,99 @@
   }
 }
 
-.titler {
-  text-align: start;
-  padding-top: 150px;
-  margin-left: 60px;
-  margin-right: 60px;
-  @extend %dwColorMenuOne;
-  // color: $whiteprimary;
-  font-family: $fontprimary;
-  font-weight: bolder;
-  font-size: $dimensionprimary;
-  @media (min-width: 2200px) and (max-width: 2560px) {
-    padding-top: 320px;
-    font-size: 110px;
-  }
-  @media all and (max-width: 516px) {
-    max-width: 250px;
-  }
-  @media all and (max-width: 500px) {
-    margin-left: 30px;
-  }
+// qui gestisco il secondo form
 
-  @media all and (max-width: 315px) {
-    font-size: 62px;
-  }
-}
-
-.formTwo{
+.formTwo {
   display: flex;
   text-align: start;
   align-items: start;
   flex-wrap: wrap;
   flex-direction: column;
-    label{
-      @extend %dwColorMenutwo;
-      font-family: $fontsecondary;
-      font-size: $dimensionsecondary;
-      margin-left: 70px;
-      margin-right: 20px;
-      margin-top: 20px;
-      @media all and (max-width: 500px) {
-        margin-left: 30px;
-      }
-        .opzionale {
-          font-size: 15px;
-          color: $greenprimary;
-          @media (min-width: 2200px) and (max-width: 2560px) {
-          
-            font-size: 25px;
-            }
-        }
-      
+  label {
+    @extend %dwColorMenutwo;
+    font-family: $fontsecondary;
+    font-size: $dimensionsecondary;
+    margin-left: 70px;
+    margin-right: 20px;
+    margin-top: 20px;
+    @media all and (max-width: 500px) {
+      margin-left: 30px;
     }
-    textarea {
-      resize: none;
-      @extend %marginform;
-      border-radius: 10px;
-      transition: 0.4s ease-in-out;
-      padding: 10px;
-      @extend %dwColorMenutwo;
-      @extend %sfondorettangolo;
-      font-size: 18px;
-      font-family: $fontsecondary;
-      margin-left: 60px;
-      width: 54vw;
-      height: 100px;     
-      @media (min-width: 2200px) and (max-width: 2560px) {
-        height: 400px;
-        font-size: 30px;
-        }
-      @media all and (max-width: 650px) {
-         width: 75vw;
-       }
-       @media all and (max-width: 500px) {
-        margin-left: 30px;
-      }
-      @media all and (max-Width:395px){
-        max-width: 300px;
-        }
-      @media all and (max-Width:375px){
-          max-width: 273px;
-          }
-      &:focus {
-        outline: none;
-        border: $greenprimary solid 2px;
-        &::placeholder {
-          color: transparent;
-          transition: color 0.5s ease;
-        }
-        @extend %focus;
-        
-      }
-      
+    @extend %opzionale;
+  }
+  textarea {
+    @extend %textarea;
+    margin-left: 60px;
+    width: 54vw;
+    height: 100px;
+    @media (min-width: 2200px) and (max-width: 2560px) {
+      height: 400px;
+      font-size: 30px;
     }
 
-    input {
-      height: 25px;
-      width: 310px;
-      cursor: pointer;
-      @extend %sfondorettangolo;
-      border-radius: 15px;
-      padding: 10px;
-      margin-left: 60px;
-      margin-top: 15px;
-      @extend %dwColorMenutwo;
-      @extend %marginform;
-      font-size: 18px;
-      font-family: $fontsecondary;
-      transition: 0.4s ease-in-out;
-      @media (min-width: 2200px) and (max-width: 2560px) {
-        height: 70px;
-        font-size: 30px;
-
-        }
-        @media all and (max-width: 500px) {
-          margin-left: 30px;
-        }
-      @media all and (max-Width:395px){
-        max-width: 300px;
-        }
-        @media all and (max-width: 375px) {
-          width: 70%;
-        }
-      &:focus {
-        outline: none;
-        border: $greenprimary solid 2px;
-        @extend %focus;
-
-      }
+    @media all and (max-width: 650px) {
+      width: 75vw;
     }
-    button {
-      @extend %sfondorettangolo;
-      width: 330px;
-      height: 45px;
-      margin-left: 60px;
-      @extend %dwColorMenutwo;
-      font-family: $fontsecondary;
-      font-weight: 500;
-      font-size: 19px;
-      margin-top: 20px;
-      margin-bottom: 50px;
-      @extend %marginform;
-      border-radius: 15px;
-      @media all and (max-width: 500px) {
-        margin-left: 30px;
-      }
-      @media all and (max-width: 375px) {
-        width: 80%;
-      }
-      cursor: pointer;
-      .airp {
-        width: 20px;
-        color: $greenprimary;
-        position: relative;
-        top: 4px;
-      }
+    @media all and (max-width: 500px) {
+      margin-left: 30px;
+    }
+    @media all and (max-width: 395px) {
+      max-width: 300px;
+    }
+    @media all and (max-width: 375px) {
+      max-width: 273px;
+    }
+  }
 
-      &:hover{
-        border: 2px solid $greenprimary;
-      }
-      @media (min-width: 2200px) and (max-width: 2560px) {
-        height: 80px;
-        }
-      }
+  input {
+    height: 25px;
+    width: 310px;
+    cursor: pointer;
+    @extend %sfondorettangolo;
+    border-radius: 15px;
+    padding: 10px;
+    margin-left: 60px;
+    margin-top: 15px;
+    @extend %dwColorMenutwo;
+    @extend %marginform;
+    font-size: 18px;
+    font-family: $fontsecondary;
+    transition: 0.4s ease-in-out;
+    @media (min-width: 2200px) and (max-width: 2560px) {
+      height: 70px;
+      font-size: 30px;
+    }
+    @media all and (max-width: 500px) {
+      margin-left: 30px;
+    }
+    @media all and (max-width: 395px) {
+      max-width: 300px;
+    }
+    @media all and (max-width: 375px) {
+      width: 70%;
+    }
+    @extend %focusinput;
+  }
+  button {
+    width: 330px;
+    margin-left: 60px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    @extend %button;
+    @media all and (max-width: 500px) {
+      margin-left: 30px;
+    }
+    @media all and (max-width: 375px) {
+      width: 80%;
+    }
+    @media (min-width: 2200px) and (max-width: 2560px) {
+      height: 80px;
+    }
+  }
   .tittledue {
     @extend %dwColorMenuOne;
-    // color: $whiteprimary;
     font-family: $fontprimary;
-    padding-top: 100px;
-    padding-left: 70px;
-    padding-right: 10px;
-    padding-bottom: 15px;
+    padding: 100px 10px 15px 70px;
     font-weight: 900;
     font-size: 30px;
     @media (min-width: 2200px) and (max-width: 2560px) {
@@ -272,35 +192,6 @@
     @media all and (max-width: 500px) {
       margin-left: -40px;
     }
-}
-.customChecbox {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  padding-left: 40px;
-  padding-right: 40px;
-  transition: 0.4s ease-in-out;
-  @media all and (max-width: 550px) {
-    font-size: 15px;
   }
-  .hidenCheckbox {
-    position: absolute;
-    opacity: 0;
-    width: 1px;
-    height: 1px;
-  }
-  .checkmark {
-    position: absolute;
-    top: 0px;
-    left: 0;
-    height: 22px;
-    width: 22px;
-    @extend %marginform;
-    border-radius: 5px;
-    @extend %sfondorettangolo;
-  }
+  @extend %checkbox;
 }
-}
-
-
-

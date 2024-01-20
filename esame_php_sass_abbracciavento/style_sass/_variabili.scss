@@ -1,53 +1,88 @@
-$template:dark; 
-// $template:light; 
+// qui è dove si decide il template
 
+$template: dark;
+// $template:light;
 
-
-$dark:#111111;
-$light:#f6f6f6;
-$whiteprimary:#ffffff;
-$whitesecondary:#cdcdcd;
+// elenco variabili
+$dark: #111111;
+$light: #f6f6f6;
+$whiteprimary: #ffffff;
+$whitesecondary: #cdcdcd;
 $greenprimary: #088b17;
-$fontprimary: 'Courier New', Courier, monospace;
+$fontprimary: "Courier New", Courier, monospace;
 $fontsecondary: Verdana, Geneva, Tahoma, sans-serif;
 $dimensionprimary: 60px;
 $dimensionsecondary: 20px;
 $sfondosecondary: #575757f2;
 $sfondoterzo: #ffffffd7;
-$secondblack:#262626;
-$greensfum:linear-gradient(45deg, #088b17, #111111);
-$dimensionspecial:25px;
-$whitenav:#e6e6e6eb;
-$blacknav:#575757fa;
-$colorhover:#26262682;
-$whitenavdue:#e6e6e6f9;
+$secondblack: #262626;
+$greensfum: linear-gradient(45deg, #088b17, #111111);
+$dimensionspecial: 25px;
+$whitenav: #e6e6e6eb;
+$blacknav: #575757fa;
+$colorhover: #26262682;
+$whitenavdue: #e6e6e6f9;
 $superbottone: #57575764;
 $lineetta: #8f8f8fb8;
-$homecursor:  #5757577d;
+$homecursor: #5757577d;
 $greentwo: #15b42d32;
+$optioncolor: rgb(67, 66, 66);
+$fontultimo: 21px;
+$primofontd: 50px;
+$fontaside: 32px;
 
-%marginform{
-        border-top: 2px solid $dark;
-        border-right: 2px solid $lineetta;
-        border-bottom: 2px solid $lineetta;
-        border-left: 2px solid $dark;
+// elenco placeholder selector
+%marginform {
+  border-top: 2px solid $dark;
+  border-right: 2px solid $lineetta;
+  border-bottom: 2px solid $lineetta;
+  border-left: 2px solid $dark;
 }
 
-%reset{
-    margin: 0;
-    padding: 0;
+%reset {
+  margin: 0;
+  padding: 0;
 }
 
-%body{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    // background: $dark;
-    @extend %dwsfondo;
-    overflow-x: hidden;
-    @media all and (max-Width:350px){
-        width: 350px;
-    }
-      
-    
+%body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  // background: $dark;
+  @extend %dwsfondo;
+  overflow-x: hidden;
+  @media all and (max-width: 350px) {
+    width: 350px;
+  }
+}
+
+%flexcenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+%hoverbutton {
+  transition: 0.3s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+%hovereffect {
+  transition: 0.4s ease-in-out;
+}
+
+%asidetext {
+  font-size: 17px;
+  font-weight: 700;
+  font-family: $fontsecondary;
+}
+
+%cardeffect {
+  position: absolute;
+  color: $whiteprimary;
+  z-index: 3;
+  filter: opacity(0);
+  transition: all 0.5s ease-in-out;
 }

@@ -1,125 +1,119 @@
+// in questa pagina gestisco lo stile del footer iniziando dal contenitore generale, su schermi grandi ci saranno due arre che ocupano il 50% della riga, mentre la terza area sarà sotto di esse è ocuperà il 100%.
+// al rimpiciolirsi dello schermo, però tutte e tre le aree saranno incollonate
+
 footer {
-    background: url(../assets/circuito.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+  background: url(../assets/circuito.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex-wrap: wrap;
+  flex-direction: row;
+  @extend %flexcenter;
+  width: 100vw;
+  @media all and (max-width: 440px) {
+    flex-direction: column;
+    background: url(../assets/circuito_piccolo.png);
+  }
+  @media all and (max-width: 350px) {
+    width: 350px;
+  }
+
+  // la prima area è quella con il logo
+
+  .footerone {
+    flex-basis: 50%;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100vw;
-        @media all and (max-Width:440px){
-            flex-direction: column;
-            background: url(../assets/circuito_piccolo.png);
-        }
-        @media all and (max-Width:350px){
-            width: 350px;
-        }
-        .footerone {
-            flex-basis: 50%;
-            display: flex;
-            justify-content: end;
-                @media all and (max-Width:700px){
-                    justify-content: start;
-                    flex-basis: 20%;
-                    }
-                @media all and (max-Width:432px){
-                    justify-content: center;
-                    }
-                img {
-                    height: 150px;
-                    width: 120px;
-                    padding: 10px 2px 20px 0px;
-                      
-                    }
-                }
+    justify-content: end;
+    @media all and (max-width: 700px) {
+      justify-content: start;
+      flex-basis: 20%;
+    }
+    @media all and (max-width: 432px) {
+      justify-content: center;
+    }
+    img {
+      height: 150px;
+      width: 120px;
+      padding: 10px 2px 20px 0px;
+    }
+  }
 
-        .footertwo {
-            flex-basis: 50%;
-                @media all and (max-Width:440px){
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    flex-direction: column;
-                    padding-bottom: 15px;
-                    }
-                img {
-                    width: 4vh;
-                    padding-top: 20px;
-                    padding-left: 15px;
-                    }
-                .recapiti{
-                    font-family:$fontsecondary;
-                    font-style: italic;
-                    color: $whiteprimary;
-                    font-size: 20px;
-                    font-weight: 900;
-                    padding-left: 2px;
-                    @media (min-width: 2200px) and (max-width: 2560px) {
-                        font-size: 38px;
-                        }
-                    } 
-                ul{
-                    color: $whiteprimary;
-                    font-family: $fontsecondary;
-                    font-style: italic;
-                    list-style: none;
-                    padding-top: 15px;
-                    padding-left: 2px;
-                    @media (min-width: 2200px) and (max-width: 2560px) {
-                        font-size: 28px;
-                        }
-                    @media all and (max-Width:440px){
-                        text-align: center;
-                        }
-                    @media all and (max-Width:380px){
-                        font-size: 14px;
-                        padding-right: 10px;
-                        }
-                    
-                    @media all and (max-Width:352px){
-                        font-size: 14px;
-                        padding-right: 10px;
-                        }
-                    }       
-                }
-        .footerthree {
-            flex-basis: 80%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-                hr{
-                    width: 60vw;
-                    border-style: dashed;
-                    color: $whiteprimary;
-                        @media all and (max-Width:997px){
-                            width: 80vW;
-                        }
-                        @media all and (max-Width:739px){
-                                width: 96vW;
-                            
-                        }
-                }
-                .button{
-                    text-align: center;
-                    font-size: 16px;
-                    color: $whiteprimary;
-                    padding-top: 10px;
-                    @media (min-width: 2200px) and (max-width: 2560px) {
-                        font-size: 28px;
-                        }
-                }
-            }        
+  // la seconda area è quella con le info di contatto
+
+  .footertwo {
+    flex-basis: 50%;
+    @media all and (max-width: 440px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding-bottom: 15px;
+    }
+    img {
+      width: 4vh;
+      padding-top: 20px;
+      padding-left: 15px;
+    }
+    .recapiti {
+      font-family: $fontsecondary;
+      font-style: italic;
+      color: $whiteprimary;
+      font-size: $dimensionsecondary;
+      font-weight: 900;
+      padding-left: 2px;
+      @media (min-width: 2200px) and (max-width: 2560px) {
+        font-size: 38px;
+      }
+    }
+    ul {
+      color: $whiteprimary;
+      font-family: $fontsecondary;
+      font-style: italic;
+      list-style: none;
+      padding-top: 15px;
+      padding-left: 2px;
+      @media (min-width: 2200px) and (max-width: 2560px) {
+        font-size: 28px;
+      }
+      @media all and (max-width: 440px) {
+        text-align: center;
+      }
+      @media all and (max-width: 380px) {
+        font-size: 14px;
+        padding-right: 10px;
+      }
+
+      @media all and (max-width: 352px) {
+        font-size: 14px;
+        padding-right: 10px;
+      }
+    }
+  }
+
+  // la terza(sotto le altre due aree) gestisce il separatore è la mia firma
+
+  .footerthree {
+    flex-basis: 80%;
+    @extend %flexcenter;
+    flex-direction: column;
+    hr {
+      width: 60vw;
+      border-style: dashed;
+      color: $whiteprimary;
+      @media all and (max-width: 997px) {
+        width: 80vw;
+      }
+      @media all and (max-width: 739px) {
+        width: 96vw;
+      }
+    }
+    .button {
+      text-align: center;
+      font-size: 16px;
+      color: $whiteprimary;
+      padding-top: 10px;
+      @media (min-width: 2200px) and (max-width: 2560px) {
+        font-size: 28px;
+      }
+    }
+  }
 }
-
-
-
-
-
-
-
-
-
-
-

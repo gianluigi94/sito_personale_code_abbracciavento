@@ -1,169 +1,163 @@
-.container{
-    max-width: 100%;
+// queste sono le impostazioni dei finti progetti, sono uguali per tutte le pagine
+
+// impostazioni contenitore principale
+
+.container {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 0px 60px 60px 60px;
+  padding-top: 150px;
+
+  @media all and (max-width: 1189px) {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  @media all and (max-width: 485px) {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  // impostazioni primo contenitore testuale
+
+  .box {
+    width: 100%;
+  }
+  .uno {
+    flex-basis: 70%;
+    max-height: 100%;
+    @media all and (max-width: 1189px) {
+      flex-basis: 100%;
+    }
+    .title {
+      @extend %dwColorMenuOne;
+      font-family: $fontprimary;
+      // color: $whiteprimary;
+      // color: $dark;
+      font-size: $dimensionprimary;
+      padding-bottom: 80px;
+
+      @media (min-width: 2200px) and (max-width: 2560px) {
+        margin-top: 120px;
+        font-size: 110px;
+      }
+
+      @media all and (max-width: 403px) {
+        font-size: 50px;
+        font-weight: bolder;
+        padding-bottom: 0;
+        margin-bottom: 70px;
+      }
+      @media all and (max-width: 358px) {
+        font-size: 44px;
+      }
+
+      @media all and (max-width: 358px) {
+        font-size: 55px;
+      }
+    }
+    .text {
+      font-family: $fontsecondary;
+      font-size: $dimensionsecondary;
+      @extend %dwColorMenutwo;
+      // color: $whitesecondary;
+      // color: $secondblack;
+      text-align: justify;
+      @media (min-width: 2200px) and (max-width: 2560px) {
+        font-size: 35px;
+      }
+      @media all and (max-width: 330px) {
+        width: 280px;
+      }
+    }
+  }
+
+  // impostazioni secondo contenitore immagine
+
+  .due {
+    flex-basis: 30%;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin: 0px 60px 60px 60px;
-    padding-top: 150px;
-
-    @media all and (max-Width:1189px){
-        margin-left: 40px;
-        margin-right: 40px;
+    justify-content: end;
+    align-items: center;
+    @media all and (max-width: 1189px) {
+      flex-basis: 100%;
+      justify-content: center;
     }
-    @media all and (max-Width:485px){
-        margin-left: 30px;
-        margin-right: 30px;
+    img {
+      width: 320px;
+      height: 340px;
+
+      @media all and (max-width: 1189px) {
+        padding-top: 50px;
+      }
+      @media all and (max-width: 395px) {
+        padding-top: 50px;
+      }
     }
-    .box{
-        width: 100%;
-       }
-       .uno{
-        flex-basis: 70%; 
-        max-height: 100%;
-        @media all and (max-Width:1189px){
-              flex-basis: 100%;
-            }
-            .title {
-                @extend %dwColorMenuOne;
-                font-family: $fontprimary;
-                // color: $whiteprimary;
-                // color: $dark;
-                font-size: $dimensionprimary;
-                padding-bottom: 80px;
+  }
 
-                @media (min-width: 2200px) and (max-width: 2560px) {
-                margin-top: 120px;
-                font-size: 110px;
-                }
-                
-                @media all and (max-Width:403px){
-                    font-size: 50px;   
-                    font-weight: bolder;
-                    padding-bottom: 0;
-                    margin-bottom: 70px;
-                }
-                @media all and (max-Width:358px){
-                    font-size: 44px;
-                }
-                
-                @media all and (max-Width:358px){
-                    font-size: 55px;
+  //    impostazioni aside
 
-                }
-                
-            }
-                .text {
-                font-family: $fontsecondary;
-                font-size: $dimensionsecondary;
-                @extend  %dwColorMenutwo;
-                // color: $whitesecondary;
-                // color: $secondblack;
-                text-align: justify;
-                @media (min-width: 2200px) and (max-width: 2560px) {
-                    font-size: 35px;
-                    }
-                    @media all and (max-Width:330px){
-                      width: 280px;  
-    
-                    }
-            }
-                
-            
-        }
-       .due{
-        flex-basis: 30%;
-        display: flex;
-        justify-content: end;
-        align-items: center;
-        @media all and (max-Width:1189px){
-            flex-basis: 100%;
-            justify-content: center;
-          }
-            img{
-                width: 320px;
-                height: 340px;
-                
-                // @media all and (max-Width:1401px){
-                //     width: 35vh;
-
-                //   }
-                @media all and (max-Width:1189px){
-                    padding-top: 50px;
-                    // width: 42vh;
-
-                  }
-                @media all and (max-Width:395px){
-                    padding-top: 50px;
-                    // width: 38vh;
-
-                  }
-
-            }
-        
-       }
-       
-       .tre{
-        flex-basis: 100%;
-        display: flex;
+  .tre {
+    flex-basis: 100%;
+    @extend %flexcenter;
+    flex-direction: column;
+    margin-top: 50px;
+    @media all and (max-width: 892px) {
+      justify-content: start;
+      align-items: start;
+    }
+    @media all and (max-width: 666px) {
+      justify-content: start;
+      align-items: start;
+    }
+    h3 {
+      color: $greenprimary;
+      font-family: $fontprimary;
+      font-size: $fontaside;
+      @media (min-width: 2200px) and (max-width: 2560px) {
+        font-size: 55px;
+      }
+    }
+    ul {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+      margin-top: 10px;
+      @media all and (max-width: 892px) {
+        list-style: square;
+        color: $greenprimary;
+        padding-left: 16px;
+        padding-top: 20px;
+      }
+      @media all and (max-width: 666px) {
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 50px;
-        @media all and (max-Width:892px){
-            justify-content: start;
-            align-items: start;
+        gap: 10px;
+      }
+      a {
+        @extend %dwColorMenuOne;
+        // color: $whitesecondary;
+        // color: $secondblack;
+        @extend %asidetext;
+        @media (min-width: 2200px) and (max-width: 2560px) {
+          font-size: 35px;
         }
-        @media all and (max-Width:666px){
-            justify-content: start;
-            align-items: start;
+        &:hover {
+          color: $greenprimary;
         }
-            h3{
-                color: $greenprimary;
-                font-family: $fontprimary;
-                font-size: 32px;
-                @media (min-width: 2200px) and (max-width: 2560px) {
-                    font-size: 55px;
-                    }
-            }
-            ul{
-                display: flex;
-                gap: 30px;
-                list-style: none;
-                margin-top: 10px;
-                @media all and (max-Width:892px){
-                    list-style: square;
-                    color: $greenprimary;
-                    padding-left: 16px;
-                    padding-top: 20px;
-                }
-                @media all and (max-Width:666px){
-                    flex-direction: column;
-                    gap: 10px;
-                }
-                    a{
-                        @extend %dwColorMenuOne;
-                        // color: $whitesecondary;
-                        // color: $secondblack;
-                        font-family: $fontsecondary;
-                        font-size: 17px;
-                        font-weight: 700;
-                        @media (min-width: 2200px) and (max-width: 2560px) {
-                            font-size: 35px;
-                            }
-                            &:hover {
-                                color: $greenprimary;
-                      
-                              }
-                    }
-              }
-       }
-   }
+      }
+    }
+  }
+}
 
-   #longtitle{
-    @media all and (max-Width:358px){
-        font-size: 45px;
-    }
-    @media all and (max-Width:321px){
-        font-size: 40px;
-    }
-   }
+//    alcuni titoli sono più lunghi quindi al rimpiciolimento dello schermo non possono essere trattati come gli altri titoli e li ho gestiti qui sotto
+
+#longtitle {
+  @media all and (max-width: 358px) {
+    font-size: 45px;
+  }
+  @media all and (max-width: 321px) {
+    font-size: 40px;
+  }
+}
