@@ -123,6 +123,38 @@
 
         }
       }
+      select{
+        height: 47px;
+        width: 100%;
+        @extend %sfondorettangolo;
+        @extend %marginform;
+        border-radius: 5px;
+        padding: 10px;
+        @extend %dwColorMenutwo;
+        font-size: 18px;
+        font-family: $fontsecondary;
+        transition: 0.4s ease-in-out;
+        option{
+          background-color: rgb(67, 66, 66);
+          color: $greenprimary;
+        }
+        @media (min-width: 2200px) and (max-width: 2560px) {
+          height: 70px;
+          font-size: 30px;
+          }
+        @media all and (max-Width:395px){
+          max-width: 300px;
+          }
+        @media all and (max-Width:375px){
+          max-width: 273px;
+          }
+        &:focus {
+          outline: none;
+          border: $greenprimary solid 2px;
+          @extend %focus;
+
+        }
+      }
       button {
         @extend %sfondorettangolo;
         width: 80%;
@@ -161,7 +193,7 @@
         }
         .checkmark {
           position: absolute;
-          top: 35px;
+          top: 27px;
           left: 0;
           height: 22px;
           width: 22px;

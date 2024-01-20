@@ -282,7 +282,7 @@
     // background-color: $sfondosecondary;
     // background-color: $sfondoterzo;
     position: fixed;
-    height: 150px;
+    height: 118px;
     width: 100vw;
     z-index: 10;
     display: none;
@@ -293,22 +293,19 @@
         width: 350px;
 
     }
-    @media all and (max-height:620px){
-        height: 118px;
-
-    }
+   
     @media (max-height: 619px) and (max-width: 326px) {
         height: 124px;
       }
   }
 
   .nascosto{
-    height: 120px;
+    height: 110px;
     width: 105px;
     position: fixed;
-    right: 40%;
+    right: 42%;
     left: auto;
-    top:20px;
+    top:5px;
     display: none;
     z-index: 400;
     @media all and (max-Width:835px){
@@ -326,9 +323,7 @@
         top:5px;
         right: 42%;
     }
-    @media (max-height: 619px) and (max-width: 326px) {
-        height: 115px;
-      }
+    
 
   }
   #ur{

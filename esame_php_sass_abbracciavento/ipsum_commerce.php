@@ -131,7 +131,6 @@
 
 
     <aside class="box tre">
-
       <h3>Altri progetti:</h3>
       <ul>
         <li><a href="portfolio_grafico.php" title="Porfolio grafico">Portfolio grafico</a></li>

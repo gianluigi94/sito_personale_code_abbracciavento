@@ -1,3 +1,4 @@
+
 header{
     height: 100vh;
     display: flex;
@@ -13,6 +14,9 @@ header{
         height: 940px;
 
         }
+        @media (max-width: 335px) and (max-height: 546px) {
+            height: 840px;            
+        }
 
 
     #videobig{    
@@ -21,6 +25,9 @@ header{
         height: 100vh;  
         @media all and (max-Width:350px){
             width:350px;
+        }
+        @media (max-width: 350px) and (max-height: 680px) {
+            margin-top: -300px;               
         }
 
     }
@@ -42,6 +49,9 @@ header{
             padding-top: 40px;
             @media all and (max-Width:540px){
                 flex-direction: column-reverse;
+            }
+            @media (max-width: 350px) and (max-height: 680px) {
+                margin-top: 0px;               
             }
 
 
@@ -87,6 +97,7 @@ header{
                     }
                 }
             }
+            
         
             h1 {
                 font-size: 50px;
@@ -115,6 +126,14 @@ header{
                 @media all and (max-height:380px){
                     padding-top: 100px;
                 }
+                @media (max-width: 540px) and (max-height: 555px) {
+                    padding-top: 50px;
+
+                }
+                @media (max-width: 350px) and (max-height: 680px) {
+                    margin-top: -200px;               
+                }
+                
                 
 
                 
@@ -221,6 +240,16 @@ padding-right:50px;
                         margin-top: -70px;
                         padding-bottom: 100px;
                     }
+                    @media (max-width: 350px) and (max-height: 680px) {
+                        margin-top: -200px;   
+                        padding-bottom: 230px;
+
+                    }
+                    @media (max-width: 335px) and (max-height: 555px) {
+                        margin-top: -280px;   
+                        padding-bottom: 320px;
+
+                    }
                     
                 }
     
@@ -246,6 +275,10 @@ padding-right:50px;
     flex-basis: 100%;
     align-items: center;
     padding-top: 50px;
+}
+@media (max-width: 350px) and (max-height: 680px) {
+    margin-top: -240px;   
+
 }
         iframe{
             border: none;
@@ -292,9 +325,11 @@ padding-right:50px;
                 }
                 @media all and (max-height:710px){
                     text-align: center;
+                    margin-right: 0px;
+
 
                 }
-
+                
 
                 }
         }

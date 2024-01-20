@@ -110,6 +110,12 @@
       <input type="email" id="email" name="email" required autocomplete="off">
       <label for="tel">Numero di telefono <span class="opzionale">(opzionale)</span></label>
       <input type="tel" id="tel" name="tel" autocomplete="off">
+      <label for="argomento">Scegli il tipo di argomento<span class="opzionale">*</span></label>
+      <select name="argomento" id="argomento">
+        <option value="" selected>Seleziona un argomento</option>
+        <option value="informazioni">Informazioni</option>
+        <option value="assistenza">Assistenza</option>
+      </select>
       <label for="messaggio">Inserisci il tuo messaggio<span class="opzionale">*</span> </label>
       <textarea name="messaggio" id="messaggio" cols="30" rows="10" required autocomplete="off"></textarea>
       <label for="accettazione" class="customChecbox">
@@ -117,7 +123,7 @@
         <span class="checkmark"></span>
         Dichiaro di aver letto le informative riguardanti l'utilizzo dei dati personali
       </label>
-      <button type="submit">Ivia messaggio <svg class="airp w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+      <button type="submit">Invia messaggio <svg class="airp w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
       </svg>
       </button>
