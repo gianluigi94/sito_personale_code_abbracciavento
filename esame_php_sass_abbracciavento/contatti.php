@@ -138,35 +138,13 @@
   </div>
   
   
-  <!-- FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER -->
+  <!-- inserisco il footer  -->
 
-
-  <footer>
-    <div class="box footerone"> 
-      <a href="#top">
-      <img src="assets/bianco.png" alt="Logo regina" draggable="false" loading="lazy" title="Torna su" class="mainImage">
-      </a>
-    </div>
-    <div class="box footertwo">
-      <p class="recapiti">Recapiti</p>
-      <ul>
-        <li>Via Castello 2, Barge (CN)</li>
-        <li>+39 3405281353</li>
-        <li>gianluigiabbracciavento@yahoo.com</li>
-      </ul>
-      <a aria-label="Linkedin" href="http://www.linkedin.com/in/gianluigi-abbracciavento-b661a8284" title="social"
-        target="_blank" class="link">
-        <img
-          src="assets/linkedin.png"
-          alt="Icona social" class="icona"  draggable="false" loading="lazy"></a>
-    </div>
-    <div class="box footerthree">
-      <hr>
-
-      <p class="button">Sviluppato da © Gianluigi Abbracciavento</p>
-    </div>
-  </footer>
-  <script src="script/script.js"></script>  
+  <?php
+  require_once "footer.php";
+  ?>
+  
+  <script src="script/script.js"></script>
   
 
 </body>
