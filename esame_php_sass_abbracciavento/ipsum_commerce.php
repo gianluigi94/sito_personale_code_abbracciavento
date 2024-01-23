@@ -1,25 +1,15 @@
-<!DOCTYPE html>
-<html lang="zxx">
-
-   <!-- inserisco la head -->
-
-   <?php
+<?php
+  //  inserisco il doctype, imposto la lingua e inserisco la head
   require_once "head.php";
 ?>
 
 <body>
-  <span class="bordoMenu"></span>
-  <span class="sfondoimgdue"></span>
-  <a href="index.html" title="Home">
-  <img class="nascosto mainImage" loading="eager" src="assets/logobianco.png" alt="Logo regina" draggable="false" >
-  </a>
-
-  
-
-    <!-- inserisco il menu  -->
 
    <?php
-  require_once "menu.php";
+  //  inserisco il menu 
+  require_once "menu.php"; 
+  // inserisco lo span e il logo che apparirà nella pagina al ridursi dello schermo e l'immagine di sfondo dell'intera pagina se è presente 
+  require_once "add.php";
   ?>
 
 

@@ -1,30 +1,16 @@
-<!DOCTYPE html>
-<html lang="it">
-
-  <!-- inserisco la head -->
-
-  <?php
+<?php
+  //  inserisco il doctype, imposto la lingua e inserisco la head
   require_once "head.php";
 ?>
 
 <body>
-  <span class="bordoMenu"></span>
-  <span class="sfondoimgsei"></span>
-  <a href="index.html" title="Home">
-  <img class="nascosto mainImage" loading="eager" src="assets/logobianco.png" alt="Logo regina" draggable="false" >
-  </a>
 
-  <!-- inserisco il menu  -->
-
-  <?php
-  require_once "menu.php";
+   <?php
+  //  inserisco il menu 
+  require_once "menu.php"; 
+  // inserisco lo span e il logo che apparirà nella pagina al ridursi dello schermo e l'immagine di sfondo dell'intera pagina se è presente 
+  require_once "add.php";
   ?>
-
-
-  <!-- MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN  -->
-
-
-
   
   <h1 class="titler">Progetti</h1>
   
@@ -86,6 +72,8 @@
   require_once "footer.php";
   ?>
   
+    <!-- codice js per il funzionamento del menu hamburger -->
+
   <script src="script/script.js"></script>  
   
 

@@ -37,6 +37,12 @@
             }  
             return $pageTitle;
         }
+        public static function lingua() {
+            $lorem = ['ipsum_commerce.php', 'lorem_cripto_dolor.php', 'socialorem.php', 'space_chess_dolor.php'];
+            $pagina = basename($_SERVER['SCRIPT_NAME']);
+            $lingua = in_array($pagina, $lorem) ? 'zxx' : 'it';
+            return $lingua;
+        }
         
     }
 ?>

@@ -3,8 +3,8 @@ require_once 'funzioni.php';
 
 use sito_personale\functions\Utility as UT;
 
-$file = "data/menu.json";
-$obj = json_decode(UT::leggiTesto($file));
+$filemenu = "data/menu.json";
+$objmenu = json_decode(UT::leggiTesto($filemenu));
 $pagina = basename($_SERVER['PHP_SELF']);
 
 ?>
@@ -15,7 +15,7 @@ $pagina = basename($_SERVER['PHP_SELF']);
             <ul class="firstlist">
                 <?php
 
-                foreach ($obj->firstmenu as $link) {
+                foreach ($objmenu->firstmenu as $link) {
                     $class = "";
                     $icon = "";
                     $subMenu = "";
@@ -48,7 +48,7 @@ $pagina = basename($_SERVER['PHP_SELF']);
         </div>
         <div class="secondmenu">
             <?php
-            $imgL = $obj->secondmenu;
+            $imgL = $objmenu->secondmenu;
             printf('<a href="%s" id="logo" title="%s"><img class="mainImage" loading="eager" src="%s" alt="%s" draggable="false"></a>', $imgL->url, $imgL->title, $imgL->icona, $imgL->alt);
             ?>
 
@@ -57,7 +57,7 @@ $pagina = basename($_SERVER['PHP_SELF']);
         <div class="thirdmenu">
             <ul class="secondlist">
                 <?php
-                foreach ($obj->thirdmenu as $link) {
+                foreach ($objmenu->thirdmenu as $link) {
                     $class = "";
                     if ($link->url == $pagina) {
                         $class .= "underlined ";
@@ -74,7 +74,7 @@ $pagina = basename($_SERVER['PHP_SELF']);
         <div class="navbar">
             <div class="hamburgermenu">
                 <?php
-                $menuUnito = array_merge($obj->firstmenu, $obj->thirdmenu);
+                $menuUnito = array_merge($objmenu->firstmenu, $objmenu->thirdmenu);
 
                 $classiL = ["lineeone", "linetwo", "linetree"];
                 foreach ($classiL as $clsL) {
@@ -84,30 +84,30 @@ $pagina = basename($_SERVER['PHP_SELF']);
             </div>
             <ul>
                 <?php
-               foreach ($menuUnito as $link) {
+               foreach ($menuUnito as $linktwo) {
                 $class = "navItem ";
                 $icon = "";
                 $subMenu = "";
-                if ($link->sub != []) {
+                if ($linktwo->sub != []) {
                     $class .= "navprogect ";
                     $icon = "<i class='fas fa-caret-down'></i>";
-                    echo '<li class="' . $class . '">' . $link->nome . ' ' . $icon;
+                    echo '<li class="' . $class . '">' . $linktwo->nome . ' ' . $icon;
             
                     $subMenu = '<ul class="sottomini">';
-                    foreach ($link->sub as $subLink) {
+                    foreach ($linktwo->sub as $subLinktwo) {
                         $classub = "";
-                        if ($subLink->url == $pagina) {
+                        if ($subLinktwo->url == $pagina) {
                             $classub .= "underlined ";
                         }
-                        $subMenu .= sprintf('<li class="%s"><a href="%s" title="%s">%s</a></li>', trim($classub), $subLink->url, $subLink->title, $subLink->nome);
+                        $subMenu .= sprintf('<li class="%s"><a href="%s" title="%s">%s</a></li>', trim($classub), $subLinktwo->url, $subLinktwo->title, $subLinktwo->nome);
                     }
                     $subMenu .= "</ul>";
                     echo $subMenu . '</li>';
                 } else {
-                    if ($link->url == $pagina) {
+                    if ($linktwo->url == $pagina) {
                         $class .= "underlined ";
                     }
-                    printf('<li class="%s"><a href="%s" title="%s">%s</a></li>', $class, $link->url, $link->title, $link->nome);
+                    printf('<li class="%s"><a href="%s" title="%s">%s</a></li>', $class, $linktwo->url, $linktwo->title, $linktwo->nome);
                 }
             }
             

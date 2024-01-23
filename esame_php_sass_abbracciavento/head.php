@@ -3,7 +3,11 @@ require_once 'funzioni.php';
 
 use sito_personale\functions\Utility as UT;
 $pageTitle = UT:: titleHTTP();
-
+$lingua = UT::lingua();
+?>
+<!DOCTYPE html>
+<html lang="<?php echo $lingua?>">
+<?php
 $html = '';
 
 $html .= '<head>';
