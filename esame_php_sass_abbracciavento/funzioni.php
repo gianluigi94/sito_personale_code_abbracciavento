@@ -28,5 +28,15 @@
             }
             return $rit;
         }
+
+        public static function titleHTTP() {
+            $fileName = basename($_SERVER['PHP_SELF'], '.php');
+            $pageTitle = ucfirst(str_replace('_', ' ', $fileName));
+            if($pageTitle == "Index"){
+                $pageTitle = "Home Page";
+            }  
+            return $pageTitle;
+        }
+        
     }
 ?>
