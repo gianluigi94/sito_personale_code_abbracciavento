@@ -1,0 +1,49 @@
+{
+    "progetti": [
+        {
+            "url": "lorem_cripto_dolor.php",
+            "title": "Progetto tema finanziario",
+            "h3": "Lorem Cripto Dolor",
+            "immagine": "assets/grafico.png",
+            "alt": "Immagine grafico",
+            "paragrafo": "Progetto ipotetico a tema finanziario"
+        },
+        {
+            "url": "socialorem.php",
+            "title": "Progetto tema social network",
+            "h3": "SociaLorem",
+            "immagine": "assets/telefono.png",
+            "alt": "immagine telefono",
+            "paragrafo": "Progetto ipotetico a tema social network"
+        },
+        {
+            "url": "ipsum_commerce.php",
+            "title": "Progetto tema negozio online",
+            "h3": "Ipsum-Commerce",
+            "immagine": "assets/negozionline.png",
+            "alt": "Immagine negozionline",
+            "paragrafo": "Progetto ipotetico a tema negozio online"
+        },
+        {
+            "url": "space_chess_dolor.php",
+            "title": "Progetto scacchistico",
+            "h3": "Space Chess Dolor",
+            "immagine": "assets/scacchispaziali.png",
+            "alt": "mano che muove pezzo di scacchi",
+            "paragrafo": "Progetto ipotetico a tema scacchistico"
+        },
+        {
+            "url": "portfolio_grafico.php",
+            "title": "Portfolio grafico",
+            "h3": "Portfolio Grafico",
+            "immagine": "assets/penna.png",
+            "alt": "immagine penna grafica",
+            "paragrafo": "Raccolta dei miei lavori con Photoshop e Illustrator"
+        }
+    ],
+    
+        "pagina": {
+            "h1" : "Progetti"
+        }
+    
+}
