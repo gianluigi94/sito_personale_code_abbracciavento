@@ -1,0 +1,86 @@
+{
+    "firstmenu": [
+        {
+            "id": 1,
+            "nome": "Home",
+            "url": "index.php",
+            "title": "HomePage",
+            "sub": []
+        },
+        {
+            "id": 2,
+            "nome": "Progetti",
+            "url": "progetti.php",
+            "title": "Pagina progetti",
+            "sub": [
+                {
+                    "id": 11,
+                    "nome": "Tutti i progetti",
+                    "url": "progetti.php",
+                    "title": "Pagina progetti",
+                    "sub": [] 
+                },
+                {
+                    "id": 12,
+                    "nome": "Porfolio grafico",
+                    "url": "portfolio_grafico.php",
+                    "title": "Vai al portfolio grafico",
+                    "sub": [] 
+                },
+                {
+                    "id": 13,
+                    "nome": "Ipsum-Commerce",
+                    "url": "ipsum_commerce.php",
+                    "title": "progetto Ipsum-Commerce",
+                    "sub": [] 
+                },
+                {
+                    "id": 14,
+                    "nome": "SociaLorem",
+                    "url": "socialorem.php",
+                    "title": "progetto SociaLorem",
+                    "sub": [] 
+                },
+                {
+                    "id": 15,
+                    "nome": "Lorem Cripto Dolor",
+                    "url": "lorem_cripto_dolor.php",
+                    "title": "progetto Lorem Cripto Dolor",
+                    "sub": [] 
+                },
+                {
+                    "id": 16,
+                    "nome": "Space Chess Dolor",
+                    "url": "space_chess_dolor.php",
+                    "title": "Progetto Space Chess Dolor",
+                    "sub": [] 
+                }
+            ]
+        }
+    ],
+
+    "secondmenu": {
+        "url": "index.php",
+        "title": "HomePage",
+        "icona": "assets/logobianco.png",
+        "alt": "Logo regina"
+
+    },
+
+    "thirdmenu": [
+        {
+            "id": 3,
+            "nome": "Recensioni",
+            "url": "recensioni.php",
+            "title": "Pagina recensioni",
+            "sub": []
+        },
+        {
+            "id": 4,
+            "nome": "Contatti",
+            "url": "contatti.php",
+            "title": "Pagina contatti",
+            "sub": []
+        }
+    ]
+}

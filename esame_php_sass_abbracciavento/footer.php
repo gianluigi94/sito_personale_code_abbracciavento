@@ -12,13 +12,7 @@ $obj = json_decode(UT::leggiTesto($file));
         
             <?php
                 $imgL = $obj->logo;
-                printf(
-                    '<a href="%s" title="%s"><img src="%s" alt="%s" draggable="false" loading="lazy" class="mainImage"></a>',
-                    $imgL->url,
-                    $imgL->title,
-                    $imgL->icona,
-                    $imgL->alt
-                )
+                printf('<a href="%s" title="%s"><img src="%s" alt="%s" draggable="false" loading="lazy" class="mainImage"></a>', $imgL->url,$imgL->title, $imgL->icona, $imgL->alt);
             ?>
     </div>
     <div class="box footertwo">
@@ -30,13 +24,8 @@ $obj = json_decode(UT::leggiTesto($file));
         </ul>
         <?php
         $lkd = $obj->linkedin;
-        printf(
-            '<a href="%s" title="%s" target="_blank" class="link"><img src="%s" alt="%s" class="icona" draggable="false" loading="lazy"></a>',
-            $lkd->url,
-            $lkd->title,
-            $lkd->icona,
-            $lkd->alt
-        );
+        printf('<a href="%s" title="%s" target="_blank" class="link"><img src="%s" alt="%s" class="icona" draggable="false" loading="lazy"></a>',
+        $lkd->url, $lkd->title, $lkd->icona, $lkd->alt);
         ?>
     </div>
     <div class="box footerthree">

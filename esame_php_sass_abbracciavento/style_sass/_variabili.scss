@@ -1,9 +1,9 @@
-// qui è dove si decide il template
+// qui nelle due righe di sotto è dove si decide il template, i colori dei testi e degli sfondi cambieranno di conseguenza
 
 // $template: dark;
 $template:light;
 
-// elenco variabili
+// elenco variabili presenti nello stile del mio sito
 $dark: #111111;
 $light: #f6f6f6;
 $whiteprimary: #ffffff;
@@ -48,7 +48,6 @@ $fontaside: 32px;
   position: relative;
   width: 100%;
   height: 100%;
-  // background: $dark;
   @extend %dwsfondo;
   overflow-x: hidden;
   @media all and (max-width: 350px) {

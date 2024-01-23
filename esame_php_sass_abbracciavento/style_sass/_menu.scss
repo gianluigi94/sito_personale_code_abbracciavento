@@ -325,16 +325,21 @@
 }
 
 //   qui di sotto gestisco la voce del menu sotolineata
-#ur {
+.underlined{
   text-decoration: underline;
-  text-decoration-color: $greenprimary;
-  text-underline-offset: 7px;
+   text-decoration-color: $greenprimary;
+   text-underline-offset: 7px;
 }
-#uru {
-  text-decoration: underline;
-  text-decoration-color: $greenprimary;
-  text-underline-offset: 7px;
-}
+// #ur {
+//   text-decoration: underline;
+//   text-decoration-color: $greenprimary;
+//   text-underline-offset: 7px;
+// }
+// #uru {
+//   text-decoration: underline;
+//   text-decoration-color: $greenprimary;
+//   text-underline-offset: 7px;
+// }
 
 //   qui sotto gestisco l'effetto hover delle voci del menu e del logo
 

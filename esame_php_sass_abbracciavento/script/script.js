@@ -1,47 +1,3 @@
-// var bottone = document.getElementById('cambiaColore');
-// var cliccato = false;
-
-// if (localStorage.getItem('btnClicked')) {
-//   cliccato = true;
-//   bottone.classList.add('green');
-
-//   document.querySelector('.animate').style.clipPath = 'circle(100%)';
-//   document.querySelector('.sun').style.transform = 'scale(1) rotate(360deg)';
-//   document.querySelector('.mun').style.transform = 'scale(0) rotate(360deg)';
-
-// }
-
-// bottone.addEventListener('click', function() {
-//   if (cliccato) {
-//     this.classList.remove('green');
-//     localStorage.removeItem('btnClicked');
-
-//     document.querySelector('.animate').style.clipPath = 'circle(0% at 0% 0%)';
-//     document.querySelector('.animate').style.transition = 'clip-path 1.5s ease-out';
-//     document.querySelector('.sun').style.transform = 'scale(0)';
-//     document.querySelector('.sun').style.transition = 'transform 1.8s ease';
-
-//     document.querySelector('.mun').style.transform = 'scale(1)';
-//     document.querySelector('.mun').style.transition = 'transform 1.8s ease';
-
-//   } else {
-//     this.classList.add('green');
-//     localStorage.setItem('btnClicked', 'true');
-
-//     document.querySelector('.animate').style.clipPath = 'circle(100% at center)';
-
-
-//     document.querySelector('.animate').style.transition = 'clip-path 1.5s ease-out';
-
-//     document.querySelector('.sun').style.transform = 'scale(1) rotate(360deg)';
-//     document.querySelector('.sun').style.transition = 'transform 1.8s ease';
-
-//     document.querySelector('.mun').style.transform = 'scale(0) rotate(360deg)';
-//     document.querySelector('.mun').style.transition = 'transform 1.8s ease';
-
-//   }
-//   cliccato = !cliccato;
-// });
 
 var mainImages = document.getElementsByClassName("mainImage");
 
@@ -56,11 +12,11 @@ for (var i = 0; i < mainImages.length; i++) {
 }
 
 function changeImage(element) {
-  element.src = "assets/nero.png";
+  element.src = "assets/logonero.png";
 }
 
 function restoreImage(element) {
-  element.src = "assets/bianco.png";
+  element.src = "assets/logobianco.png";
 }
 
 
@@ -100,56 +56,6 @@ menuIcon.addEventListener('click', () => {
   navbar.classList.toggle("change");
 });
 
-// var coloreCorrente = localStorage.getItem('colore') || 'whbl';
-//     applicaColore();
-
-//     function cambiaCol() {
-//       var elementiBianchi = document.querySelectorAll('.whbl');
-
-//       elementiBianchi.forEach(function(elemento) {
-//         elemento.style.transition = "color 2s";
-//         if (coloreCorrente === 'whbl') {
-//           elemento.style.color = "#111111";
-//         } else {
-//           elemento.style.color = "#ffffff";
-//         }
-//       });
-
-    //   coloreCorrente = (coloreCorrente === 'whbl') ? '#111111' : 'whbl';
-    //   localStorage.setItem('colore', coloreCorrente);
-    // }
-
-    // function applicaColore() {
-    //   var elementiBianchi = document.querySelectorAll('.whbl');
-
-    //   elementiBianchi.forEach(function(elemento) {
-    //     elemento.style.transition = "color 2s";
-    //     if (coloreCorrente === 'whbl') {
-    //       elemento.style.color = "#ffffff";
-    //     } else {
-    //       elemento.style.color = "#111111";
-    //     }
-
-    
-    //     elemento.addEventListener('mouseenter', function() {
-    //       elemento.style.color = "#088b17"; // Colore durante l'hover
-          
-    //     elemento.style.transition = "color 0.4s";
-
-    //     });
-
-    //     elemento.addEventListener('mouseleave', function() {
-    //       // Ripristina il colore in base alla variabile di stato corrente
-    //       if (coloreCorrente === 'whbl') {
-    //         elemento.style.color = "#ffffff";
-        
-
-    //       } else {
-    //         elemento.style.color = "#111111";
-    //       }
-    //     });
-    //   });
-    // }
 
    
 
