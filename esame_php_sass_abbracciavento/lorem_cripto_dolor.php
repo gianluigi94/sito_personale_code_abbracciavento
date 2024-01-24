@@ -1,4 +1,11 @@
 <?php
+require_once 'funzioni.php';
+
+use sito_personale\functions\Utility as UT;
+
+$currentPage = basename($_SERVER['PHP_SELF']);
+$fileaside = "data/aside.json";
+$aside = json_decode(UT::leggiTesto($fileaside));
   //  inserisco il doctype, imposto la lingua e inserisco la head
   require_once "head.php";
 ?>
@@ -44,20 +51,11 @@
         draggable="false">
       </figure>
 
-      <!-- ASIDE ASIDE ASIDE ASIDE ASIDE ASIDE ASIDE ASIDE ASIDE ASIDE ASIDE ASIDE ASIDE ASIDE ASIDE ASIDE ASIDE ASIDE ASIDE ASIDE ASIDE ASIDE  -->
+      <!-- inserisco l'aside per navigare tra gli altri progetti il più comodamente possibile -->
 
-
-    <aside class="box tre">
-
-      <h3>Altri progetti:</h3>
-      <ul>
-        <li><a href="portfolio_grafico.php" title="Porfolio grafico">Portfolio grafico</a></li>
-        <li><a href="ipsum_commerce.php" title="Progetto IpsumCommerce">Ipsum-Commerce</a></li>
-        <li><a href="socialorem.php" title="Pagina SociaLorem">SociaLorem</a></li>
-        <li><a href="space_chess_dolor.php" title="Pagina Space Chess Dolor">Space Chess Dolor</a></li>
-      </ul>
-
-    </aside>
+      <?php
+            require_once "aside.php";
+        ?>
   </div>
 
 
