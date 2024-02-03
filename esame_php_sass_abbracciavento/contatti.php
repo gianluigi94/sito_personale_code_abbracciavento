@@ -1,66 +1,199 @@
 <?php
-  //  inserisco il doctype, imposto la lingua e inserisco la head
-  require_once "head.php";
+require_once "funzioni.php";
+
+use sito_personale\functions\Utility as UT;
+
+$inviato = UT::richiestaHTTP('inviato');
+$nome = UT::richiestaHTTP('nome');
+$cognome = UT::richiestaHTTP('cognome');
+$email = UT::richiestaHTTP('email');
+$tel = UT::richiestaHTTP('tel');
+$argomento = UT::richiestaHTTP('argomento');
+$testo = UT::richiestaHTTP('messaggio');
+$check = UT::richiestaHTTP("accettazione");
+
+$copiaEmail = "data/email_copia.txt";
+$fileContatti = "data/contatti.json";
+$dataOra = date("d-m-Y H:i");
+
+$contatti = json_decode(UT::leggiTesto($fileContatti));
+$nomeJs = $contatti->form->nome;
+$cognomeJs = $contatti->form->cognome;
+$emailJs = $contatti->form->email;
+$telJs = $contatti->form->tel;
+$argomentoJs = $contatti->form->argomento;
+$txtJs = $contatti->form->textarea;
+$checkJs = $contatti->form->check;
+$button = $contatti->form->button;
+$hdn = $contatti->form->hidden;
+$out = $contatti->form->output;
+$if = $contatti->iframe;
+
+
+$classeNomeLab = "labelTwo";
+$classeNomeImp = "inpTwo";
+$classeCognomeLab = "labelTwo";
+$classeCognomeImp = "inpTwo";
+$classeEmailLab = "labelTwo";
+$classeEmailImp = "inpTwo";
+$classeTelefonoLab = "labelTwo";
+$classeTelefonoImp = "inpTwo";
+$classeArgomentoLab = "labelTwo";
+$classeArgomentoImp = "select";
+$classeTestoLab = "labelTwo";
+$classeTestoImp = "txtDue";
+$classeCheckLab = "labelTwo";
+$clsasseCheck = "checkmarkTwo";
+
+$classeHiddenUno = "formErHid";
+$classeHiddenDue = "formErHid";
+$classeHiddenTre = "formErHid";
+$classeHiddenQuattro = "formErHid";
+$classeHiddenCinque = "formErHid";
+$classeHiddenSei = "formErHid";
+$classeHiddenSette = "formErHid";
+$classeHiddenOtto = "formErHid";
+$classeHiddenNove = "formErHid";
+$classeHiddenTen = "formErHid";
+$classeHiddenUndic = "formErHid";
+$classeHiddenDodici = "formErHid";
+$classeHiddenTredici = "formErHid";
+$classeHiddenQuattordici = "formErHid";
+
+$form = "";
+$stringaEmail = "";
+$fileNameEm = "";
+
+$inviato = ($inviato == null || $inviato != 1) ? false : true;
+
+if ($inviato) {
+    $valido = 0;
+
+    UT::formControlDue($nome, 2, 20, $classeNomeImp, "inpTwoEr", $classeHiddenUno, $classeHiddenDue, $classeNomeLab, "labelTwoEr",  $valido);
+    UT::formControlDue($cognome, 2, 20, $classeCognomeImp, "inpTwoEr", $classeHiddenTre, $classeHiddenQuattro, $classeCognomeLab, "labelTwoEr",  $valido);
+    UT::formControlEmail($email, 10, 55, $classeEmailImp, $classeHiddenCinque,  $classeHiddenSette, $classeHiddenSei, $classeEmailLab, $valido);
+    UT::formControlDue($testo, 2, 600, $classeTestoImp, "txtDueEr", $classeHiddenUndic, $classeHiddenDodici, $classeTestoLab, "labelTwoEr",  $valido);
+    UT::checkControl($valido, $classeCheckLab, "labelTwoEr", $clsasseCheck, "checkmarkTwoEr", $classeHiddenTredici);
+
+
+    if (!preg_match('/^[+]?[0-9\s\-\(\)]+$/', $tel) && !empty($tel)) {
+        $classeHiddenQuattordici = "formErr";
+    } elseif ((!UT::controllaRangeStringa($tel, 8, 14)) && !empty($tel)) {
+        $classeHiddenNove = "formErr";
+    }
+    if ((!preg_match('/^[+]?[0-9\s\-\(\)]+$/', $tel) && !empty($tel)) || (!UT::controllaRangeStringa($tel, 8, 14)) && !empty($tel)) {
+        $tel = "";
+        $valido++;
+        $classeTelefonoLab = "labelTwoEr";
+        $classeTelefonoImp = "inpTwoEr";
+    }
+
+    if (empty($argomento)) {
+        $argomento = "";
+        $valido++;
+        $classeHiddenTen = "formErr";
+        $classeArgomentoLab = "labelTwoEr";
+        $classeArgomentoImp = "selectEr";
+    }
+
+    $inviato = ($valido == 0) ? true : false;
+}
+
+
+
+require_once "head.php";
 ?>
 
 <body>
+    <?php
+    require_once "menu.php";
+    require_once "add.php";
 
-   <?php
-  //  inserisco il menu 
-  require_once "menu.php"; 
-  // inserisco lo span e il logo che apparirà nella pagina al ridursi dello schermo e l'immagine di sfondo dell'intera pagina se è presente 
-  require_once "add.php";
-  ?>
-  
-  <h1 class="titles">Contatti</h1>
-  <div class="twopage">
-    <form action="invioEmail" method="post">
-      <fieldset>
-      <legend>Inviami una email</legend>
-      <label for="nome">Nome<span class="opzionale">*</span></label>
-      <input type="text" id="nome" name="nome" required autocomplete="off">
-      <label for="cognome">Cognome<span class="opzionale">*</span> </label>
-      <input type="text" id="cognome" name="cognome" required autocomplete="off">
-      <label for="email">Email<span class="opzionale">*</span> </label>
-      <input type="email" id="email" name="email" required autocomplete="off">
-      <label for="tel">Numero di telefono <span class="opzionale">(opzionale)</span></label>
-      <input type="tel" id="tel" name="tel" autocomplete="off">
-      <label for="argomento">Scegli il tipo di argomento<span class="opzionale">*</span></label>
-      <select name="argomento" id="argomento">
-        <option value="" selected>Seleziona un argomento</option>
-        <option value="informazioni">Informazioni</option>
-        <option value="assistenza">Assistenza</option>
-      </select>
-      <label for="messaggio">Inserisci il tuo messaggio<span class="opzionale">*</span> </label>
-      <textarea name="messaggio" id="messaggio" cols="30" rows="10" required autocomplete="off"></textarea>
-      <label for="accettazione" class="customChecbox">
-        <input type="checkbox" class="hidenCheckbox" id="accettazione" name="accettazione" required>
-        <span class="checkmark"></span>
-        Dichiaro di aver letto le informative riguardanti l'utilizzo dei dati personali
-      </label>
-      <button type="submit">Invia messaggio <svg class="airp w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-      </svg>
-      </button>
-    </fieldset>
-    </form>
-    
-      <iframe class="sectiontwo"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90708.72157601382!2d7.334092992309494!3d44.72680422133416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cd339e28a911ef%3A0x405e67d473ca330!2s12032%20Barge%20CN!5e0!3m2!1sit!2sit!4v1698120340020!5m2!1sit!2sit"
-            title="mappa" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-    
-  </div>
-  
-  
-  <!-- inserisco il footer  -->
+    ?>
+      <?php if (!$inviato) {
+                    $isChecked = isset($_POST['accettazione']) && $_POST['accettazione'] == 'on' ? 'checked' : '';
+                ?>
+    <section class="twopage">
 
-  <?php
-  require_once "footer.php";
-  ?>
-  
-  <script src="script/script.js"></script>
-  
+        <form action="contatti.php" method="post" novalidate>
+            <fieldset class="fieltwo">
+              
+                    <legend><?php echo $contatti->form->legend ?></legend>
+                    <?php
+                    $form .= sprintf('<label class="%s" for="%s">%s<span class="%s">%s</span></label>', $classeNomeLab, $nomeJs->for, $nomeJs->txt, $nomeJs->spanclass, $nomeJs->spanText);
+                    $form .= sprintf('<input class="%s" type="%s" id="%s" name="%s" value="%s" required autocomplete="off">', $classeNomeImp, $nomeJs->type, $nomeJs->id, $nomeJs->name, $nome);
+                    $form .= sprintf($out->nomeV, $classeHiddenUno);
+                    $form .= sprintf($out->nomeIn, $classeHiddenDue);
+                    $form .= sprintf('<label class="%s" for="%s">%s<span class="%s">%s</span> </label>', $classeCognomeLab, $cognomeJs->for, $cognomeJs->txt, $cognomeJs->spanclass, $cognomeJs->spanText);
+                    $form .= sprintf('<input class="%s" type="%s" id="%s" name="%s" value="%s"; required autocomplete="off">', $classeCognomeImp, $cognomeJs->type, $cognomeJs->id, $cognomeJs->name, $cognome);
+                    $form .= sprintf($out->cognomeV, $classeHiddenTre);
+                    $form .= sprintf($out->cognomeIn, $classeHiddenQuattro);
+                    $form .= sprintf('<label class="%s" for="%s">%s<span class="%s">%s</span> </label>', $classeEmailLab, $emailJs->for, $emailJs->txt, $emailJs->spanclass, $emailJs->spanText);
+                    $form .= sprintf('<input class="%s" type="%s" id="%s" name="%s" value="%s" required autocomplete="off">', $classeEmailImp, $emailJs->type, $emailJs->id, $emailJs->name, $email);
+                    $form .= sprintf($out->emailV, $classeHiddenCinque);
+                    $form .= sprintf($out->emailIn, $classeHiddenSei);
+                    $form .= sprintf($out->emailErr, $classeHiddenSette);
+                    $form .= sprintf('<label class="%s" for="%s">%s<span class="%s">%s</span></label>', $classeTelefonoLab, $telJs->for, $telJs->txt, $telJs->spanclass, $telJs->spanText);
+                    $form .= sprintf('<input class="%s" type="%s" id="%s" name="%s" value="%s" autocomplete="off">', $classeTelefonoImp, $telJs->type, $telJs->id, $telJs->name, $tel);
+                    $form .= sprintf($out->telV, $classeHiddenOtto);
+                    $form .= sprintf($out->telIn, $classeHiddenNove);
+                    $form .= sprintf($out->telCaratteri, $classeHiddenQuattordici);
+                    $form .= sprintf('<label class="%s" for="%s">%s<span class="%s">%s</span></label>', $classeArgomentoLab, $argomentoJs->for, $argomentoJs->txt, $argomentoJs->spanclass, $argomentoJs->spanText);
+                    $form .= sprintf('<select class="%s" name="%s" id="%s">', $classeArgomentoImp, $argomentoJs->name, $argomentoJs->id);
+                    $options = [
+                        $argomentoJs->v1 => $argomentoJs->v1txt,
+                        $argomentoJs->v2 => $argomentoJs->v2txt,
+                        $argomentoJs->v3 => $argomentoJs->v3txt
+                    ];
+
+                    foreach ($options as $value => $text) {
+                        $selected = ($argomento == $value) ? ' selected' : '';
+                        $form .= sprintf('<option value="%s"%s>%s</option>', $value, $selected, $text);
+                    }
+                    $form .= sprintf('</select>');
+                    $form .= sprintf($out->argV, $classeHiddenTen);
+                    $form .= sprintf('<label class="%s" for="%s">%s<span class="%s">%s</span> </label>', $classeTestoLab, $txtJs->for, $txtJs->txt, $txtJs->spanclass, $txtJs->spanText);
+                    $form .= sprintf('<textarea class="%s" name="%s" id="%s" %s required autocomplete="off">%s</textarea>', $classeTestoImp, $txtJs->name, $txtJs->id, $txtJs->dimension, $testo);
+                    $form .= sprintf($out->txtV, $classeHiddenUndic);
+                    $form .= sprintf($out->txtIn, $classeHiddenDodici);
+                    $form .= sprintf('<label for="%s" class="%s %s">', $checkJs->for, $checkJs->class, $classeCheckLab);
+                    $form .= sprintf('<input type="%s" class="%s" id="%s" name="%s" %s required>', $checkJs->type, $checkJs->inpClass, $checkJs->id, $checkJs->name, $isChecked);
+                    $form .= sprintf('<span class="%s"></span>', $clsasseCheck);
+                    $form .= sprintf('%s', $checkJs->text);
+                    $form .= sprintf('</label>');
+                    $form .= sprintf($out->checkF, $classeHiddenTredici);
+                    $form .= sprintf('<input type="%s" name="%s" value="%s">', $hdn->type, $hdn->name, $hdn->value);
+                    $form .= sprintf('<button type="%s" class="%s">%s %s</button>', $button->type, $button->class, $button->txt, $button->svg);
+                    echo $form;
+                    ?>
+                
+            </fieldset>
+        </form>
+
+        <?php
+        printf('<iframe class="sectiontwo" src="%s" title="%s" %s"></iframe>', $if->url, $if->title, $if->attributi);
+        ?>
+
+    </section>
+    <?php } else {
+                    $argomento = ($argomento == 1) ? "Informazioni" : "Assistenza";
+                    $tel = ($tel == "") ? "-ASSENTE-" : $tel;
+                    $stringaEmail = "<strong>Nome:</strong>" . "<br>" . $nome . "<br>" . "<strong>Cognome:</strong>" . "<br>" . $cognome . "<br>" . "<strong>Email:</strong>" . "<br>" . $email . "<br>" . "<strong>Telefono:</strong>" . "<br>" . $tel . "<br>" . "<strong>Argomento/Oggetto:</strong>" . "<br>" . $argomento . "<br>" . "<strong>Testo:</strong>" . "<br>" . $testo . "<br>" . "<strong>$dataOra</strong>" . "<br>" . "<br>";
+
+                    printf($out->successoTxt, $stringaEmail);
+                    $stringaEmail = str_replace( ["<br>", "<strong>", "</strong>"], [chr(10), "", ""], $stringaEmail );
+                    UT::scriviTesto($copiaEmail, $stringaEmail);
+                    ?>
+                    <button class="buttTre" onclick="window.location.href='contatti.php'"><?php echo $button->txtDue?></button>
+                <?php
+                } ?>
+
+    <?php
+    require_once "footer.php";
+    ?>
+
+    <script src="script/script.js"></script>
+
 
 </body>
 

@@ -5,7 +5,6 @@
     "video": 
         {
             "url": "assets/sesantaquattro.webm",
-            "id": "videobig",
             "attributi": "autoplay loop muted",
             "alt": "Il tuo browser non supporta questo videoheader"
         },
@@ -22,7 +21,7 @@
     "bottoneUno": 
         {
             "url": "contatti.php",
-            "class": "leftb",
+            "class": "leftB",
             "title": "Pagina contatti",
             "testo": "Contattami",
             "classDue": "progetti"
@@ -30,7 +29,7 @@
     "bottoneDue": 
         {
             "url": "progetti.php",
-            "class": "rightb",
+            "class": "rightB",
             "title": "pagina progetti",
             "testo": "Guarda i miei progetti",
             "classDue": "progetti"

@@ -1,119 +1,109 @@
-// in questa pagina gestisco lo stile del footer iniziando dal contenitore generale, su schermi grandi ci saranno due arre che ocupano il 50% della riga, mentre la terza area sarà sotto di esse è ocuperà il 100%.
-// al rimpiciolirsi dello schermo, però tutte e tre le aree saranno incollonate
+// In questa pagina imposto lo stile del footer
 
+// E' suddiviso in tre div e in schermi grandi e medi i primi due si contengono la prima riga, mentre il terso occupa tutta la seconda riga.
+// Inizio impostando il contenitore generale
 footer {
-  background: url(../assets/circuito.png);
-  background-size: cover;
-  background-repeat: no-repeat;
+  width: 100%;
+  height: 220px;
+  margin-top: 50px;
+  display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  @extend %flexcenter;
-  width: 100vw;
-  @media all and (max-width: 440px) {
-    flex-direction: column;
+  background: url(../assets/circuito.png);
+  @media all and (max-width: 445px) {
     background: url(../assets/circuito_piccolo.png);
-  }
-  @media all and (max-width: 350px) {
-    width: 350px;
+    height: 375px;
   }
 
-  // la prima area è quella con il logo
-
-  .footerone {
+  // Imposto il primo contenitore che contiene il logo
+  .footerOne {
     flex-basis: 50%;
     display: flex;
+    align-items: end;
     justify-content: end;
-    @media all and (max-width: 700px) {
-      justify-content: start;
-      flex-basis: 20%;
+    @media all and (max-width: 640px) {
+      flex-basis: 40%;
     }
-    @media all and (max-width: 432px) {
+    @media all and (max-width: 470px) {
+      flex-basis: 15%;
+    }
+    @media all and (max-width: 445px) {
+      flex-basis: 100%;
+      align-items: center;
       justify-content: center;
     }
     img {
       height: 150px;
       width: 120px;
-      padding: 10px 2px 20px 0px;
+      padding: 10px 10px 20px 0px;
     }
-  }
-
-  // la seconda area è quella con le info di contatto
-
-  .footertwo {
-    flex-basis: 50%;
-    @media all and (max-width: 440px) {
-      display: flex;
+    @media all and (max-width: 470px) {
+      padding-left: 20px;
+    }
+    @media all and (max-width: 445px) {
+      flex-basis: 100%;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
-      padding-bottom: 15px;
-    }
-    img {
-      width: 4vh;
-      padding-top: 20px;
-      padding-left: 15px;
-    }
-    .recapiti {
-      font-family: $fontsecondary;
-      font-style: italic;
-      color: $whiteprimary;
-      font-size: $dimensionsecondary;
-      font-weight: 900;
-      padding-left: 2px;
-      @media (min-width: 2200px) and (max-width: 2560px) {
-        font-size: 38px;
-      }
-    }
-    ul {
-      color: $whiteprimary;
-      font-family: $fontsecondary;
-      font-style: italic;
-      list-style: none;
-      padding-top: 15px;
-      padding-left: 2px;
-      @media (min-width: 2200px) and (max-width: 2560px) {
-        font-size: 28px;
-      }
-      @media all and (max-width: 440px) {
-        text-align: center;
-      }
-      @media all and (max-width: 380px) {
-        font-size: 14px;
-        padding-right: 10px;
-      }
-
-      @media all and (max-width: 352px) {
-        font-size: 14px;
-        padding-right: 10px;
-      }
     }
   }
 
-  // la terza(sotto le altre due aree) gestisce il separatore è la mia firma
+  // Imposto il secondo contenitore che contiene i recapiti
+  .footerTwo {
+    padding-top: 25px;
+    flex-basis: 50%;
+    font-family: $fontSecondary;
+    @media all and (max-width: 640px) {
+      flex-basis: 60%;
+    }
+    @media all and (max-width: 470px) {
+      flex-basis: 65%;
+    }
+    @media all and (max-width: 445px) {
+      flex-basis: 100%;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 10px;
+    }
+    p {
+      font-family: $fontSecondary;
+      font-style: italic;
+      color: $whitePrimary;
+      font-size: $dimensionTre;
+      font-weight: 900;
+    }
+    ul {
+      list-style: none;
+      padding-top: 10px;
+      font-style: italic;
+      color: $whitePrimary;
+      font-size: $dimensionFour;
+    }
+    .iconaLnkd {
+      height: 30px;
+      width: 30px;
+      padding-top: 10px;
+    }
+  }
 
-  .footerthree {
-    flex-basis: 80%;
-    @extend %flexcenter;
+  // Imposto il terzo contenitore che contiene la mia firma
+  .footerThree {
+    flex-basis: 100%;
+    display: flex;
     flex-direction: column;
+    justify-content: end;
+    align-items: center;
+
     hr {
       width: 60vw;
       border-style: dashed;
-      color: $whiteprimary;
-      @media all and (max-width: 997px) {
-        width: 80vw;
-      }
-      @media all and (max-width: 739px) {
-        width: 96vw;
-      }
+      color: $whitePrimary;
     }
-    .button {
+    p {
       text-align: center;
-      font-size: 16px;
-      color: $whiteprimary;
+      font-size: $dimensionFour;
+      color: $whitePrimary;
       padding-top: 10px;
-      @media (min-width: 2200px) and (max-width: 2560px) {
-        font-size: 28px;
-      }
     }
   }
 }

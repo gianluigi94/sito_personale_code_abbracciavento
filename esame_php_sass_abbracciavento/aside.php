@@ -1,4 +1,4 @@
-<aside class="box tre">
+<aside class="tre">
 
             <h3><?php echo $aside->pagina->h3;?></h3>
             <ul>

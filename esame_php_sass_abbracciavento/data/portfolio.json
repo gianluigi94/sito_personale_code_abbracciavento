@@ -5,8 +5,17 @@
         "id": "titlerlong"
     },
     "progetti": [
+
         {
             "id": 1,
+            "url": "assets/portfolio/spacetime.webp",
+            "title": "Progetto misto",
+            "h3": "Spacetime",
+            "paragrafo": "Foto inserimento di diversi elementi realizzato con Photoshop, ma terminato con scritte vettoriali su Illustrator",
+            "alt": "Spacetime"
+        },
+        {
+            "id": 2,
             "url": "assets/portfolio/bicchiere.webp",
             "title": "Progetto Photoshop",
             "h3": "Città nel bicchiere",
@@ -14,7 +23,7 @@
             "alt": "Città nel bicchiere"
         },
         {
-            "id": 2,
+            "id": 3,
             "url": "assets/portfolio/blu.webp",
             "title": "Progetto Photoshop",
             "h3": "Blue",
@@ -22,7 +31,7 @@
             "alt": "Blue"
         },
         {
-            "id": 3,
+            "id": 4,
             "url": "assets/portfolio/carosello.webp",
             "title": "Progetto Illustration",
             "h3": "Carosello Vivace",
@@ -30,7 +39,7 @@
             "alt": "Carosello Vivace"
         },
         {
-            "id": 4,
+            "id": 5,
             "url": "assets/portfolio/febe.webp",
             "title": "Progetto Photoshop",
             "h3": "Logo Febe",
@@ -38,7 +47,7 @@
             "alt": "Logo FEBE"
         },
         {
-            "id": 5,
+            "id": 6,
             "url": "assets/portfolio/cama.webp",
             "title": "Progetto Photoshop",
             "h3": "Logo Cama",
@@ -46,7 +55,7 @@
             "alt": "Logo Cama"
         },
         {
-            "id": 6,
+            "id": 7,
             "url": "assets/portfolio/fotoinserimentoragazza.webp",
             "title": "Progetto Photoshop",
             "h3": "Foto inserimento Conterranea",
@@ -54,20 +63,12 @@
             "alt": "Foto inserimento logo"
         },
         {
-            "id": 7,
+            "id": 8,
             "url": "assets/portfolio/post_quadrato.webp",
             "title": "Progetto Photoshop",
             "h3": "Corso Diamond",
             "paragrafo": "Post di dimensioni quadrate realizzato con Photoshop",
             "alt": "Corso Diamond"
-        },
-        {
-            "id": 8,
-            "url": "assets/portfolio/spacetime.webp",
-            "title": "Progetto misto",
-            "h3": "Spacetime",
-            "paragrafo": "Foto inserimento di diversi elementi realizzato con Photoshop, ma terminato con scritte vettoriali su Illustrator",
-            "alt": "Spacetime"
         },
         {
             "id": 9,

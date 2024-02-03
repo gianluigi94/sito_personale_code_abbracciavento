@@ -1,30 +1,45 @@
-// in questa pagina gestisco lo stile sia del menu da schermo grande che il menu hamburger, inizio da quello grande che scomparirà sotto i 835px di larghezza, per far apparire il secondo menu entrambi i menu sono nel tag nav e sono racchiusi in due specifici div: navbig è il div del menu grande
+// In questa pagina gestisco sia il menu principale e sia il menu hamburger
+
+//Per aiutarmi a creare l'effetto logo centrato, il menu grande è diviso in tre div. Il primo contiene le prime due voci del menu, il secondo contiene il logo e il terzo contiene le altre due voci del menu. Inizio con lo stile del contenitore generale del menu grande, che contiene i tre div.
 
 .navbig {
   display: flex;
   width: 100%;
   height: 150px;
   z-index: 100;
-  @extend %dwsfondoMenuUno;
   position: fixed;
-
-  @media all and (max-width: 835px) {
+  @extend %dwombraMenu;
+  @extend %dwsfondoMenu;
+  @media all and (max-width: 815px) {
     display: none;
   }
+  a {
+    display: block;
+    font-family: $fontPrimary;
+    font-size: $dimension;
+    font-weight: 900;
+    text-decoration: none;
+    padding-bottom: 47px;
+    padding-top: 47px;
+    transition: 0.3s;
+    height: 20%;
+    width: 100%;
+    @extend %dwtesto;
+    &:hover {
+      color: $greenPrimary;
+      transform: scale(1.2);
+    }
 
-  // quando lo schermo è più stretto di altezza si ristringe il menu
-
-  @media all and (max-height: 535px) {
-    height: 100px;
+    // gestisco lo stile del primo div
   }
-
-  // il menu grande è diviso a sua volta in tre div per facilitare l'effetto logo centrale, il primo div è costituito dalle prime due voci del menu
-
   .firstmenu {
     flex-basis: 45%;
     display: flex;
     justify-content: end;
     align-items: center;
+    @media all and (max-width: 875px) {
+      margin-right: -30px;
+    }
     .firstlist {
       display: flex;
       flex-direction: row;
@@ -33,37 +48,38 @@
         padding-right: 20px;
         padding-left: 20px;
       }
+
+      // all'hover della seconda voce compare il sottomenu a tendina
       .special {
         position: relative;
+        &:hover .subMenu {
+          transition: 0.4s;
+          visibility: visible;
+          opacity: 1;
+          top: 120px;
+        }
       }
     }
   }
 
-  // il secondo div è costituito dal logo, le immagini sono due e aiutandomi con un po di JS ho creato un effetto hover dove al passagio del mouse la regina bianca si trasforma nella regina nera
+  // imposto lo stile del secondo div che contiene il logo
 
   .secondmenu {
     flex-basis: 10%;
-    @extend %flexcenter;
-    img {
-      height: 130px;
-      width: 114px;
-      @media all and (max-height: 732px) {
-        // height: 140px;
-      }
-
-      // quando il menu si rimpiciolisce al rimpiciolimento verticale dello schermo, ho rimpiciolito anche il logo è ho tagliato la parte inferiore dell'immagine dove si trovava il mio nome per avere un immagine più piccola e più facilmente gestibile, ho scelto questa tecnica solo per il menu grande
-
-      @media all and (max-height: 535px) {
-        height: 95px;
-        width: 84px;
-        clip-path: polygon(0% 0%, 100% 0%, 100% 79%, 0% 79%);
-        padding-top: 10px;
+    padding-left: 10px;
+    @media all and (max-width: 875px) {
+      margin-right: -30px;
+    }
+    a {
+      padding: 10px 0 0 0;
+      img {
+        height: 130px;
+        width: 114px;
       }
     }
   }
 
-  // il terzo div del menu è costituito dalle ultime due voci del menu grande
-
+  // imposto il terzo div
   .thirdmenu {
     flex-basis: 45%;
     display: flex;
@@ -79,108 +95,62 @@
       }
     }
   }
-
-  // qui sotto imposto lo stile dei link senza indentarli all'interno degli li, per gestirli separatamente
-  a {
-    @extend %dwColorMenuOne;
-    display: block;
-    font-family: $fontprimary;
-    font-size: 28px;
-    font-weight: 900;
-    text-decoration: none;
-    padding-bottom: 47px;
-    padding-top: 47px;
-    transition: 0.3s;
-    height: 20%;
-    width: 100%;
-    @media (min-width: 2200px) and (max-width: 2560px) {
-      font-size: 55px;
-    }
-    &:hover {
-      color: $greenprimary;
-      transform: scale(1.2);
-    }
-  }
 }
 
-// qui sotto gestisco lo stile per il menu a tendina
-
+// qui a parte dal resto dell'identazione gestisco meglio lo stile del sottomenu
 .subMenu {
   position: absolute;
   left: -34px;
-  @extend %dwsfondoMenuDue;
   top: 155px;
   visibility: hidden;
   opacity: 0;
   border-radius: 0 0 45px 10px;
   border-bottom: none;
   text-align: center;
+  @extend %dwsfondoMenuTwo;
 
-  // l'hover dell'ultima voce del menu a tendina è gestita separatamente perchè  ha un angolo smussato
-
-  .lastChild:hover {
-    border-radius: 0 0 45px 10px;
-  }
   li {
-    padding-top: 15px;
-    padding-left: 30px;
-    padding-bottom: 15px;
+    padding: 15px 0 15px 30px;
     list-style: none;
     width: 240px;
     &:hover {
-      @extend %dwshover;
+      @extend %dwsfondoMenuHover;
     }
     a {
-      font-size: $dimensionsecondary;
+      font-size: $dimensionTre;
       width: 100%;
       padding-bottom: 20px;
       padding-top: 20px;
       height: 20px;
     }
   }
+
+  // il sottomenu ha un angolo arrotondato, quindi devo arrotondare anche l'effetto hover dell'ultimo li
+  .lastChild:hover {
+    border-radius: 0 0 45px 10px;
+  }
 }
 
-// quando passo con il mouse sopra alla voce progetti si attiva l'effetto
-
-.navbig .special:hover .subMenu {
-  transition: 0.4s;
-  visibility: visible;
-  opacity: 1;
-  top: 120px;
-}
-
-// qui sotto gestisco il menu hamburger
+// Al rimpiciolimento dello schermo scopare il menu grande e compare invece il menu hamburger che imposto qui di seguito
 
 .containersup {
   display: none;
-
-  @media all and (max-width: 835px) {
+  @media all and (max-width: 815px) {
     display: block;
   }
-
-  // qui gestisco lo sfondo, che si trova fuori dallo schermo così da permettere "l'effetto di entrata"
-
   .navbar {
     width: 320px;
     height: 100%;
-    @extend %dwsfondoMenuDue;
     position: fixed;
     top: 0;
     right: -320px;
-    @extend %flexcenter;
     border-radius: 20% 0 0 60%;
     transition: right 0.8s;
     z-index: 320;
-    &.change {
-      right: 0;
-    }
-
-    // questo è il div che contiene i tre span che formano il l'icona hamburger,
-
+    @extend %dwsfondoMenuTwo;
     .hamburgermenu {
       width: 35px;
       height: 35px;
-
       position: fixed;
       top: 30px;
       right: 50px;
@@ -188,75 +158,73 @@
       display: flex;
       flex-direction: column;
       justify-content: space-around;
+
+      // queste sono le tre linee che costituiscono l'hambuger. Al click si dispongono a croce (sono animate con l'aiuto di js)
+
       span {
         width: 100%;
         height: 3px;
-        background: $greensfum;
-        border: 2px solid $greenprimary;
-        box-shadow: 0 0 2px $greenprimary, 0 0 2px $greenprimary;
+        background: $hamburgerGr;
+        border: $borderGr;
+        box-shadow: $hamurgerSh;
         border-radius: 12px;
         transition: all 0.8s;
       }
     }
 
-    //   qui gestisco le voci del menu
+    // gestisco le voci del menu hamburger
 
     ul {
       text-align: right;
+      @extend %dwtesto;
+      padding-top: 100px;
+      .navItem {
+        list-style: none;
+        margin: 50px;
+        a {
+          text-decoration: none;
+          font-size: $dimensionTwo;
+          font-family: $fontPrimary;
+          font-weight: bolder;
+          letter-spacing: 1px;
+          text-align: right;
+          @extend %dwtesto;
+          &:hover {
+            color: $greenPrimary;
+          }
+        }
+      }
+
+      // gestisco il "li" che contiene il sottomenu con la lista dei link ai vari progetti
 
       .navprogect {
         padding: 0;
-        @extend %dwColorMenuOne;
-        font-size: $dimensionspecial;
-        font-family: $fontprimary;
+        font-size: $dimensionTwo;
+        font-family: $fontPrimary;
         font-weight: bolder;
         cursor: pointer;
         letter-spacing: 1px;
         &:hover {
-          color: $greenprimary;
+          color: $greenPrimary;
         }
-
-        // queste sono le voci del sottomenu
-
         .sottomini {
           padding: 0;
-          margin: 0;
           margin-top: 35px;
           display: none;
-          margin-top: 35px;
           height: 0;
           overflow: hidden;
           transition: height 0.8s ease;
           li {
             list-style: none;
             padding: 3px;
-
             a {
-              @extend %dwColorMenutwo;
               text-decoration: none;
-              font-size: 18px;
+              font-size: $dimensionOne;
+              @extend %dwtestoDue;
               &:hover {
-                color: $greenprimary;
+                color: $greenPrimary;
               }
             }
-          }
-        }
-      }
-
-      //   qui imposto lo stile del ul che contiene le voci del sottomenu, per farlo apparire ho usato un po di JS, ecco anche perche non ho identato all'interno gli li
-
-      .navItem {
-        list-style: none;
-        margin: 50px;
-        a {
-          @extend %dwColorMenuOne;
-          text-decoration: none;
-          font-size: $dimensionspecial;
-          font-family: $fontprimary;
-          font-weight: bolder;
-          letter-spacing: 1px;
-          &:hover {
-            color: $greenprimary;
           }
         }
       }
@@ -264,7 +232,10 @@
   }
 }
 
-//   questo è il codice per le animazioni delle linee del menu hamburger da orizontali a croce
+// qui di seguito gestisco le animazioni delle linee del menu hamburger con js
+.navbar.change {
+  right: 0;
+}
 
 .change .lineeone {
   transform: rotate(-405deg) translate(-8px, 6px);
@@ -278,77 +249,39 @@
   opacity: 0;
 }
 
-//   qui di sotto imposto la barra in alto dove è presente il logo, appare solo quando compare il menù hamburger e serve per sostituire lo sfondo che era presente nel menu grande
-
+// Qui di seguito ho gestito lo stile di uno span ricreato con un altro logo più piccolo, che sostituisce lo sfondo del menu principale al rimpiciolirsi dello schermo
 .bordoMenu {
-  @extend %dwsfondoMenuUno;
   position: fixed;
   height: 118px;
   width: 100vw;
   z-index: 10;
   display: none;
-  @media all and (max-width: 835px) {
+  @extend %dwsfondoMenu;
+  @media all and (max-width: 815px) {
     display: block;
-  }
-  @media all and (max-width: 350px) {
-    width: 350px;
-  }
-
-  @media (max-height: 619px) and (max-width: 326px) {
-    height: 124px;
   }
 }
 
 .nascosto {
-  height: 110px;
-  width: 105px;
+  height: 120px;
+  width: 110px;
   position: fixed;
   right: 42%;
   left: auto;
-  top: 5px;
+  top: 10px;
   display: none;
   z-index: 400;
-  @media all and (max-width: 835px) {
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 79%, 0% 79%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 79%, 0% 79%);
+  @media all and (max-width: 815px) {
     display: block;
   }
-
-  @media all and (max-width: 370px) {
-    right: 40%;
-  }
-
-  @media all and (max-height: 620px) {
-    height: 110px;
-    width: 95px;
-    top: 5px;
-    right: 42%;
-  }
 }
 
-//   qui di sotto gestisco la voce del menu sotolineata
-.underlined{
+// Questa è la classe con cui gestisco in php la sotolineatura della voce del menu che corrisponde alla pagina in cui l'utente si trova
+
+.underlined {
   text-decoration: underline;
-   text-decoration-color: $greenprimary;
-   text-underline-offset: 7px;
-}
-// #ur {
-//   text-decoration: underline;
-//   text-decoration-color: $greenprimary;
-//   text-underline-offset: 7px;
-// }
-// #uru {
-//   text-decoration: underline;
-//   text-decoration-color: $greenprimary;
-//   text-underline-offset: 7px;
-// }
-
-//   qui sotto gestisco l'effetto hover delle voci del menu e del logo
-
-.whbl:hover {
-  color: $greenprimary;
-}
-
-#logo {
-  @extend %flexcenter;
-  transform: scale(1);
-  z-index: 350;
+  text-decoration-color: $greenPrimary;
+  text-underline-offset: 7px;
 }

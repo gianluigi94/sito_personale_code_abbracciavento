@@ -1,0 +1,248 @@
+// In questa pagina imposto lo stile per la pagina contatti
+
+// La pagina è divisa in due sezioni ed inizio impostando il contenitore che li contiene entrami
+.twopage {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 60px;
+  margin-left: 50px;
+  align-items: center;
+  justify-content: space-between;
+  @media all and (max-width: 555px) {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  @media all and (max-width: 380px) {
+    margin-left: 25px;
+  }
+
+  @media all and (max-width: 342px) {
+    margin-left: 15px;
+  }
+
+  @media all and (max-width: 309px) {
+    margin-left: 9px;
+  }
+
+  // Proseguo impostando lo stile del primo contenitore ovvero il form
+
+  form {
+    flex-basis: 45%;
+    margin-right: 50px;
+    @media all and (max-width: 953px) {
+      flex-basis: 100%;
+    }
+    fieldset {
+      margin: 0;
+      @extend %fieldset;
+
+      legend {
+        border-radius: 35px;
+        padding-top: 17px;
+        @extend %legend;
+      }
+
+      //  I vari elementi sono presenti in due versioni, dichiarati con due classi distinte: la versione normale e la versione "errore".
+      //  Ho "esteso" gli elementi in comune il più possibile, ricordando che nel sito è presente un secondo form nella pagina recensioni, con stili simili, ma differenti per alcuni aspetti
+
+      .labelTwo {
+        @extend %impostaLabel;
+        padding-top: 25px;
+        @extend %dwtestoDue;
+        border-radius: 35px;
+        @extend %dwsdarkspecial;
+      }
+      .labelTwoEr {
+        @extend %impostaLabel;
+        padding-top: 25px;
+        border-radius: 35px;
+        @extend %dwsdarkspecial;
+        color: $error;
+      }
+
+      .inpTwo {
+        @extend %imposttaInput;
+        @extend %inputa;
+        width: 96%;
+        margin: 0;
+        &:focus {
+          @extend %dwInputTwo;
+          outline: none;
+          border: $borderGr;
+        }
+        @media all and (max-width: 380px) {
+          width: 280px;
+        }
+
+        @media all and (max-width: 380px) {
+          width: 260px;
+        }
+      }
+      .inpTwoEr {
+        @extend %imposttaInput;
+        @extend %inputaEr;
+        width: 96%;
+        margin: 0;
+        &:focus {
+          @extend %dwInputTwo;
+          outline: none;
+        }
+        @media all and (max-width: 380px) {
+          width: 280px;
+        }
+
+        @media all and (max-width: 380px) {
+          width: 260px;
+        }
+      }
+      @extend %opzionale;
+      .select {
+        @extend %impostaSelect;
+        @extend %inputa;
+
+        &:focus {
+          @extend %dwInputTwo;
+          outline: none;
+          border: $borderGr;
+        }
+        @media all and (max-width: 380px) {
+          width: 292px;
+        }
+
+        @media all and (max-width: 330px) {
+          width: 280px;
+        }
+      }
+      .selectEr {
+        @extend %impostaSelect;
+        @extend %inputaEr;
+
+        &:focus {
+          @extend %dwInputTwo;
+          outline: none;
+        }
+        @media all and (max-width: 380px) {
+          width: 292px;
+        }
+
+        @media all and (max-width: 330px) {
+          width: 280px;
+        }
+      }
+      option {
+        @extend %dwOption;
+        color: $greenPrimary;
+        font-weight: bolder;
+        font-family: $fontPrimary;
+      }
+      .txtDue {
+        @extend %inputext;
+        @extend %impostaTxt;
+        &:focus {
+          @extend %dwInputTwo;
+          outline: none;
+          border: $borderGr;
+        }
+        @media all and (max-width: 380px) {
+          width: 270px;
+        }
+
+        @media all and (max-width: 330px) {
+          width: 260px;
+        }
+      }
+      .txtDueEr {
+        @extend %impostaTxt;
+        @extend %inputextEr;
+        &:focus {
+          @extend %dwInputTwo;
+          outline: none;
+        }
+        @media all and (max-width: 380px) {
+          width: 270px;
+        }
+
+        @media all and (max-width: 330px) {
+          width: 260px;
+        }
+      }
+      .buttonTwo {
+        width: 80%;
+        margin: auto;
+        margin-top:50px;
+        @extend %inputa;
+        @extend %impostaButton;
+        &:hover {
+          @extend %dwInputTwo;
+          border: $borderGr;
+        }
+        @extend %icon;
+      }
+      .customChecboxTwo {
+        @extend %labelCheck;
+       
+        margin-top: 10px;
+      }
+
+      .checkmarkTwo {
+        margin-top: 27px;
+        @extend %inputC;
+        @extend %check;
+      }
+      .checkmarkTwoEr {
+        margin-top: 27px;
+        @extend %inputCer;
+        @extend %check;
+      }
+    }
+  }
+
+  // Ora imposto lo stile della seconda sezione: la mappa
+
+  .sectiontwo {
+    border: 0cap;
+    flex-basis: 45%;
+    margin-top: -50px;
+    border-radius: 32px 100px 40px 100px;
+    height: 600px;
+    @media all and (max-width: 953px) {
+      flex-basis: 80%;
+      margin-top: 60px;
+      margin-left: 100px;
+    }
+
+    @media all and (max-width: 895px) {
+      flex-basis: 100%;
+      margin-left: 0px;
+    }
+
+    @media all and (max-width: 380px) {
+      flex-basis: 90%;
+    }
+
+    @media all and (max-width: 330px) {
+      width: 260px;
+      margin-left: 15px;
+    }
+  }
+}
+
+.buttTre {
+  width: 300px;
+  margin-bottom: 30px;
+  @extend %impostaButton;
+  @extend %inputa;
+  margin-left: 50px;
+  @media all and (max-width: 455px) {
+    width: 85%;
+    margin-left: 20px;
+    margin-right: 0;
+  }
+  &:hover {
+    @extend %dwInputTwo;
+    border: $borderGr;
+  }
+  @extend %icon;
+}
