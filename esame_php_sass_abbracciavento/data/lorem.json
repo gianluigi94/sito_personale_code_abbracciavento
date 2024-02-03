@@ -1,6 +1,6 @@
 {
     "pagina": {
-        "testo": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non omnis, aut optio iure laborum amet libero deserunt iste? Illum asperiores quo repellat, error vitae perspiciatis praesentium iusto, in, delectus impedit velit sed! Fugiat sed cumque laboriosam corrupti magni, nobis tenetur culpa qui beatae nesciunt laudantium in minus quia aperiam quaeratd<br>\u00A0"
+        "testo": "Lorem<span class='it green'> ciclo for </span> ipsum dolor sit amet consectetur adipisicing elit. Non omnis, aut optio iure laborum amet libero deserunt iste? Illum asperiores quo repellat, error vitae <span class='strong'>perspiciatis praesentium iusto,</span> in, delectus impedit velit sed! Fugiat sed cumque laboriosam corrupti magni, nobis tenetur<span class='green'> culpa qui nesciunt</span> laudantium in minus quia aperiam quaeratd."
     },
     "immagineCripto":{
         "pagina":"lorem_cripto_dolor.php",
@@ -15,7 +15,7 @@
         "title": "Immagine scacchi"
     },
     "immagineNegozio":{
-        "pagina":"ipsum_commerce.php",
+        "pagina":"ipsum-commerce.php",
         "urlImg": "assets/negozionline.png",
         "alt": "Negozio online immagine",
         "title": "Immagine negozio online"

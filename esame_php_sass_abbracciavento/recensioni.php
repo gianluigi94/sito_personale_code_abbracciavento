@@ -1,82 +1,175 @@
 <?php
-  //  inserisco il doctype, imposto la lingua e inserisco la head
-  require_once "head.php";
+require_once "funzioni.php";
+
+use sito_personale\functions\Utility as UT;
+
+$nome = UT::richiestaHTTP("nome");
+$testo = UT::richiestaHTTP("commento");
+$check = UT::richiestaHTTP("accettazione");
+$inviato = UT::richiestaHTTP('inviato');
+
+$fileDaScrivere = "data/recensioni.txt";
+$fileRec = "data/recensioni.json";
+$dataOra = date("d-m-Y H:i");
+
+
+$recensione = json_decode(UT::leggiTesto($fileRec));
+$recUno = $recensione->recensione;
+$inptxt = $recensione->form->textarea;
+$inpInp = $recensione->form->input;
+$inpck = $recensione->form->check;
+$inpbtn = $recensione->form->button;
+$nomeF = $recensione->form->nome;
+$hdn = $recensione->form->hidden;
+$out = $recensione->output;
+
+
+$classHiddenUno = "formErHid";
+$classHiddenDue = "formErHid";
+$classHiddenTre = "formErHid";
+$classHiddenQuattro = "formErHid";
+$classHiddenCinque = "formErHid";
+$classHiddenSei = "formErHid";
+$classHiddenSette = "formErHid";
+$classHiddenOtto = "formErHid";
+$classHiddenNove = "formErHid";
+$classHiddenTen = "formErHid";
+
+$clNomeImp = "inpOne";
+$clTxtImp = "txtOne";
+$clCkImp = "checkmark";
+$clCkLab = "labRec";
+$clFlImo = "inpOne";
+$clFlLab = "labRec";
+
+$stringaRec = "";
+$fileName = "";
+$form = "";
+
+$inviato = ($inviato == null || $inviato != 1) ? false : true;
+
+if ($inviato) {
+    $valido = 0;
+    $erroreImg = 0;
+
+    UT::formControl($nome, 2, 20, $clNomeImp, "inpOneEr", $classHiddenUno, $classHiddenDue,  $valido);
+
+    UT::formControl($testo, 2, 600, $clTxtImp, "txtOneEr", $classHiddenTre, $classHiddenQuattro,  $valido);
+
+    UT::checkControl($valido, $clCkLab, "labRecEr", $clCkImp, "checkmarkEr", $classHiddenTen);
+
+    if (isset($_FILES) && count($_FILES) > 0) {
+        $estensioniPermesse = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "png" => "image/png");
+        $dimensione_massima = 4 * 1024 * 1024;
+        $uploadDir = __DIR__ . '/upload';
+
+
+        foreach ($_FILES as $file) {
+            if ($file['error'] === UPLOAD_ERR_NO_FILE) {
+                continue;
+            }
+            $fileName = basename($file['name']);
+            $dimensione_file = $file["size"];
+            $estensione = pathinfo($fileName, PATHINFO_EXTENSION);
+            if ($file['error'] !== UPLOAD_ERR_OK) {
+                UT::fotoControl($erroreImg, $classHiddenCinque, $clFlImo, $clFlLab);
+            } elseif (!array_key_exists($estensione, $estensioniPermesse)) {
+                UT::fotoControl($erroreImg, $classHiddenSei, $clFlImo, $clFlLab);
+            } elseif ($dimensione_file > $dimensione_massima) {
+                UT::fotoControl($erroreImg, $classHiddenSette, $clFlImo, $clFlLab);
+            } elseif (file_exists($uploadDir . DIRECTORY_SEPARATOR . $fileName)) {
+                UT::fotoControl($erroreImg, $classHiddenOtto, $clFlImo, $clFlLab);
+            }
+            if ((($erroreImg != 0) || ($erroreImg == 0)) && (($valido != 0) && ($_FILES['foto']['error'] != UPLOAD_ERR_NO_FILE))) {
+                $clFlImo = "inpOneEr";
+                $clFlLab = "labRecEr";
+                $classHiddenNove = "formEr";
+            }
+        }
+    }
+    $inviato = ($valido == 0 && $erroreImg == 0) ? true : false;
+}
+require_once "head.php";
 ?>
 
 <body>
+    <?php
+    require_once "menu.php";
+    require_once "add.php";
+    ?>
+    <section>
+        <p class="spieg"><?php echo $recensione->p ?></p>
 
-   <?php
-  //  inserisco il menu 
-  require_once "menu.php"; 
-  // inserisco lo span e il logo che apparirà nella pagina al ridursi dello schermo e l'immagine di sfondo dell'intera pagina se è presente 
-  require_once "add.php";
-  ?>
+        <div class="conteinerdue">
+            <h3><?php echo $recUno->h2 ?></h3>
+            <?php
+            $recImg = $recUno->foto;
+            printf('<img src="%s" alt="%s" draggable="false" title="%s">', $recImg->url, $recImg->alt, $recImg->title);
+            ?>
+            <p><?php echo $recUno->testo ?></p>
+            <?php
+            $recSuno = $recUno->socialUno;
+            printf('<a href="%s" title="%s" target="_blank">%s</a><br>', $recSuno->url, $recSuno->title, $recSuno->txt);
+            $recSdue = $recUno->socialDue;
+            printf('<a href="%s" title="%s" target="_blank">%s</a>', $recSdue->url, $recSdue->title, $recSdue->txt);
+            ?>
+        </div>
+    </section>
+    <?php if (!$inviato) {
+        $isChecked = isset($_POST['accettazione']) && $_POST['accettazione'] == 'on' ? 'checked' : '';
+    ?>
+        <form action="recensioni.php#ancora" class="formTwo" method="post" enctype="multipart/form-data" novalidate id="formLocation">
+            <fieldset class="fieltwo">
+                <legend class="tittledue"><?php echo $recensione->titolo->h2 ?></legend>
+                <?php
+                $form .= sprintf("<input class='%s' type='%s' id='%s'  name='%s' placeholder=%s value='%s' required minlength='2' maxlength='20' autocomplete='off'>",$clNomeImp, $nomeF->type, $nomeF->id, $nomeF->name, $nomeF->placeholder, $nome);
+                $form .= sprintf($out->nomeV, $classHiddenUno);
+                $form .= sprintf($out->nomeIn, $classHiddenDue);
+                $form .= sprintf("<textarea class='%s' name='%s' id='%s' placeholder='%s' minlength='2' maxlength='600' required >%s</textarea>",$clTxtImp, $inptxt->name, $inptxt->id, $inptxt->placeholder, $testo);
+                $form .= sprintf($out->txtV, $classHiddenTre);
+                $form .= sprintf($out->txtIn, $classHiddenQuattro);
+                $form .= sprintf("<label class='%s' for='%s'>%s <span class='%s'>%s</span></label>",$clFlLab, $inpInp->for, $inpInp->text, $inpInp->spanClass, $inpInp->spanTxt);
+                $form .= sprintf("<input class='%s' type='%s' id='%s' accept='image/jpeg, image/png' name='%s'>",$clFlImo, $inpInp->type, $inpInp->id, $inpInp->name);
+                $form .= sprintf($out->generale, $classHiddenCinque);
+                $form .= sprintf($out->estensioni, $classHiddenSei);
+                $form .= sprintf($out->grandezza, $classHiddenSette);
+                $form .= sprintf($out->presenza, $classHiddenOtto, $fileName);
+                $form .= sprintf($out->noPerfect, $classHiddenNove);
+                $form .= sprintf("<label for='%s' class='customChecbox %s'>", $inpck->for, $clCkLab);
+                $form .= sprintf("<input type='%s' class='hidenCheckbox' %s required id='%s' name='%s'>", $inpck->type, $isChecked, $inpck->id, $inpck->name);
+                $form .= sprintf("<span class='%s'></span>%s</label>",$clCkImp, $inpck->text);
+                $form .= sprintf($out->checkF, $classHiddenTen);
+                $form .= sprintf('<input type="%s" name="%s" value="%s">', $hdn->type, $hdn->name, $hdn->value);
+                $form .= sprintf('<button class="buttOne"  type="%s">%s %s</button>', $inpbtn->type, $inpbtn->txt, $inpbtn->svg);
+                echo $form;
+                
+                ?>
+            </fieldset>
+        </form>
 
+    <?php } else {
+        $stringaRec = "Nome utente:" . chr(10) . $nome . chr(10) . "Recensione:" . chr(10) . $testo . chr(10) . $dataOra . chr(10) . chr(10);
+        UT::scriviTesto($fileDaScrivere, $stringaRec);
+        printf($out->successoTxt, $nome, $testo, $dataOra);
+        if (($erroreImg == 0) && ($_FILES['foto']['error'] != UPLOAD_ERR_NO_FILE)) {
+            move_uploaded_file($_FILES['foto']['tmp_name'], $uploadDir . DIRECTORY_SEPARATOR . $_FILES['foto']['name']);
+            printf($out->successoImg, $_FILES['foto']['name']);
+        }
+        if ((($_FILES['foto']['error'] == UPLOAD_ERR_NO_FILE)) && (UT::scriviTesto($fileDaScrivere, $stringaRec))) {
+            printf($out->successoNoImg);
+        }
+    ?>
+        <button class="buttTwo" onclick="window.location.href='recensioni.php'">Invia un nuovo commento</button>
+    <?php
 
-  <!-- MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN MAIN  -->
+    }
+    ?>
+    <span id="ancora"></span>
 
-
-
-  <header class="recc">
-    
-      <h1 class="titler">Cosa dicono di me</h1>
-
-    
-      <p class="spiegazione">Per il momento non ho molte recensioni visto il numero modesto di progetti che ho sviluppato,
-        ma allo stesso
-        tempo non mi tiro indietro se qualcuno mi commissiona un lavoro.
-      </p>
-    
-
-  </header>
-
-
-  <section class="recensione">
-    <h2 class="tittledue">Toto Pixel</h2>
-    <div class="conteinerdue">
-      <img src="assets/toto_foto.png" alt="Foto Toto Pixel" draggable="false" title="Toto Pixel">
-      <p>Estremamente soddisfatto del risultato finale, logo trasformato in vettoriale in maniera eccelsa con
-        addirittura più versioni e colorazioni, in modo da essere già tutto pronto per essere utilizzato in ogni
-        possibile soluzione.
-        Anche la versione creata da zero è molto bella e sia adatta al mio stile e lavoro.
-        Super consigliato.</p>
-      <a href="https://www.youtube.com/@TotoPixel" title="Social Toto" target="_blank">Youtube</a>
-      <br>
-      <a href="https://www.instagram.com/warriors_tfc/" title="Social Toto" target="_blank">Instagram</a>
-    </div>
-  </section>
-
-  <!-- COMMENTI COMMENTI COMMENTI COMMENTI COMMENTI COMMENTI COMMENTI COMMENTI COMMENTI COMMENTI COMMENTI COMMENTI COMMENTI COMMENTI -->
-
-
-  <form action="recensioni.php" class="formTwo">
-    <h2 class="tittledue">Lascia anche tu un commento:</h2>
-    <textarea name="commento" id="commento" placeholder="commento..."></textarea>
-    <label for="foto">Invia foto <span class="opzionale">(opzionale, png o jpeg, max size 5MB)</span></label>
-    <input type="file" id="foto" name="foto">
-    <label for="accettazione" class="customChecbox">
-        <input type="checkbox" class="hidenCheckbox" id="accettazione" name="accettazione" required>
-        <span class="checkmark"></span>
-        Dichiaro di aver letto le informative riguardanti l'utilizzo dei dati personali
-      </label>
-      <button type="submit">Invia messaggio <svg class="airp w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
-      </svg>
-      </button>
-  </form>
-
-
-
-
-  <!-- inserisco il footer  -->
-
-  <?php
-  require_once "footer.php";
-  ?>
-  
-  <script src="script/script.js"></script>
-
-
+    <?php
+    require_once "footer.php";
+    ?>
+    <script src="script/script.js"></script>
 </body>
 
 </html>

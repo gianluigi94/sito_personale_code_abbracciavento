@@ -1,87 +1,69 @@
-// qui nelle due righe di sotto è dove si decide il template, i colori dei testi e degli sfondi cambieranno di conseguenza
+// In questa pagina gestisco tutte le variabili utilizzate nello stile dei due template del mio sito
 
-// $template: dark;
-$template:light;
+// I due font utilizzati
+$fontPrimary: "Courier New", Courier, monospace;
+$fontSecondary: Verdana, Geneva, Tahoma, sans-serif;
 
-// elenco variabili presenti nello stile del mio sito
-$dark: #111111;
-$light: #f6f6f6;
-$whiteprimary: #ffffff;
-$whitesecondary: #cdcdcd;
-$greenprimary: #088b17;
-$fontprimary: "Courier New", Courier, monospace;
-$fontsecondary: Verdana, Geneva, Tahoma, sans-serif;
-$dimensionprimary: 60px;
-$dimensionsecondary: 20px;
-$sfondosecondary: #575757f2;
-$sfondoterzo: #ffffffd7;
-$secondblack: #262626;
-$greensfum: linear-gradient(45deg, #088b17, #111111);
-$dimensionspecial: 25px;
-$whitenav: #e6e6e6eb;
-$blacknav: #575757fa;
-$colorhover: #26262682;
-$whitenavdue: #e6e6e6f9;
-$superbottone: #57575764;
-$lineetta: #8f8f8fb8;
-$homecursor: #5757577d;
-$greentwo: #15b42d32;
-$optioncolor: rgb(67, 66, 66);
-$fontultimo: 21px;
-$primofontd: 50px;
-$fontaside: 32px;
+// Le grandezze utilizzate 
+$dimensionFour: 15px;
+$dimensionOne: 18px;
+$dimensionTre: 20px;
+$dimensionnine :22px;
+$dimensionTwo: 25px;
+$dimensionsix :27px;
+$dimension: 28px;
+$dimensionundici: 32px;
+$dimensiontredici: 34px;
+$dimensionheight :40px;
+$dimensiondodici :50px;
+$dimensionFive :52px;
 
-// elenco placeholder selector
-%marginform {
-  border-top: 2px solid $dark;
-  border-right: 2px solid $lineetta;
-  border-bottom: 2px solid $lineetta;
-  border-left: 2px solid $dark;
-}
+// I colori utilizzati
+$whitePrimary: #ffffff;
+$whiteSecondary: #cdcdcd;
+$blackPrimary: #111111;
+$blackSecondary: #404040;
+$input: #57575764;
+$inputWhite: #dad8d864;
+$inputWhiteHover: #cef6d4a2;
+$inputHover: #26262682;
+$greenPrimary: #208b08;
+$error: #ff0000;
 
-%reset {
-  margin: 0;
-  padding: 0;
-}
+// Le sfumature utilizzate
+$darkMenu: linear-gradient(to right, #5b5b5bf2, #515151f2, #414141f2);
+$lightMenu: linear-gradient(to right, #f5fffcf1, #d4e2def1 );
+$lightMenuTwo : linear-gradient(to right, #e6f1eaf7 0%, #cfe3def0 100%);
+$darkMenuTwo: linear-gradient(to right, #535353fa, #515151fa, #414141fa);
+$darkMenuHover: linear-gradient(to right, #38383882,  #26262682);
+$lightMenuHover: linear-gradient(to right, #d0dcdeef 0%, #b1bec0eb 100%);
+$darkButton: linear-gradient(to right, #6e6e6e7d, #6666667d, #5f5f5f7d, #5757577d, #5050507d, #4949497d, #4242427d, #4b4b4b7d);
+$lightButton: linear-gradient(to right, rgba(235, 244, 223, 0.936) 0%, rgba(210, 222, 197, 0.922) 100%);
+$dark: linear-gradient(to right, #202020, #000000);
+$light: linear-gradient(to right, #ffffff, #edf3f5, #e4eeec); 
+$lightLight: linear-gradient(to right, #52f8a016, #369a5714);
+$darkDark: linear-gradient(to right, #12131383 0%, #0b0f0c85 0%);
+$hamburgerGr: linear-gradient(45deg, $greenPrimary, $blackPrimary);
 
-%body {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  @extend %dwsfondo;
-  overflow-x: hidden;
-  @media all and (max-width: 350px) {
-    width: 350px;
-  }
-}
+// I bordi utilizzati
+$hamurgerSh: 0 0 2px $greenPrimary, 0 0 2px $greenPrimary;
+$borderRecTwo: $whiteSecondary solid 2px;
+$borderRec: $whiteSecondary solid 3px;
+$borderRecTre: $blackSecondary solid 2px;
+$borderRecFour: $blackSecondary solid 3px;
+$borderGr: 2px solid $greenPrimary;
+$borderError: 2px solid $error;
+$borderOne: 2px solid #131313ab;
+$borderTwo: 2px solid #a0a0a062;
+$borderTre: 2px solid #a0a0a077;
 
-%flexcenter {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+// Le ombre utilizzate
+$ombra: 3px 3px 7px #8f8f8fb8;
+$ombraScura: 5px 5px 9px #3a3a3a9b;
+$shadowLightMenu: inset 1px -3px 10px #325f3236;
+$shadowDarkMenu: inset -1px -5px 10px #c1c6c14f;
+$ombraOne: inset 2px 2px 5px #131313b2, inset -1px -1px 1px #a0a0a08b;
+$ombraTwo: inset 2px 2px 5px #131313b2, inset -1px -1px 1px #a0a0a08b, 3px 3px 4px #5b5b5b71;
+$ombraTre: inset 3px 3px 10px #131313c2, inset -1px -1px 1px #a0a0a0a3, 4px 4px 5px #5b5b5b71;
 
-%hoverbutton {
-  transition: 0.3s ease-in-out;
-  &:hover {
-    transform: scale(1.1);
-  }
-}
 
-%hovereffect {
-  transition: 0.4s ease-in-out;
-}
-
-%asidetext {
-  font-size: 17px;
-  font-weight: 700;
-  font-family: $fontsecondary;
-}
-
-%cardeffect {
-  position: absolute;
-  color: $whiteprimary;
-  z-index: 3;
-  filter: opacity(0);
-  transition: all 0.5s ease-in-out;
-}

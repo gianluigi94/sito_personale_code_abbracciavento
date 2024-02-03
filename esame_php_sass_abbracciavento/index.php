@@ -6,31 +6,19 @@ use sito_personale\functions\Utility as UT;
 $fileHome = "data/home.json";
 $paragrafi = json_decode(UT::leggiTesto($fileHome));
 
-  //  inserisco il doctype, imposto la lingua e inserisco la head
-  require_once "head.php";
+require_once "head.php";
 ?>
 
 <body>
-
-   <?php
-  //  inserisco il menu 
-  require_once "menu.php"; 
-  // inserisco lo span e il logo che apparirà nella pagina al ridursi dello schermo e l'immagine di sfondo dell'intera pagina se è presente 
-  require_once "add.php";
-  ?>
-
-
-<!-- HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER   -->
-
+    <?php
+    require_once "menu.php";
+    ?>
     <header>
-        <div class="videoContainer">
-            <?php
-                $videoh = $paragrafi->video;
-                printf('<video src="%s" id="%s" %s>%s</video>',$videoh->url, $videoh->id, $videoh->attributi, $videoh->alt );
-            ?>
-            
-
-            <div class="headerContent">
+        <?php
+        $videoh = $paragrafi->video;
+        printf('<video src="%s" %s>%s</video>', $videoh->url, $videoh->attributi, $videoh->alt);
+        ?>
+        <div class="headerContent">
                 <h1><?php echo $paragrafi->H1 ?></h1>
                 <h2><?php echo $paragrafi->H2 ?></h2>
                 <div class="ahome">
@@ -43,12 +31,14 @@ $paragrafi = json_decode(UT::leggiTesto($fileHome));
                     
                 </div>
             </div>
-        </div>
     </header>
 
-    <div class="homeElement">
+     <div class="homeElement">
         <span class="sfondoimgnove"></span>
         <div class="description">
+            <h1 class= "hiddenTitle"><?php
+                echo $paragrafi->H1 . ", " . $paragrafi->H2;
+            ?></h1>
             <p><?php
                 echo $paragrafi->p_uno;
                 ?></p>
@@ -71,16 +61,9 @@ $paragrafi = json_decode(UT::leggiTesto($fileHome));
         </div>
 
     </div>
-
-
-    <!-- inserisco il footer  -->
-
     <?php
     require_once "footer.php";
     ?>
-
-    
-    <!-- codice js per il funzionamento del menu hamburger -->
 
     <script src="script/script.js"></script>
 

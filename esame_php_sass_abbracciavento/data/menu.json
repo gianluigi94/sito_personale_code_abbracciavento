@@ -30,7 +30,7 @@
                 {
                     "id": 13,
                     "nome": "Ipsum-Commerce",
-                    "url": "ipsum_commerce.php",
+                    "url": "ipsum-commerce.php",
                     "title": "progetto Ipsum-Commerce",
                     "sub": [] 
                 },
@@ -82,5 +82,7 @@
             "title": "Pagina contatti",
             "sub": []
         }
-    ]
+    ],
+
+    "icona": "<i class='fas fa-caret-down'></i>"
 }

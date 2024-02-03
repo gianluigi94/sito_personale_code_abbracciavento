@@ -18,5 +18,6 @@
         "titledue": "Vai alla HomePage",
         "url" : "#top",
         "urlsecond" : "index.php"
-    }
+    },
+    "titolo" : "Recapiti"
 }

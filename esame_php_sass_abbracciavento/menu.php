@@ -6,6 +6,7 @@ use sito_personale\functions\Utility as UT;
 $filemenu = "data/menu.json";
 $objmenu = json_decode(UT::leggiTesto($filemenu));
 $pagina = basename($_SERVER['PHP_SELF']);
+$imgL = $objmenu->secondmenu;
 
 ?>
 
@@ -21,7 +22,7 @@ $pagina = basename($_SERVER['PHP_SELF']);
                     $subMenu = "";
                     if ($link->sub != []) {
                         $class .= "special ";
-                        $icon = "<i class='fas fa-caret-down'></i>";
+                        $icon = "$objmenu->icona";
                         $subMenu = '<ul class="subMenu">';
                         foreach ($link->sub as $subLink) {
                             $classub = "";
@@ -42,17 +43,12 @@ $pagina = basename($_SERVER['PHP_SELF']);
                 }
 
                 ?>
-
             </ul>
-
         </div>
         <div class="secondmenu">
             <?php
-            $imgL = $objmenu->secondmenu;
             printf('<a href="%s" id="logo" title="%s"><img class="mainImage" loading="eager" src="%s" alt="%s" draggable="false"></a>', $imgL->url, $imgL->title, $imgL->icona, $imgL->alt);
             ?>
-
-
         </div>
         <div class="thirdmenu">
             <ul class="secondlist">
@@ -68,8 +64,12 @@ $pagina = basename($_SERVER['PHP_SELF']);
             </ul>
         </div>
     </div>
-    <!-- MENU HAMBURGER MENU HAMBURGER MENU HAMBURGER MENU HAMBURGER MENU HAMBURGER MENU HAMBURGER MENU HAMBURGER MENU HAMBURGER MENU HAMBURG -->
 
+    <!-- MENU HAMBURGER MENU HAMBURGER MENU HAMBURGER MENU HAMBURGER MENU HAMBURGER MENU HAMBURGER MENU HAMBURGER MENU HAMBURGER MENU HAMBURG -->
+    <span class="bordoMenu"></span>
+        <?php
+        printf('<a href="%s" title="%s"><img class="nascosto mainImage" loading="eager" src="%s" alt="%s" draggable="false" ></a>', $imgL->url, $imgL->title, $imgL->icona, $imgL->alt);
+        ?>
     <div class="containersup">
         <div class="navbar">
             <div class="hamburgermenu">
@@ -82,38 +82,38 @@ $pagina = basename($_SERVER['PHP_SELF']);
                 }
                 ?>
             </div>
-            <ul>
+            <ul class="navList">
                 <?php
-               foreach ($menuUnito as $linktwo) {
-                $class = "navItem ";
-                $icon = "";
-                $subMenu = "";
-                if ($linktwo->sub != []) {
-                    $class .= "navprogect ";
-                    $icon = "<i class='fas fa-caret-down'></i>";
-                    echo '<li class="' . $class . '">' . $linktwo->nome . ' ' . $icon;
-            
-                    $subMenu = '<ul class="sottomini">';
-                    foreach ($linktwo->sub as $subLinktwo) {
-                        $classub = "";
-                        if ($subLinktwo->url == $pagina) {
-                            $classub .= "underlined ";
+                foreach ($menuUnito as $linktwo) {
+                    $class = "navItem ";
+                    $icon = "";
+                    $subMenu = "";
+                    if ($linktwo->sub != []) {
+                        $class .= "navprogect ";
+                        $icon = "<i class='fas fa-caret-down'></i>";
+                        echo '<li class="' . $class . '">' . $linktwo->nome . ' ' . $icon;
+
+                        $subMenu = '<ul class="sottomini">';
+                        foreach ($linktwo->sub as $subLinktwo) {
+                            $classub = "";
+                            if ($subLinktwo->url == $pagina) {
+                                $classub .= "underlined ";
+                            }
+                            $subMenu .= sprintf('<li class="%s"><a href="%s" title="%s">%s</a></li>', trim($classub), $subLinktwo->url, $subLinktwo->title, $subLinktwo->nome);
                         }
-                        $subMenu .= sprintf('<li class="%s"><a href="%s" title="%s">%s</a></li>', trim($classub), $subLinktwo->url, $subLinktwo->title, $subLinktwo->nome);
+                        $subMenu .= "</ul>";
+                        echo $subMenu . '</li>';
+                    } else {
+                        if ($linktwo->url == $pagina) {
+                            $class .= "underlined ";
+                        }
+                        printf('<li class="%s"><a href="%s" title="%s">%s</a></li>', $class, $linktwo->url, $linktwo->title, $linktwo->nome);
                     }
-                    $subMenu .= "</ul>";
-                    echo $subMenu . '</li>';
-                } else {
-                    if ($linktwo->url == $pagina) {
-                        $class .= "underlined ";
-                    }
-                    printf('<li class="%s"><a href="%s" title="%s">%s</a></li>', $class, $linktwo->url, $linktwo->title, $linktwo->nome);
                 }
-            }
-            
+
                 ?>
             </ul>
+
         </div>
     </div>
-
 </nav>
