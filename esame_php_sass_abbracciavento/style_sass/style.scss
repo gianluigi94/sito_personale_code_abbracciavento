@@ -1,7 +1,7 @@
 // Questa è la pagina principale dove gestisco lo stile in Sass. Definisco quale dei due template utilizzare e collego gli altri file di stile
 
-// $template: dark;
-$template: light;
+$template: dark;
+// $template: light;
 
 @import "variabili";
 @import "condizioni";
