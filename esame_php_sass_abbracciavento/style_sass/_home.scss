@@ -102,9 +102,13 @@ header {
   .leftB {
     transition: transform 0.3s ease;
     margin-right: 30px;
+    @media all and (max-width: 585px) {
+      margin-right: 0px;
+    }
     &:hover {
       transform: scale(1.15);
     }
+    
   }
   .rightB {
     transition: transform 0.3s ease;
@@ -145,7 +149,7 @@ header {
     padding-right: 10px;
   }
 
-  // Questo di seguito è lo stile di un h1, creato solo per la semantica (i validatori di html non accettavano un main senza un titolo diretto) tuttavia è nascosto alla vista degli utenti, ma senza usare opacity.
+  // Questo di seguito è lo stile di un h1, creato solo per la semantica (i validatori di html non accettavano un main senza un titolo diretto) tuttavia è nascosto alla vista degli utenti, ma senza usare display none.
 
   .hiddenTitle {
     position: absolute;

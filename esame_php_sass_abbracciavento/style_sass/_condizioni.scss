@@ -117,7 +117,7 @@
   }
 }
 
-// cambio il riquadro che contiene la mia recensione da bianco a nera
+// cambio il riquadro che contiene la recensione da bianco a nera
 %dwrecensioni {
   @if $template == dark {
     border-bottom: $borderRecTwo;

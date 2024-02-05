@@ -8,11 +8,17 @@
 body {
   background-color: $blackPrimary;
   @extend %dwsfondo;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
 }
+
 
 // codice per migliorare la navigazione dei punti di ancoraggio
 html {
   scroll-behavior: smooth;
+  
 }
 
 // stile del titolo principale che compare in tutte le pagine tranne che nella home

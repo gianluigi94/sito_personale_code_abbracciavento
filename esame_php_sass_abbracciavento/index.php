@@ -1,4 +1,5 @@
 <?php
+// in questa pagina gestisco la home page, le informazioni sono prese da dei dati json 
 require_once 'funzioni.php';
 
 use sito_personale\functions\Utility as UT;
@@ -6,22 +7,27 @@ use sito_personale\functions\Utility as UT;
 $fileHome = "data/home.json";
 $paragrafi = json_decode(UT::leggiTesto($fileHome));
 
+// richiamo la head impostando dinamicamente lingua il title, e il content
 require_once "head.php";
 ?>
 
 <body>
     <?php
+    // richiamo il menu 
     require_once "menu.php";
     ?>
+    <!-- imposto la header  -->
     <header>
         <?php
         $videoh = $paragrafi->video;
         printf('<video src="%s" %s>%s</video>', $videoh->url, $videoh->attributi, $videoh->alt);
         ?>
         <div class="headerContent">
+            <!-- imposto i titoli  -->
                 <h1><?php echo $paragrafi->H1 ?></h1>
                 <h2><?php echo $paragrafi->H2 ?></h2>
                 <div class="ahome">
+                    <!-- imposto i bottoni per le cta  -->
                     <?php
                     $bUno = $paragrafi->bottoneUno;
                     $bDue = $paragrafi->bottoneDue;
@@ -34,9 +40,13 @@ require_once "head.php";
     </header>
 
      <div class="homeElement">
+        <!-- imposto lo sfondo  -->
+
         <span class="sfondoimgnove"></span>
+
+        <!-- imposto la descrizione  -->
         <div class="description">
-            <h1 class= "hiddenTitle"><?php
+            <h1 class= "hiddenTitle"><?php // questo titolo non è visibile serviva solo per inserire un h1 nel main della mia home page
                 echo $paragrafi->H1 . ", " . $paragrafi->H2;
             ?></h1>
             <p><?php
@@ -50,6 +60,7 @@ require_once "head.php";
                 ?></p>
         </div>
 
+        <!-- imposto il video di youtube e il pulsante per accedere al mio vecchio progetto adobe xD  -->
         <div class="secondCol">
             <?php
                 $iframe= $paragrafi->youtube;
@@ -62,6 +73,7 @@ require_once "head.php";
 
     </div>
     <?php
+    // richiamo il footer e il js usato per le animazioni del menu
     require_once "footer.php";
     ?>
 

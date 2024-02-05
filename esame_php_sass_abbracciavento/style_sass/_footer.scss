@@ -1,11 +1,11 @@
 // In questa pagina imposto lo stile del footer
 
-// E' suddiviso in tre div e in schermi grandi e medi i primi due si contengono la prima riga, mentre il terso occupa tutta la seconda riga.
+// E' suddiviso in tre div e in schermi grandi e medi i primi due si contengono la prima riga, mentre il terzo occupa tutta la seconda riga.
 // Inizio impostando il contenitore generale
 footer {
   width: 100%;
   height: 220px;
-  margin-top: 50px;
+  margin-top: auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
