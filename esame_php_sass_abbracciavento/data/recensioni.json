@@ -82,6 +82,6 @@
         "nomeV": "<p class='%s'>Devi compilare il campo 'nome'<br></p>",
         "nomeIn": "<p class='%s'>Il campo 'nome' può contenere solo dai 2 ai 20 caratteri<br></p>",
         "txtV": "<p class='%s'>Devi compilare il campo 'commento'<br></p>",
-        "txtIn": "<p class='%s'>Il campo 'commento' può contenere solo dai 2 ai 600 caratteri<br></p>"
+        "txtIn": "<p class='%s'>Il campo 'commento' può contenere dai 2 ai 600 caratteri<br></p>"
     }
 }

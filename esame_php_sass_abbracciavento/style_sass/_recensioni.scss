@@ -1,4 +1,4 @@
-// In questo file gestisco la pagina recensioni, dove in alto è situata la mia recensione e in basso ho inserito un nuovo form che non cera nel esame precedente
+// In questo file gestisco la pagina recensioni, dove in alto è situata la mia recensione e in basso ho inserito un nuovo form che non c'era nell'esame precedente
 
 // gestisco la spiegazione iniziale
 
@@ -63,7 +63,7 @@
   }
 }
 
-// Inizio qui in basso a gestire il form, le varie voci presentato due versioni: una normale e una per la modalità errore. Ho cercato di ragruppare più caratteristiche comuni possibili, tenendo presente che nella pagina contatti c'è un altro form, che per quanto molto simile a questo, presenta caratteristiche legermente diverse
+// Inizio qui in basso a gestire il form, le varie voci presentato due versioni: una normale e una per la modalità errore. Ho cercato di raggruppare più caratteristiche comuni possibili, tenendo presente che nella pagina contatti c'è un altro form, che per quanto molto simile a questo, presenta caratteristiche leggermente diverse
 
 // gestisco la fieldset 
 .fieltwo {
@@ -141,16 +141,16 @@
     cursor: pointer;
   }
 
-  // stile checkBoxe
+  // stile checkBox
   .customChecbox {
     @extend %labelCheck;
   }
-  // stile label con cui ho personalizzato la checkboxe
+  // stile label con cui ho personalizzato la checkbox
   .checkmark {
     @extend %check;
     @extend %inputC;
   }
-  // checkboxe sbagliata
+  // checkbox sbagliata
   .checkmarkEr {
     @extend %inputCer;
     @extend %check;
@@ -158,7 +158,7 @@
 
   @extend %opzionale;
 
-  // stile textare 
+  // stile textarea
   .txtOne {
     @extend %inputext;
     @extend %impostaTxt;

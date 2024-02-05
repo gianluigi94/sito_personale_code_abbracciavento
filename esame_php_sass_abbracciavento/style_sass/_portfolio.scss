@@ -7,7 +7,7 @@
   margin-bottom: -90px;
   padding: 120px 0px 150px 0px;
 
-  // Imposto lo stile del singolo div che contiene la singola card. E' importante per l'effetto hover che consiste nel mostrare uno sfondo verde che ofusca parzialmente l'immagine e mostra titolo e descrizione. In oltre l'immagine si ingrandisce legermente, ma senza uscire fuori dal suo contenitore
+  // Imposto lo stile del singolo div che contiene la singola card. E' importante per l'effetto hover, che consiste nel mostrare uno sfondo verde che offusca parzialmente l'immagine e mostra titolo e descrizione. Inoltre l'immagine si ingrandisce leggermente, ma senza uscire fuori dal suo contenitore
   .imgCon {
     @extend %flexCenter;
     @extend %dwsdarkspecial;
@@ -68,7 +68,7 @@
       margin-left: -290px;
     }
 
-    // queste ultime due classi servono per impostare manualmente le anteprime di due card specifiche dove l'antemprima di default non rendeva giustizia all'immagine finale
+    // queste ultime due classi servono per impostare manualmente le anteprime di due card specifiche dove l'anteprima di default non rendeva giustizia all'immagine finale
     .toto {
       -o-object-position: 23%;
       object-position: 23%;

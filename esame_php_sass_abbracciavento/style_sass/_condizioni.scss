@@ -1,4 +1,4 @@
-// In questa pagina contengo le condizioni che danno vita al cambio di tema del sito
+// In questa pagina imposto le condizioni che danno vita al cambio di tema del sito
 
 // cambio lo sfondo del sito nero scuro a bianco chiaro
 %dwsfondo {
@@ -18,7 +18,7 @@
   }
 }
 
-// cambio il colore del menù a tendina da grigio scuro a grigio chiaro
+// cambio il colore del menu a tendina da grigio scuro a grigio chiaro
 %dwsfondoMenuTwo {
   @if $template == dark {
     background: $darkMenuTwo;
@@ -36,7 +36,7 @@
   }
 }
 
-// cambio il colore dei pulsati da grigi a verdi chiaro
+// cambio il colore dei pulsati da grigio a verde chiaro
 %dwsbutton {
   @if $template == dark {
     background: $darkButton;
@@ -45,7 +45,7 @@
   }
 }
 
-// cambio lo sfondo di alcuni elementi decorativi da neri a verde chiaro
+// cambio lo sfondo di alcuni elementi decorativi da nero a verde chiaro
 %dwslightdark {
   @if $template == dark {
     background: $darkDark;
@@ -63,7 +63,7 @@
   }
 }
 
-// cambio il colore dell'obra interna del menu da nera a bianca
+// cambio il colore dell'ombra interna del menu da nera a bianca
 %dwombraMenu {
   @if $template == dark {
     box-shadow: $shadowDarkMenu;
@@ -72,7 +72,7 @@
   }
 }
 
-// cambio il colore degli elementi del form da grigio scuro a bianco scuro
+// cambio il colore degli elementi del form da grigio scuro a bianco 
 %dwInput {
   @if $template == dark {
     background-color: $input;
@@ -99,7 +99,7 @@
   }
 }
 
-// cambio il colore dei testi principali da bianco chiaro a nero scuro
+// cambio il colore dei testi principali da bianco a nero
 %dwtesto {
   @if $template == dark {
     color: $whitePrimary;
@@ -108,7 +108,7 @@
   }
 }
 
-// cambio il colore dei testi secondari da bianco scuro a nero chiaro
+// cambio il colore dei testi secondari da bianco a nero
 %dwtestoDue {
   @if $template == dark {
     color: $whiteSecondary;
@@ -117,7 +117,7 @@
   }
 }
 
-// cambio il riquadro che contiene la recensione da bianco a nera
+// cambio il riquadro che contiene la recensione da bianco a nero
 %dwrecensioni {
   @if $template == dark {
     border-bottom: $borderRecTwo;

@@ -46,7 +46,7 @@ require_once "head.php";
 
         <!-- imposto la descrizione  -->
         <div class="description">
-            <h1 class= "hiddenTitle"><?php // questo titolo non è visibile serviva solo per inserire un h1 nel main della mia home page
+            <h1 class= "hiddenTitle"><?php // questo titolo non è visibile, serve solo per inserire un h1 nel main della mia home page
                 echo $paragrafi->H1 . ", " . $paragrafi->H2;
             ?></h1>
             <p><?php

@@ -39,7 +39,7 @@ $classHiddenOtto = "formErHid";
 $classHiddenNove = "formErHid";
 $classHiddenTen = "formErHid";
 
-// definisco la classe di defaul dei vari elementi input 
+// definisco la classe di default dei vari elementi input 
 $clNomeImp = "inpOne";
 $clTxtImp = "txtOne";
 $clCkImp = "checkmark";
@@ -52,11 +52,11 @@ $stringaRec = "";
 $fileName = "";
 $form = "";
 
-// se non è stato inviato nessu dato valido sara false 
+// se non è stato inviato nessun dato valido sara false 
 $inviato = ($inviato == null || $inviato != 1) ? false : true;
 
 if ($inviato) {
-    // imposto due contatori per gli errori, uno per gli input obligatori e uno per l'invio dell'immagine facoltativa
+    // imposto due contatori per gli errori, uno per gli input obbligatori e uno per l'invio dell'immagine facoltativa
     $valido = 0;
     $erroreImg = 0;
 
@@ -66,17 +66,17 @@ if ($inviato) {
     // con questo metodo controllo la validità del campo testo e in caso di errore aumento il conteggio degli errori, e cambio le classi
     UT::formControl($testo, 2, 600, $clTxtImp, "txtOneEr", $classHiddenTre, $classHiddenQuattro,  $valido);
 
-    // con questo metodo controllo la spunta nella checkboxe  e in caso di errore aumento il conteggio degli errori, e cambio le classi
+    // con questo metodo controllo la spunta nella checkbox  e in caso di errore aumento il conteggio degli errori, e cambio le classi
     UT::checkControl($valido, $clCkLab, "labRecEr", $clCkImp, "checkmarkEr", $classHiddenTen);
 
-    // inizio il controllo dell'immagine, ricordiamo non essere un campo obligatorio, ma se l'utente prova ad inviare file non accettati viene segnalato 
+    // inizio il controllo dell'immagine, che ricordiamo non essere un campo obligatorio, ma se l'utente prova ad inviare file non accettati viene segnalato 
     if (isset($_FILES) && count($_FILES) > 0) {
         // definisco le estensioni permesse, la grandezza massima e la cartella dove verrà salvato il file 
         $estensioniPermesse = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "png" => "image/png");
         $dimensione_massima = 4 * 1024 * 1024;
         $uploadDir = __DIR__ . '/upload';
 
-        // creo un ciclo per passare le proprità del file inviato, se trova l'errore di elemento vuoto, lo faccio saltare, perche lascio la possibilità di non inserire la foto per la recensione. La funzione assegna le classi di errore e aumenta di uno il conteggio degli errori per il file
+        // creo un ciclo per passare le proprità del file inviato, se trova l'errore di elemento vuoto, lo faccio saltare, perché lascio la possibilità di non inserire la foto per la recensione. La funzione assegna le classi di errore e aumenta di uno il conteggio degli errori per il file
         foreach ($_FILES as $file) {
             if ($file['error'] === UPLOAD_ERR_NO_FILE) {
                 continue;
@@ -93,7 +93,7 @@ if ($inviato) {
             } elseif (file_exists($uploadDir . DIRECTORY_SEPARATOR . $fileName)) {
                 UT::fotoControl($erroreImg, $classHiddenOtto, $clFlImo, $clFlLab);
             }
-            // se non ci sono errori nell'invio del file, ma ci sono errori nel resto del form, mando a schermo un errore apposita per indicare la giusta via all'utente
+            // se non ci sono errori nell'invio del file, ma ci sono errori nel resto del form, stampo a schermo un errore apposito per indicare la giusta via all'utente
             if ((($erroreImg != 0) || ($erroreImg == 0)) && (($valido != 0) && ($_FILES['foto']['error'] != UPLOAD_ERR_NO_FILE))) {
                 $clFlImo = "inpOneEr";
                 $clFlLab = "labRecEr";
@@ -101,10 +101,10 @@ if ($inviato) {
             }
         }
     }
-    // se non ci sono errori ne nei campi obligatori e ne in quello facoltativo $inviato diventa true 
+    // se non ci sono errori né nei campi obligatori e né in quello facoltativo $inviato diventa true 
     $inviato = ($valido == 0 && $erroreImg == 0) ? true : false;
 }
-// richiamo la head impostando dinamicamente lingua il title, e il content
+// richiamo la head impostando dinamicamente lingua, il title, e il content
 require_once "head.php";
 ?>
 
@@ -114,7 +114,7 @@ require_once "head.php";
     require_once "menu.php";
     require_once "add.php";
     ?>
-    <!-- gestisco la section dove tengo la mia recesione, tutti i dati sono salvati su un file json  -->
+    <!-- gestisco la section dove tengo la mia recensione, tutti i dati sono salvati su un file json  -->
     <section>
         <p class="spieg"><?php echo $recensione->p ?></p>
 
@@ -136,7 +136,7 @@ require_once "head.php";
 
     <!-- se $inviato è false verrà ancora mostrato il form  -->
     <?php if (!$inviato) {
-        // per prima cosa controllo se fosse stata selezionata la checkboxe e se fosse vero la riseleziono 
+        // per prima cosa controllo se fosse stata selezionata la checkbox e se fosse vero la riseleziono 
         $isChecked = isset($_POST['accettazione']) && $_POST['accettazione'] == 'on' ? 'checked' : '';
     ?>
     <!-- gestisco il form i dati per la costruzione dei campi sono presi da un file json, i messaggi di errore sono stati inseriti e nascosti vicini al campo interessato  -->
@@ -179,7 +179,7 @@ require_once "head.php";
         UT::scriviTesto($fileDaScrivere, $stringaRec);
         printf($out->successoTxt, $nome, $testo, $dataOra);
         
-        // se tutto è andato a buon fine mando un secondo messaggio sia nel caso ha mandato anche un immagine, o se non lo ha fatto e vorrebbe farlo 
+        // se tutto è andato a buon fine mando un secondo messaggio, sia nel caso ha mandato anche un'immagine, o se non lo ha fatto e vorrebbe farlo 
         if (($erroreImg == 0) && ($_FILES['foto']['error'] != UPLOAD_ERR_NO_FILE)) {
             move_uploaded_file($_FILES['foto']['tmp_name'], $uploadDir . DIRECTORY_SEPARATOR . $_FILES['foto']['name']);
             printf($out->successoImg, $_FILES['foto']['name']);

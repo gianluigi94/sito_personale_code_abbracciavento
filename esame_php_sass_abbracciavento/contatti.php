@@ -49,7 +49,7 @@ $classeTestoImp = "txtDue";
 $classeCheckLab = "labelTwo";
 $clsasseCheck = "checkmarkTwo";
 
-// classi dei messaggi di errore, di defaul sono su display none 
+// classi dei messaggi di errore, di default sono su display none 
 $classeHiddenUno = "formErHid";
 $classeHiddenDue = "formErHid";
 $classeHiddenTre = "formErHid";
@@ -73,24 +73,24 @@ $fileNameEm = "";
 // se l'utente non ha inviato dei dati validi è falso, altrimenti è vero 
 $inviato = ($inviato == null || $inviato != 1) ? false : true;
 
-// se inviato è vero eseque questi controlli 
+// se inviato è vero esegue questi controlli 
 if ($inviato) {
     // contatore di errori 
     $valido = 0;
 
-    // metodo per il controllo del nome, nel caso ci siano errori, cambia classi css, aumenta il contegio degli errori e resetta il valore
+    // metodo per il controllo del nome, nel caso ci siano errori, cambia classi css, aumenta il conteggio degli errori e resetta il valore
     UT::formControlDue($nome, 2, 20, $classeNomeImp, "inpTwoEr", $classeHiddenUno, $classeHiddenDue, $classeNomeLab, "labelTwoEr",  $valido);
 
-    // metodo per il controllo del cognome, nel caso ci siano errori, cambia classi css, aumenta il contegio degli errori e resetta il valore
+    // metodo per il controllo del cognome, nel caso ci siano errori, cambia classi css, aumenta il conteggio degli errori e resetta il valore
     UT::formControlDue($cognome, 2, 20, $classeCognomeImp, "inpTwoEr", $classeHiddenTre, $classeHiddenQuattro, $classeCognomeLab, "labelTwoEr",  $valido);
 
-    // metodo per il controllo della email, nel caso ci siano errori, cambia classi css, aumenta il contegio degli errori e resetta il valore 
-    UT::formControlEmail($email, 10, 55, $classeEmailImp, $classeHiddenCinque,  $classeHiddenSette, $classeHiddenSei, $classeEmailLab, $valido);
+    // metodo per il controllo della email, nel caso ci siano errori, cambia classi css, aumenta il conteggio degli errori e resetta il valore 
+    UT::formControlEmail($email, 8, 55, $classeEmailImp, $classeHiddenCinque,  $classeHiddenSette, $classeHiddenSei, $classeEmailLab, $valido);
 
-    // metodo per il controllo del testo, nel caso ci siano errori, cambia classi css, aumenta il contegio degli errori e resetta il valore
+    // metodo per il controllo del testo, nel caso ci siano errori, cambia classi css, aumenta il conteggio degli errori e resetta il valore
     UT::formControlDue($testo, 2, 600, $classeTestoImp, "txtDueEr", $classeHiddenUndic, $classeHiddenDodici, $classeTestoLab, "labelTwoEr",  $valido);
 
-    // metodo per il controllo della spunta della checkboxe, nel caso ci siano errori, cambia classi css e aumenta il contegio degli errori 
+    // metodo per il controllo della spunta della checkbox, nel caso ci siano errori, cambia classi css e aumenta il conteggio degli errori 
     UT::checkControl($valido, $classeCheckLab, "labelTwoEr", $clsasseCheck, "checkmarkTwoEr", $classeHiddenTredici);
 
     // il controllo del numero di telefono non è uguale agli altri controlli, visto che il campo telefono è opzionale e non controllo che sia vuoto. Tuttavia se viene inserito un valore e quel valore è sbagliato, questo viene segnalato all'utente
@@ -116,7 +116,7 @@ if ($inviato) {
         $classeArgomentoImp = "selectEr";
     }
 
-    // Viene nuovamente contrllato valido, se il campo degli errori è ancora sullo 0 inviato è vero 
+    // Viene nuovamente controllato $valido, se il campo degli errori è ancora sullo 0 inviato è vero 
     $inviato = ($valido == 0) ? true : false;
 }
 
@@ -134,7 +134,7 @@ require_once "head.php";
     ?>
     <!-- se $inviato è ancora falso si entra in questo blocco di codice e viene mostrato nuovamente il form  -->
       <?php if (!$inviato) {
-        // controllo se in precedenza è stata selezionata la checkboxe dall'utente e se si la riseleziono 
+        // controllo se in precedenza è stata selezionata la checkbox dall'utente e se sì la riseleziono 
                     $isChecked = isset($_POST['accettazione']) && $_POST['accettazione'] == 'on' ? 'checked' : '';
                 ?>
     <div class="twopage">
@@ -197,7 +197,7 @@ require_once "head.php";
             </fieldset>
         </form>
         
-        <!-- mando a schermo la mappa  -->
+        <!-- stampo a schermo la mappa  -->
         <?php
         printf('<iframe class="sectiontwo" src="%s" title="%s" %s></iframe>', $if->url, $if->title, $if->attributi);
         ?>
@@ -215,7 +215,7 @@ require_once "head.php";
                     $stringaEmail = "<strong>Nome:</strong>" . "<br>" . $nome . "<br>" . "<strong>Cognome:</strong>" . "<br>" . $cognome . "<br>" . "<strong>Email:</strong>" . "<br>" . $email . "<br>" . "<strong>Telefono:</strong>" . "<br>" . $tel . "<br>" . "<strong>Argomento/Oggetto:</strong>" . "<br>" . $argomento . "<br>" . "<strong>Testo:</strong>" . "<br>" . $testo . "<br>" . "<strong>$dataOra</strong>" . "<br>" . "<br>";
 
                     printf($out->successoTxt, $stringaEmail);
-                    // dopo aver mandando a schermo i dati converto i caratteri html in caratteri ASCII e salvo il contenuto in un file txt
+                    // dopo aver stampato a schermo i dati converto i caratteri html in caratteri ASCII e salvo il contenuto in un file txt
                     $stringaEmail = str_replace( ["<br>", "<strong>", "</strong>"], [chr(10), "", ""], $stringaEmail );
                     UT::scriviTesto($copiaEmail, $stringaEmail);
                     ?>

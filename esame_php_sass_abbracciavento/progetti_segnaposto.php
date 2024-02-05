@@ -12,7 +12,7 @@ $fileLorem = "data/lorem.json";
 $lorem = json_decode(UT::leggiTesto($fileLorem));
 
 
-// richiamo la head impostando dinamicamente lingua il title, e la description
+// richiamo la head impostando dinamicamente lingua, il title, e la description
 
 require_once "head.php";
 ?>
@@ -40,7 +40,7 @@ require_once "head.php";
         <figure class="due">
             <?php
 
-            // con un ciclo passo a rasegnna un file json finche non trova l'immagine che mi occorre per questa pagina, salta i dati che non centrano con le immagini ed esce una volta trovato ciò che cercava
+            // con un ciclo passo a rassegna un file json finché non trova l'immagine che mi occorre per questa pagina, salta i dati che non c'entrano con le immagini ed esce una volta trovato ciò che cercava
             foreach ($lorem as $link => $value) {
 
                 if ($link == "pagina") {

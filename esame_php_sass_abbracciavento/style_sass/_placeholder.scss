@@ -109,7 +109,7 @@
   cursor: pointer;
 }
 
-// stile per icona eareoplanino usata per i form
+// stile per icona aeroplanino usata per i form
 %icon {
   .airp {
     width: 20px;
@@ -119,7 +119,7 @@
   }
 }
 
-// codice che gestisce i checkboxe presenti sui due form del sito
+// codice che gestisce i checkbox presenti sui due form del sito
 %labelCheck {
   cursor: pointer;
   display: inline-block;
@@ -148,7 +148,7 @@
   @extend %dwInput;
 }
 
-// classe che gestisce gli span dei form delle scritte opzionale ed "*"
+// classe che gestisce gli span dei form delle scritte opzionali ed obbligatori"*"
 %opzionale {
   .opzionale {
     font-size: $dimensionFour;
@@ -156,7 +156,7 @@
   }
 }
 
-// ripetizione più comune per i flex boxe
+// ripetizione più comune per i flex box
 %flexCenter {
   display: flex;
   justify-content: center;

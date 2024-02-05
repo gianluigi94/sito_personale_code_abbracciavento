@@ -1,5 +1,5 @@
 <!-- In questa pagina definisco l'aside per la navigazione più facile tra i vari progetti -->
-<!-- Su un file json sono riportati tutti i progetti che serviranno da link per la navigazione. Tuttavia ho fatto in modo che "salti" il nome che corrisponde alla pagina stessa dove si trova l'utente, perche non aveva senso inserire il link al progetto che si stava gia visualizzando -->
+<!-- Su un file json sono riportati tutti i progetti che serviranno da link per la navigazione. Tuttavia ho fatto in modo che "salti" il nome che corrisponde alla pagina stessa dove si trova l'utente, perché non aveva senso inserire il link al progetto che si stava già visualizzando -->
 
 <aside class="tre">
 

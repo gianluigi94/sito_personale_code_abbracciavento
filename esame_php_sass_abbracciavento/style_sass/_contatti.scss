@@ -189,20 +189,20 @@
         }
         @extend %icon;
       }
-      // stile checkboxe
+      // stile checkbox
       .customChecboxTwo {
         @extend %labelCheck;
        
         margin-top: 10px;
       }
 
-      // stile label con cui ho personalizzaro la checkboxe
+      // stile label con cui ho personalizzaro la checkbox
       .checkmarkTwo {
         margin-top: 27px;
         @extend %inputC;
         @extend %check;
       }
-      // la checkboxe versione errore 
+      // la checkbox versione errore 
       .checkmarkTwoEr {
         margin-top: 27px;
         @extend %inputCer;

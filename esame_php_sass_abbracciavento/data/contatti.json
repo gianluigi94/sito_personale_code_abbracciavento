@@ -96,13 +96,13 @@
             "cognomeV": "<p class='%s'>Devi compilare il campo 'cognome'<br></p>",
             "cognomeIn": "<p class='%s'>Il campo 'cognome' può contenere solo dai 2 ai 20 caratteri<br></p>",
             "emailV": "<p class='%s'>Devi compilare il campo 'email'<br></p>",
-            "emailIn": "<p class='%s'>Il campo 'email' può contenere solo dai 10 ai 55 caratteri<br></p>",
+            "emailIn": "<p class='%s'>Il campo 'email' può contenere solo dai 8 ai 55 caratteri<br></p>",
             "emailErr": "<p class='%s'>Non hai inserito un'email valida<br></p>",
             "telV": "<p class='%s'>Devi compilare il campo 'telefono'<br></p>",
             "telIn": "<p class='%s'>Il campo 'telefono' può contenere solo dai 7 ai 17 caratteri, se preferisci puoi lasciarlo vuoto<br></p>",
             "telCaratteri": "<p class='%s'>Hai digitato uno o più caratteri non validi, se preferisci puoi lasciare vuoto il campo 'telefono'<br></p>",
             "txtV": "<p class='%s'>Devi compilare il campo 'messaggio'<br></p>",
-            "txtIn": "<p class='%s'>Il campo 'commento' può contenere solo dai 2 ai 600 caratteri<br></p>",
+            "txtIn": "<p class='%s'>Il campo 'commento' può contenere dai 2 ai 600 caratteri<br></p>",
             "argV": "<p class='%s'>Devi selezionare un argomento<br></p>"
         }
     }

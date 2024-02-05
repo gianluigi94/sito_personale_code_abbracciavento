@@ -26,7 +26,7 @@ require_once "head.php";
     <section class="pgraf">
 
     <?php
-    // ciclo in una volta sola tutte le card con tutte le varie proprietà che si trovano salvate su un file json, tuttavia ci sono delle card particolari dove ho inserito più di una classe. Per assegnare piu eventuali classi dinamicamente, ho lasciato volutamente uno spazio nel nome della classe, se non dovesse servire, lo eliminerò in seguito con trim 
+    // ciclo in una volta sola tutte le card con tutte le varie proprietà che si trovano salvate su un file json, tuttavia ci sono delle card particolari dove ho inserito più di una classe. Per assegnare eventualmente più classi dinamicamente, ho lasciato volutamente uno spazio nel nome della classe, se non dovesse servire, lo eliminerò in seguito con trim 
         foreach ($disegni->progetti as $progGra) {
             $classPro = "imgcard ";
             if ($progGra->h3 == "Carosello Vivace") {

@@ -1,5 +1,5 @@
 <?php
-// in questa pagina gestisco la diversa immagine di sfondo in maniera dinamica prendendo il nome dell'immagine da un file json, che deve corrispondere al nome della pagina. Poi Definisco con la funzione titleHttp il titolo del progetto.
+// in questa pagina gestisco la diversa immagine di sfondo in maniera dinamica prendendo il nome dell'immagine da un file json, che deve corrispondere al nome della pagina. Poi definisco con la funzione titleHttp il titolo del progetto.
 require_once 'funzioni.php';
 
 use sito_personale\functions\Utility as UT;

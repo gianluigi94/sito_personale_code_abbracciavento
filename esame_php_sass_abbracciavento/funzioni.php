@@ -12,7 +12,7 @@ class utility
     /**
      * Il Metodo riportato sotto è usato per leggere i file json
      * @param string $file è il percorso/nome del file
-     * @param boolean $commenta se vera mostra dei commenti per aiutarmi nello sviluppo, faccio in modo di non mostrarli
+     * @param boolean $commenta se vera mostra dei commenti per aiutarmi nello sviluppo, se è falsa faccio in modo di non mostrarli
      * @return boolean|string dopo che il file è stato aperto,  letto per intero e chiuso, ritorna sia un booleano e sia la stringa con il testo che occorreva
      */
     public static function leggiTesto($file, $commenta = false)
@@ -41,7 +41,7 @@ class utility
     /**
      * Il Metodo riportato sotto è usato per estrarre il valore Post o Get
      * @param string $str valore scritto dall'utente tramite form da ricercare
-     * @return string|null Ho è nullo ho ritorna il valore
+     * @return string|null o è nullo o ritorna il valore
      */
 
     public static function richiestaHTTP($str)
@@ -58,7 +58,7 @@ class utility
     }
     /**
      * Il metodo riportato sotto serve per ricavare il title della pagina corrente e il titolo principale dei progetti in maniera dinamica: prende con una variabile superglobale il nome dal percorso.
-     * dopo rende maiuscola la prima lettera, sostituisce gli eventuali underscore con spazzi bianchi e per finire se il risultato finale è Index lo sostituisce con Home Page.
+     * dopo rende maiuscola la prima lettera, sostituisce gli eventuali underscore con spazi bianchi e per finire se il risultato finale è Index lo sostituisce con Home Page.
      * @return string TITLE | h1 della pagina
      */
     public static function titleHTTP()
@@ -121,8 +121,8 @@ class utility
     /**
      * Il metodo riportato sotto è usato per controllare la grandezza minima e massima di un valore inviato dall'utente all'interno di un form. 
      * @param string $stringa valore inserito dall'utente
-     * @param int $min valore numerico sotto al cuale il dato non deve scendere
-     * @param int $max Valore numerico sopra al cuale il dato non deve salire
+     * @param int $min valore numerico sotto al quale il dato non deve scendere
+     * @param int $max Valore numerico sopra al quale il dato non deve salire
      * @return boolean 
      */
     public static function controllaRangeStringa($stringa, $min = null, $max = null)
@@ -139,13 +139,13 @@ class utility
     }
 
     /**
- * Il metodo riportato sotto serve a ridurre il numero di righe di codice in maniera sostanziale e controlla la validazione di molti dei campi imput presenti sul mio sito, controlla se il campo non è vuoto, controlla se la lunghezza è delle giuste dimensioni e se non andasse bene qualcosa, cambia le clasi del form facendo quindi comprendere l'errore all'utente e facendo comparire un testo esplicito che indica l'errore. Molte variabili sono passate per riferimento.
+ * Il metodo riportato sotto serve a ridurre il numero di righe di codice in maniera sostanziale e controlla la validazione di molti dei campi input presenti sul mio sito, controlla se il campo non è vuoto, controlla se la lunghezza è delle giuste dimensioni e se non andasse bene qualcosa, cambia le classi del form facendo quindi comprendere l'errore all'utente e facendo comparire un testo esplicito che indica l'errore. Molte variabili sono passate per riferimento.
  *
  * @param string &$stringa campo da validare.
  * @param int $min Lunghezza minima accettabile della stringa.
  * @param int $max Lunghezza massima accettabile della stringa.
  * @param string &$classeOrigine Riferimento alla classe CSS  da modificare in caso di errore.
- * @param string $classeDestinazione Classe CSS che se in caso di errore prende il posto a classeOrrigine.
+ * @param string $classeDestinazione Classe CSS che se in caso di errore prende il posto a classeOrigine.
  * @param string &$classeErroreOrUno si riferisce alla specifica classe dello specifico messaggio di errore (lo scopo è togliere il display none)
  * @param string &$classeErroreOrDue si riferisce alla specifica classe dello specifico messaggio di errore (lo scopo è togliere il display none)
  * @param int &$valido Riferimento al contatore degli errori; incrementato in caso di errore.
@@ -168,13 +168,13 @@ class utility
     }
 
     /**
- * Il metodo riportato sotto serve a ridurre in maniera sostanziale il numero di righe di codice controlla la validazione di molti dei campi imput presenti sul mio sito, controlla se il campo non è vuoto, controlla se la lunghezza è delle giuste dimensioni e se non andasse bene qualcosa, cambia le clasi del form facendo capire l'errore all'utente e facendo comparire un testo che indica l'errore. Molte variabili sono passate per riferimento.
+ * Il metodo riportato sotto serve a ridurre in maniera sostanziale il numero di righe di codice, controlla la validazione di molti dei campi input presenti sul mio sito, controlla se il campo non è vuoto, controlla se la lunghezza è delle giuste dimensioni e se non andasse bene qualcosa, cambia le clasi del form facendo capire l'errore all'utente e facendo comparire un testo che indica l'errore. Molte variabili sono passate per riferimento.
  *
  * @param string &$stringa campo da validare.
  * @param int $min Lunghezza minima accettabile della stringa.
  * @param int $max Lunghezza massima accettabile della stringa.
  * @param string &$classeOrigine Riferimento alla classe CSS  da modificare in caso di errore.
- * @param string $classeDestinazione Classe CSS che se in caso di errore prende il posto a classeOrrigine.
+ * @param string $classeDestinazione Classe CSS che se in caso di errore prende il posto a classeOrigine.
  * @param string &$classeErroreOrUno si riferisce alla specifica classe dello specifico messaggio di errore (lo scopo è togliere il display none)
  * @param string &$classeErroreOrDue si riferisce alla specifica classe dello specifico messaggio di errore (lo scopo è togliere il display none)
  * @param string &classeLab si riferisce alla classe della label da eventualmente modificare.
@@ -259,7 +259,7 @@ class utility
      * @param int &$valido cambia il numero attribuiti agli errori
      * @param string &$classeLab cambia la label
      * @param string $classeLabNuova la nuova classe che sostituisce la classe della label
-     * @param string &$clsasseCheck serve a cambiare lo stile della checkboxe
+     * @param string &$clsasseCheck serve a cambiare lo stile della checkbox
      * @param string &$classeHidden serve per mostrare il messaggio di errore
      */
     public static function checkControl(&$valido, &$classeLab, $classeLabNuova, &$clsasseCheck, $classeCheckNuova, &$classeHidden)

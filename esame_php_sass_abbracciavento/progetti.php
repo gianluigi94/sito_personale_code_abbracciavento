@@ -1,6 +1,6 @@
 <?php
 
-// in questa pagina gestisco la pagina dove vengono visualizzati tutti i progetti i dati sono inseriti in file json
+// in questa pagina gestisco la pagina dove vengono visualizzati tutti i progetti, i dati sono inseriti in file json
 require_once 'funzioni.php';
 
 use sito_personale\functions\Utility as UT;
@@ -8,7 +8,7 @@ use sito_personale\functions\Utility as UT;
 $fileProgetti = "data/progetti.json";
 $progect = json_decode(UT::leggiTesto($fileProgetti));
 
-// richiamo la head impostando dinamicamente lingua il title, e la description
+// richiamo la head impostando dinamicamente lingua, il title, e la description
 require_once "head.php";
 ?>
 
@@ -23,7 +23,7 @@ require_once "head.php";
     <div class="ttprogect">
 
         <?php
-        // con un ciclo mando a schermo tutti i dati dei progetti  presi da un json
+        // con un ciclo stampo a schermo tutti i dati dei progetti  presi da un json
         foreach ($progect->progetti as $prg) {
             $specialClass = "";
             if ($prg->h3 == "Portfolio Grafico") {
@@ -36,7 +36,7 @@ require_once "head.php";
 
     </div>
     <?php
-    // richiamo il footer e il codice js usto per le animazioni del menu 
+    // richiamo il footer e il codice js usato per le animazioni del menu 
     require_once "footer.php";
     ?>
 
