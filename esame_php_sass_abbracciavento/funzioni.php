@@ -59,7 +59,7 @@ class utility
     /**
      * Il metodo riportato sotto serve per ricavare il title della pagina corrente e il titolo principale dei progetti in maniera dinamica: prende con una variabile superglobale il nome dal percorso.
      * dopo rende maiuscola la prima lettera, sostituisce gli eventuali underscore con spazzi bianchi e per finire se il risultato finale è Index lo sostituisce con Home Page.
-     * @return string TITLE
+     * @return string TITLE | h1 della pagina
      */
     public static function titleHTTP()
     {
@@ -139,7 +139,7 @@ class utility
     }
 
     /**
- * Il metodo riportato sotto serve a ridurre il numero di righe di codice in maniera sostanziale e controlla la validazione di molti dei campi imput presenti sul mio sito, controlla se il campo non è vuoto, controlla se la lunghezza è delle giuste dimensioni e se non andasse bene qualcosa, cambia le clasi del form facendo capire l'errore all'utente e facendo comparire un testo che indica l'errore. Molte variabili sono passate per riferimento.
+ * Il metodo riportato sotto serve a ridurre il numero di righe di codice in maniera sostanziale e controlla la validazione di molti dei campi imput presenti sul mio sito, controlla se il campo non è vuoto, controlla se la lunghezza è delle giuste dimensioni e se non andasse bene qualcosa, cambia le clasi del form facendo quindi comprendere l'errore all'utente e facendo comparire un testo esplicito che indica l'errore. Molte variabili sono passate per riferimento.
  *
  * @param string &$stringa campo da validare.
  * @param int $min Lunghezza minima accettabile della stringa.
