@@ -28,7 +28,7 @@
         },
     "bottoneDue": 
         {
-            "url": "progetti.php",
+            "url": "progetti.php?progetto=tutti_i_progetti",
             "class": "rightB",
             "title": "pagina progetti",
             "testo": "Guarda i miei progetti",

@@ -57,16 +57,23 @@ class utility
         return $rit;
     }
     /**
-     * Il metodo riportato sotto serve per ricavare il title della pagina corrente e il titolo principale dei progetti in maniera dinamica: prende con una variabile superglobale il nome dal percorso.
+     * Il metodo riportato sotto serve per ricavare il title della pagina corrente e il titolo principale dei progetti in maniera dinamica:
+     * come prima cosa controlla che non ci sia una richiesta get particolare
+     * prende con una variabile superglobale il nome dal percorso.
      * dopo rende maiuscola la prima lettera, sostituisce gli eventuali underscore con spazi bianchi e per finire se il risultato finale è Index lo sostituisce con Home Page.
      * @return string TITLE | h1 della pagina
      */
     public static function titleHTTP()
     {
-        $fileName = basename($_SERVER['SCRIPT_NAME'], '.php');
-        $pageTitle = ucfirst(str_replace('_', ' ', $fileName));
-        if ($pageTitle == "Index") {
-            $pageTitle = "Home Page";
+        if (isset($_GET['progetto'])) {
+            $fileName =  $_GET['progetto'];
+            $pageTitle = ucfirst(str_replace('_', ' ', $fileName));
+        } else {
+            $fileName = basename($_SERVER['SCRIPT_NAME'], '.php');
+            $pageTitle = ucfirst(str_replace('_', ' ', $fileName));
+            if ($pageTitle == "Index") {
+                $pageTitle = "Home Page";
+            }
         }
         return $pageTitle;
     }
@@ -78,13 +85,21 @@ class utility
      * @return string html lang
      */
 
-    public static function lingua()
-    {
-        $lorem = ['ipsum-commerce.php', 'lorem_cripto_dolor.php', 'socialorem.php', 'space_chess_dolor.php'];
-        $pagina = basename($_SERVER['SCRIPT_NAME']);
-        $lingua = in_array($pagina, $lorem) ? 'zxx' : 'it';
-        return $lingua;
-    }
+     public static function lingua()
+     {
+         $lorem = ['progetti.php?progetto=ipsum-commerce.php', 'progetti.php?progetto=lorem_cripto_dolor.php', 'progetti.php?progetto=socialorem.php', 'progetti.php?progetto=space_chess_dolor.php'];
+         $pagina = basename($_SERVER['REQUEST_URI']); 
+         $lingua = 'it';
+         
+         foreach ($lorem as $url) {
+             if (strpos($url, $pagina) !== false) { //controllo la presenza di occorrenze
+                 $lingua = 'zxx';
+                 break;
+             }
+         }
+         return $lingua;
+     }
+     
 
     /**
      * Il metodo riportato sotto è per scrivere su un file txt una stringa che raccoglie i dati dell'utente
@@ -139,18 +154,18 @@ class utility
     }
 
     /**
- * Il metodo riportato sotto serve a ridurre il numero di righe di codice in maniera sostanziale e controlla la validazione di molti dei campi input presenti sul mio sito, controlla se il campo non è vuoto, controlla se la lunghezza è delle giuste dimensioni e se non andasse bene qualcosa, cambia le classi del form facendo quindi comprendere l'errore all'utente e facendo comparire un testo esplicito che indica l'errore. Molte variabili sono passate per riferimento.
- *
- * @param string &$stringa campo da validare.
- * @param int $min Lunghezza minima accettabile della stringa.
- * @param int $max Lunghezza massima accettabile della stringa.
- * @param string &$classeOrigine Riferimento alla classe CSS  da modificare in caso di errore.
- * @param string $classeDestinazione Classe CSS che se in caso di errore prende il posto a classeOrigine.
- * @param string &$classeErroreOrUno si riferisce alla specifica classe dello specifico messaggio di errore (lo scopo è togliere il display none)
- * @param string &$classeErroreOrDue si riferisce alla specifica classe dello specifico messaggio di errore (lo scopo è togliere il display none)
- * @param int &$valido Riferimento al contatore degli errori; incrementato in caso di errore.
- * @return int Restituisce il numero aggiornato di errori validati.
- */
+     * Il metodo riportato sotto serve a ridurre il numero di righe di codice in maniera sostanziale e controlla la validazione di molti dei campi input presenti sul mio sito, controlla se il campo non è vuoto, controlla se la lunghezza è delle giuste dimensioni e se non andasse bene qualcosa, cambia le classi del form facendo quindi comprendere l'errore all'utente e facendo comparire un testo esplicito che indica l'errore. Molte variabili sono passate per riferimento.
+     *
+     * @param string &$stringa campo da validare.
+     * @param int $min Lunghezza minima accettabile della stringa.
+     * @param int $max Lunghezza massima accettabile della stringa.
+     * @param string &$classeOrigine Riferimento alla classe CSS  da modificare in caso di errore.
+     * @param string $classeDestinazione Classe CSS che se in caso di errore prende il posto a classeOrigine.
+     * @param string &$classeErroreOrUno si riferisce alla specifica classe dello specifico messaggio di errore (lo scopo è togliere il display none)
+     * @param string &$classeErroreOrDue si riferisce alla specifica classe dello specifico messaggio di errore (lo scopo è togliere il display none)
+     * @param int &$valido Riferimento al contatore degli errori; incrementato in caso di errore.
+     * @return int Restituisce il numero aggiornato di errori validati.
+     */
     public static function formControl(&$stringa, $min, $max, &$classeOrigine, $classeDestinazione, &$classeErroreOrUno,  &$classeErroreOrDue, &$valido)
     {
         if (empty($stringa)) {
@@ -168,21 +183,21 @@ class utility
     }
 
     /**
- * Il metodo riportato sotto serve a ridurre in maniera sostanziale il numero di righe di codice, controlla la validazione di molti dei campi input presenti sul mio sito, controlla se il campo non è vuoto, controlla se la lunghezza è delle giuste dimensioni e se non andasse bene qualcosa, cambia le clasi del form facendo capire l'errore all'utente e facendo comparire un testo che indica l'errore. Molte variabili sono passate per riferimento.
- *
- * @param string &$stringa campo da validare.
- * @param int $min Lunghezza minima accettabile della stringa.
- * @param int $max Lunghezza massima accettabile della stringa.
- * @param string &$classeOrigine Riferimento alla classe CSS  da modificare in caso di errore.
- * @param string $classeDestinazione Classe CSS che se in caso di errore prende il posto a classeOrigine.
- * @param string &$classeErroreOrUno si riferisce alla specifica classe dello specifico messaggio di errore (lo scopo è togliere il display none)
- * @param string &$classeErroreOrDue si riferisce alla specifica classe dello specifico messaggio di errore (lo scopo è togliere il display none)
- * @param string &classeLab si riferisce alla classe della label da eventualmente modificare.
- * @param string classeLabNuova la nuova classe per la lable
- * @param int &$valido Riferimento al contatore degli errori; incrementato in caso di errore.
- * @return int Restituisce il numero aggiornato di errori validati.
- */
-    public static function formControlDue(&$stringa, $min, $max, &$classeOrigine, $classeDestinazione, &$classeErroreOrUno,  &$classeErroreOrDue,&$classeLab, $classeLabNuova, &$valido)
+     * Il metodo riportato sotto serve a ridurre in maniera sostanziale il numero di righe di codice, controlla la validazione di molti dei campi input presenti sul mio sito, controlla se il campo non è vuoto, controlla se la lunghezza è delle giuste dimensioni e se non andasse bene qualcosa, cambia le clasi del form facendo capire l'errore all'utente e facendo comparire un testo che indica l'errore. Molte variabili sono passate per riferimento.
+     *
+     * @param string &$stringa campo da validare.
+     * @param int $min Lunghezza minima accettabile della stringa.
+     * @param int $max Lunghezza massima accettabile della stringa.
+     * @param string &$classeOrigine Riferimento alla classe CSS  da modificare in caso di errore.
+     * @param string $classeDestinazione Classe CSS che se in caso di errore prende il posto a classeOrigine.
+     * @param string &$classeErroreOrUno si riferisce alla specifica classe dello specifico messaggio di errore (lo scopo è togliere il display none)
+     * @param string &$classeErroreOrDue si riferisce alla specifica classe dello specifico messaggio di errore (lo scopo è togliere il display none)
+     * @param string &classeLab si riferisce alla classe della label da eventualmente modificare.
+     * @param string classeLabNuova la nuova classe per la lable
+     * @param int &$valido Riferimento al contatore degli errori; incrementato in caso di errore.
+     * @return int Restituisce il numero aggiornato di errori validati.
+     */
+    public static function formControlDue(&$stringa, $min, $max, &$classeOrigine, $classeDestinazione, &$classeErroreOrUno,  &$classeErroreOrDue, &$classeLab, $classeLabNuova, &$valido)
     {
         if (empty($stringa)) {
             $valido++;
@@ -201,20 +216,20 @@ class utility
     }
 
 
-      /**
- * Il metodo riportato sotto serve a ridurre in maniera sostanziale il numero di righe di codice e controlla la validazione del campo email presenti sul mio sito. Controlla se il campo non è vuoto, controlla se la lunghezza è delle giuste dimensioni, controlla se è un email valida e se non andasse bene qualcosa, cambia le clasi del form facendo capire l'errore all'utente e facendo comparire un testo che indica l'errore. Molte variabili sono passate per riferimento.
- *
- * @param string &$stringa del campo email.
- * @param int $min Lunghezza minima accettabile della stringa.
- * @param int $max Lunghezza massima accettabile della stringa.
- * @param string &$classeOrigine Riferimento alla classe CSS  da modificare in caso di errore.
- * @param string &$classeErroreOrUno si riferisce alla specifica classe dello specifico messaggio di errore (lo scopo è togliere il display none)
- * @param string &$classeErroreOrDue si riferisce alla specifica classe dello specifico messaggio di errore (lo scopo è togliere il display none)
- * @param string &$classeErroreOrTre si riferisce alla specifica classe dello specifico messaggio di errore (lo scopo è togliere il display none)
- * @param string &classeLab si riferisce alla classe della label da eventualmente modificare.
- * @param int &$valido Riferimento al contatore degli errori; incrementato in caso di errore.
- * @return int Restituisce il numero aggiornato di errori validati.
- */
+    /**
+     * Il metodo riportato sotto serve a ridurre in maniera sostanziale il numero di righe di codice e controlla la validazione del campo email presenti sul mio sito. Controlla se il campo non è vuoto, controlla se la lunghezza è delle giuste dimensioni, controlla se è un email valida e se non andasse bene qualcosa, cambia le clasi del form facendo capire l'errore all'utente e facendo comparire un testo che indica l'errore. Molte variabili sono passate per riferimento.
+     *
+     * @param string &$stringa del campo email.
+     * @param int $min Lunghezza minima accettabile della stringa.
+     * @param int $max Lunghezza massima accettabile della stringa.
+     * @param string &$classeOrigine Riferimento alla classe CSS  da modificare in caso di errore.
+     * @param string &$classeErroreOrUno si riferisce alla specifica classe dello specifico messaggio di errore (lo scopo è togliere il display none)
+     * @param string &$classeErroreOrDue si riferisce alla specifica classe dello specifico messaggio di errore (lo scopo è togliere il display none)
+     * @param string &$classeErroreOrTre si riferisce alla specifica classe dello specifico messaggio di errore (lo scopo è togliere il display none)
+     * @param string &classeLab si riferisce alla classe della label da eventualmente modificare.
+     * @param int &$valido Riferimento al contatore degli errori; incrementato in caso di errore.
+     * @return int Restituisce il numero aggiornato di errori validati.
+     */
     public static function formControlEmail(&$stringa, $min, $max, &$classeOrigine, &$classeErroreOrUno,  &$classeErroreOrDue, &$classeErroreOrTre, &$classeLab, &$valido)
     {
         if (empty($stringa)) {
@@ -223,13 +238,13 @@ class utility
             $classeOrigine = "inpTwoEr";
             $classeErroreOrUno = "formErr";
             $stringa = "";
-        } elseif(!filter_var($stringa, FILTER_VALIDATE_EMAIL)){
+        } elseif (!filter_var($stringa, FILTER_VALIDATE_EMAIL)) {
             $valido++;
             $classeLab = "labelTwoEr";
             $classeOrigine = "inpTwoEr";
             $classeErroreOrDue = "formErr";
             $stringa = "";
-        } elseif (!self::controllaRangeStringa($stringa, $min, $max)){
+        } elseif (!self::controllaRangeStringa($stringa, $min, $max)) {
             $valido++;
             $classeLab = "labelTwoEr";
             $classeOrigine = "inpTwoEr";
@@ -238,7 +253,7 @@ class utility
         }
         return $valido;
     }
-   
+
     /**
      * Il metodo riportato sotto serve a ridurre il numero di righe di codice visto che questi elementi sono ripetuti in tutti i controlli che servono a validare l'input file per l'invio della foto. Tutte le variabili sono passate per riferimento. Cambiano le classi css e aumentano di un il conteggio degli errori.
      * @param int &$erroreImg cambia il numero attribuiti agli errori della validazione dell'immagine
@@ -253,8 +268,8 @@ class utility
         $clFlImo = "inpOneEr";
         $clFlLab = "labRecEr";
     }
-    
-      /**
+
+    /**
      * Il metodo riportato sotto serve a validare la spunta nel form di contatti. Molte variabili sono passate per riferimento. Cambiano le classi css e aumenta eventualmente di uno il conteggio degli errori.
      * @param int &$valido cambia il numero attribuiti agli errori
      * @param string &$classeLab cambia la label

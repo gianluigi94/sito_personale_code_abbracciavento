@@ -1,11 +1,11 @@
 {
     "index.php": "Pagina principale del mio sito",
     "contatti.php": "Pagina per invio di email",
-    "space_chess_dolor.php": "progetto segnaposto a tema scacchistico",
-    "socialorem.php": "progetto segnaposto a tema socialnetwork",
+    "progetti.php?progetto=space_chess_dolor": "progetto segnaposto a tema scacchistico",
+    "progetti.php?progetto=socialorem": "progetto segnaposto a tema socialnetwork",
     "recensioni.php": "pagina dove si leggono e inviano recensioni",
-    "progetti.php": "pagina dove elenco i progetti svolti fino ad ora",
-    "portfolio_grafico.php": "pagina dove elenco i miei lavori di grafica",
-    "lorem_cripto_dolor.php": "progetto segnaposto a tema finananziario",
-    "ipsum-commerce.php": "progetto segnaposto a tema negozio online"
+    "progetti.php?progetto=tutti_i_progetti": "pagina dove elenco i progetti svolti fino ad ora",
+    "progetti.php?progetto=portfolio_grafico.phpportfolio_grafico": "pagina dove elenco i miei lavori di grafica",
+    "progetti.php?progetto=lorem_cripto_dolor": "progetto segnaposto a tema finananziario",
+    "progetti.php?progetto=ipsum-commerce": "progetto segnaposto a tema negozio online"
 }

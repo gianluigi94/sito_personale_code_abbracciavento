@@ -1,11 +1,11 @@
 {
     "index.php": "sfondoimgnove",
     "contatti.php": "sfondoimgsette",
-    "space_chess_dolor.php": "sfondoimgtre",
-    "socialorem.php": "sfondoimgquattro",
+    "progetti.php?progetto=space_chess_dolor": "sfondoimgtre",
+    "progetti.php?progetto=socialorem": "sfondoimgquattro",
     "recensioni.php": "sfondoimgotto",
-    "progetti.php": "sfondoimgsei",
-    "portfolio_grafico.php": "sfondoimguno",
-    "lorem_cripto_dolor.php": "sfondoimgcinque",
-    "ipsum-commerce.php": "sfondoimgdue"
+    "progetti.php?progetto=tutti_i_progetti": "sfondoimgsei",
+    "progetti.php?progetto=portfolio_grafico": "sfondoimguno",
+    "progetti.php?progetto=lorem_cripto_dolor": "sfondoimgcinque",
+    "progetti.php?progetto=ipsum-commerce": "sfondoimgdue"
 }

@@ -8,10 +8,17 @@ $filedue = "data/sfondo.json";
 $sfondi = json_decode(UT::leggiTesto($filedue));
 $currentPage = basename($_SERVER['PHP_SELF']);
 
-if (isset($sfondi->$currentPage)) {
+// nel caso l'url ha una query la gestisco diversamente
+$currentPageQuery = basename($_SERVER['PHP_SELF']) . (isset($_SERVER['QUERY_STRING']) ? '?' . $_SERVER['QUERY_STRING'] : '');
+
+
+if (isset($sfondi->$currentPageQuery)) {
+    $class = $sfondi->$currentPageQuery;
+    echo "<span class='$class'></span>";
+} elseif (isset($sfondi->$currentPage)) {
     $class = $sfondi->$currentPage;
     echo "<span class='$class'></span>";
-}
+} 
 ?>
 
 <h1 class="titoloPr"><?php echo $titleProgect ?></h1>

@@ -1,27 +1,27 @@
 {
     "aside": [
         {
-            "url": "portfolio_grafico.php",
+            "url": "progetti.php?progetto=portfolio_grafico",
             "title": "Porfolio grafico",
             "testo": "Portfolio grafico"
         },
         {
-            "url": "ipsum-commerce.php",
+            "url": "progetti.php?progetto=ipsum-commerce",
             "title": "Progetto IpsumCommerce",
             "testo": "Ipsum-Commerce"
         },
         {
-            "url": "socialorem.php",
+            "url": "progetti.php?progetto=socialorem",
             "title": "Pagina SociaLorem",
             "testo": "SociaLorem"
         },
         {
-            "url": "lorem_cripto_dolor.php",
+            "url": "progetti.php?progetto=lorem_cripto_dolor",
             "title": "Progetto lorem Cripto Dolor",
             "testo": "Lorem Cripto Dolor"
         },
         {
-            "url": "space_chess_dolor.php",
+            "url": "progetti.php?progetto=space_chess_dolor",
             "title": "Pagina Space Chess Dolor",
             "testo": "Space Chess Dolor"
         }

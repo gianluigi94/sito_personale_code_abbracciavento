@@ -10,48 +10,48 @@
         {
             "id": 2,
             "nome": "Progetti",
-            "url": "progetti.php",
+            "url": "progetti.php?progetto=tutti_i_progetti",
             "title": "Pagina progetti",
             "sub": [
                 {
                     "id": 11,
                     "nome": "Tutti i progetti",
-                    "url": "progetti.php",
+                    "url": "progetti.php?progetto=tutti_i_progetti",
                     "title": "Pagina progetti",
                     "sub": [] 
                 },
                 {
                     "id": 12,
                     "nome": "Porfolio grafico",
-                    "url": "portfolio_grafico.php",
+                    "url": "progetti.php?progetto=portfolio_grafico",
                     "title": "Vai al portfolio grafico",
                     "sub": [] 
                 },
                 {
                     "id": 13,
                     "nome": "Ipsum-Commerce",
-                    "url": "ipsum-commerce.php",
+                    "url": "progetti.php?progetto=ipsum-commerce",
                     "title": "progetto Ipsum-Commerce",
                     "sub": [] 
                 },
                 {
                     "id": 14,
                     "nome": "SociaLorem",
-                    "url": "socialorem.php",
+                    "url": "progetti.php?progetto=socialorem",
                     "title": "progetto SociaLorem",
                     "sub": [] 
                 },
                 {
                     "id": 15,
                     "nome": "Lorem Cripto Dolor",
-                    "url": "lorem_cripto_dolor.php",
+                    "url": "progetti.php?progetto=lorem_cripto_dolor",
                     "title": "progetto Lorem Cripto Dolor",
                     "sub": [] 
                 },
                 {
                     "id": 16,
                     "nome": "Space Chess Dolor",
-                    "url": "space_chess_dolor.php",
+                    "url": "progetti.php?progetto=space_chess_dolor",
                     "title": "Progetto Space Chess Dolor",
                     "sub": [] 
                 }

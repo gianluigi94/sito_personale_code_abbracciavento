@@ -8,8 +8,8 @@
         <?php
         $asd = $aside->aside;
         foreach ($asd as $linkAs) {
-            $linkUrl = basename($linkAs->url);
-            if ($linkUrl == $currentPage) {
+            $linkUrl = $linkAs->url;
+            if ($linkUrl == $currentPageQuery) {
                 continue;
             }
             printf('<li><a href="%s" title="%s">%s</a></li>', $linkAs->url, $linkAs->title, $linkAs->testo);

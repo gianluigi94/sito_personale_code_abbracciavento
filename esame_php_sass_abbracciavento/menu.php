@@ -7,6 +7,8 @@ use sito_personale\functions\Utility as UT;
 $filemenu = "data/menu.json";
 $objmenu = json_decode(UT::leggiTesto($filemenu));
 $pagina = basename($_SERVER['PHP_SELF']);
+$paginaQuery = basename($_SERVER['PHP_SELF']) . (isset($_SERVER['QUERY_STRING']) ? '?' . $_SERVER['QUERY_STRING'] : '');
+
 $imgL = $objmenu->secondmenu;
 
 ?>
@@ -32,7 +34,7 @@ $imgL = $objmenu->secondmenu;
                                 $classub .= "lastChild ";
                             }
                             // $pagina è la variabile che determina la pagina che si sta visitando e verrà aggiunta una classe per la sottolineatura 
-                            if ($subLink->url == $pagina) {
+                            if ($subLink->url == $pagina || $subLink->url == $paginaQuery) {
                                 $classub .= "underlined ";
                             }
                             $subMenu .= sprintf('<li class="%s"><a href="%s" title="%s">%s</a></li>', trim($classub), $subLink->url, $subLink->title, $subLink->nome);
@@ -108,7 +110,7 @@ $imgL = $objmenu->secondmenu;
                         $subMenu = '<ul class="sottomini">';
                         foreach ($linktwo->sub as $subLinktwo) {
                             $classub = "";
-                            if ($subLinktwo->url == $pagina) {
+                            if ($subLinktwo->url == $pagina || $subLinktwo->url == $paginaQuery) {
                                 $classub .= "underlined ";
                             }
                             $subMenu .= sprintf('<li class="%s"><a href="%s" title="%s">%s</a></li>', trim($classub), $subLinktwo->url, $subLinktwo->title, $subLinktwo->nome);

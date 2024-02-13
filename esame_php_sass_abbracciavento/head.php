@@ -8,9 +8,13 @@ $lingua = UT::lingua();
 
 $fileContent = "data/content.json";
 $content = json_decode(UT::leggiTesto($fileContent));
+// definisco sia la pagina corrente con o senza eventuali query
 $currentPage = basename($_SERVER['PHP_SELF']);
-
-if (isset($content->$currentPage)) {
+$currentPageQuery = basename($_SERVER['PHP_SELF']) . (isset($_SERVER['QUERY_STRING']) ? '?' . $_SERVER['QUERY_STRING'] : '');
+$contenuto = "";
+if (isset($content->$currentPageQuery)) {
+    $contenuto = $content->$currentPageQuery;
+} elseif (isset($content->$currentPage)){
     $contenuto = $content->$currentPage;
 }
 ?>
