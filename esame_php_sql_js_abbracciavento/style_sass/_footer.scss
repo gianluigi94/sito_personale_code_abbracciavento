@@ -1,0 +1,110 @@
+// In questa pagina imposto lo stile del footer
+
+// E' suddiviso in tre div e in schermi grandi e medi, i primi due si contengono la prima riga, mentre il terzo occupa tutta la seconda riga.
+// Inizio impostando il contenitore generale
+footer {
+  width: 100%;
+  height: 220px;
+  margin-top: auto;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background: url(../assets/circuito.png);
+  @media all and (max-width: 445px) {
+    background: url(../assets/circuito_piccolo.png);
+    height: 375px;
+  }
+
+  // Imposto il primo contenitore che contiene il logo
+  .footerOne {
+    flex-basis: 50%;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    @media all and (max-width: 640px) {
+      flex-basis: 40%;
+    }
+    @media all and (max-width: 470px) {
+      flex-basis: 15%;
+    }
+    @media all and (max-width: 445px) {
+      flex-basis: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+    img {
+      height: 150px;
+      width: 120px;
+      padding: 10px 10px 20px 0px;
+    }
+    @media all and (max-width: 470px) {
+      padding-left: 20px;
+    }
+    @media all and (max-width: 445px) {
+      flex-basis: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  // Imposto il secondo contenitore che contiene i recapiti
+  .footerTwo {
+    padding-top: 25px;
+    flex-basis: 50%;
+    font-family: $fontSecondary;
+    @media all and (max-width: 640px) {
+      flex-basis: 60%;
+    }
+    @media all and (max-width: 470px) {
+      flex-basis: 65%;
+    }
+    @media all and (max-width: 445px) {
+      flex-basis: 100%;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding-top: 10px;
+    }
+    p {
+      font-family: $fontSecondary;
+      font-style: italic;
+      color: $whitePrimary;
+      font-size: $dimensionTre;
+      font-weight: 900;
+    }
+    ul {
+      list-style: none;
+      padding-top: 10px;
+      font-style: italic;
+      color: $whitePrimary;
+      font-size: $dimensionFour;
+    }
+    .iconaLnkd {
+      height: 30px;
+      width: 30px;
+      padding-top: 10px;
+    }
+  }
+
+  // Imposto il terzo contenitore che contiene la mia firma
+  .footerThree {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+
+    hr {
+      width: 60vw;
+      border-style: dashed;
+      color: $whitePrimary;
+    }
+    p {
+      text-align: center;
+      font-size: $dimensionFour;
+      color: $whitePrimary;
+      padding-top: 10px;
+    }
+  }
+}

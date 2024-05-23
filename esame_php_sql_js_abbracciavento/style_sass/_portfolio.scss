@@ -1,0 +1,282 @@
+// In questa pagina gestisco il portfolio grafico
+
+// Inizio impostando lo stile del contenitore generale
+.pgraf {
+  flex-wrap: wrap;
+  @extend %flexCenter;
+  margin-bottom: -90px;
+  padding: 120px 0px 150px 0px;
+
+  // Imposto lo stile del singolo div che contiene la singola card. E' importante per l'effetto hover, che consiste nel mostrare uno sfondo verde che offusca parzialmente l'immagine e mostra titolo e descrizione. Inoltre l'immagine si ingrandisce leggermente, ma senza uscire fuori dal suo contenitore
+  .imgCon {
+    @extend %flexCenter;
+    @extend %dwsdarkspecial;
+    position: relative;
+    opacity: 0;
+    transform: rotate(-2deg);
+    transition: opacity 1.1s ease-in-out, transform 0.6s ease-in-out;
+    border-radius: 20px;
+    margin: 5px;
+    :hover .imgcard {
+      transform: scale(1.1);
+      filter: opacity(0.1);
+    }
+    :hover .titoletto,
+    :hover .descrizioneimg {
+      filter: opacity(1);
+      z-index: 3;
+    }
+
+    @media all and (max-width: 380px) {
+      width: 280px;
+    }
+
+    // imposto il singolo link che rimanda all'immagine a schermo intero, il titolo, la descrizione e l'anteprima dell'immagine
+    .card {
+      cursor: pointer;
+      width: 310px;
+      height: 420px;
+      background-color: $greenPrimary;
+      background-size: contain;
+      overflow: hidden;
+      margin: 10px;
+      @extend %flexCenter;
+      text-decoration: none;
+    }
+    .titoletto {
+      font-size: $dimensiontredici;
+      margin-bottom: 380px;
+      font-family: $fontPrimary;
+      width: 280px;
+      margin-top: 100px;
+      font-weight: bolder;
+      position: absolute;
+      color: $whitePrimary;
+      filter: opacity(0);
+    }
+    .descrizioneimg {
+      font-size: $dimensionnine;
+      width: 280px;
+      font-family: $fontSecondary;
+      text-align: start;
+      font-weight: 600;
+      color: $whitePrimary;
+      filter: opacity(0);
+      padding-left: 10px;
+    }
+    .imgcard {
+      width: 100%;
+      height: 420px;
+      transition: all 0.3s ease-in-out;
+      -o-object-fit: cover;
+      object-fit: cover;
+      margin-left: -290px;
+    }
+
+    // queste ultime due classi servono per impostare manualmente le anteprime di due card specifiche dove l'anteprima di default non rendeva giustizia all'immagine finale
+    .toto {
+      -o-object-position: 23%;
+      object-position: 23%;
+    }
+
+    .carosello {
+      -o-object-position: left;
+      object-position: left;
+    }
+  }
+}
+// di sotto gestisco lo stile del popup
+.porBack{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  border-radius: 20px;
+}
+
+.popup{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  width: 80%;
+  max-width: 1600px;
+  height: 97vh;
+  max-height: 900px;
+  border-radius: 20px;
+  box-shadow: $ombraTwo;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  overflow: hidden;
+  transition: 1s;
+  opacity: 0;
+  @media all and (max-width: 470px) {
+    max-width: 100%;
+    width: 100vw;
+    height: 100vh;;
+  }
+}
+
+.galleryLightBac{
+  background: $lightGallery;
+}
+.galleryDarkBac{
+  background: $darkGallery;
+}
+
+.popup.active{
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+//default
+.popup.active .closeBtn,
+.popup.active .immageNamePop,
+.popup.active .descritionPop,
+.popup.active .largeImg,
+.popup.active .popupButton{
+  opacity: 1;
+  transition: opacity .5s;
+  transition-delay: 1s;
+  display: block;
+}
+
+.topBarPop{
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-weight: 300;  
+}
+
+//stile icona di chiusura
+.closeBtn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px; // centro il testo
+  border-radius: 20%;
+  background: $greenPrimary;
+  cursor: pointer;
+  opacity: 1; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $whiteSecondary; 
+  font-family: $fontPrimary; 
+  font-size: 16px; 
+  padding: 0; 
+  margin: 0; 
+  text-align: center;
+  font-weight: 900;
+  box-shadow: $ombraTwo;
+  z-index: 500;
+}
+
+
+.popupButton{
+  padding: 10px;
+  border-radius: 40%;
+  border: none;
+  background: $dark;
+  cursor: pointer;
+  color: $greenPrimary;
+  font-size: 30px;
+  border: 3px $greenPrimary solid;
+  opacity: 0;
+  z-index: 401;
+  text-shadow: $ombra;
+  box-shadow: $ombra;
+  display: none;
+  z-index: 200;
+  @media all and (max-width: 420px) {
+    font-size: 15px;
+  }
+}
+// le due frecce
+.arrowLeft{
+  position: absolute;
+    top:300px;
+    left: 10px;
+    z-index: 500;
+    @media all and (max-height: 365px) {
+      top:60px;
+    }
+}
+
+.arrowRight{
+  position: absolute;
+    top:300px;
+    right: 10px;
+    z-index: 500;
+    @media all and (max-height: 365px) {
+      top:60px;
+    }
+}
+
+.descritionPop{
+  opacity: 0;
+  font-size: $dimensionnine;
+  padding: 20px;
+  width: 90%;
+  line-height: 1.2;
+  font-family: $fontSecondary;
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  transform: translatex(-50%);
+  text-shadow: $ombra;
+  z-index: 401;
+  @media all and (max-height: 410px) {
+    bottom: 0px;
+  }
+
+
+}
+//contenitore generale del popup
+.largeImg{
+  max-height: 550px;
+  max-width: 100%;
+  opacity: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translatex(-50%) translateY(-55%);
+  transition: opacity 0.5s ease-in-out;
+  box-shadow: $ombra;
+  z-index: 401;
+  @media all and (max-height: 770px) {
+    max-height: 70%;
+  }
+}
+
+//immagine
+.immageNamePop{
+  opacity: 0;
+  font-family: $fontSecondary;
+  font-size: $dimensionheight;
+  color: $greenPrimary;
+  z-index: 150;
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translatex(-50%);
+  text-shadow: $ombra;
+  z-index: 410;
+  width: 88%;
+  @media all and (max-height: 525px) {
+    top:0px;
+  }
+}
+.popupS{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 200;
+}

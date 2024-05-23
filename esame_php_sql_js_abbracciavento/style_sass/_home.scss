@@ -1,0 +1,1199 @@
+// In questa pagina imposto lo stile della homePage
+
+// Incomincio dalla header e dal video header
+header {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  video {
+    -o-object-fit: fill;
+    object-fit: fill;
+    width: 100vw;
+    height: 100vh;
+    z-index: 500;
+  }
+
+  #canvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+  // imposto i titoli
+
+  .headerContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    letter-spacing: 3px;
+    margin: 0;
+    border-radius: 200px;
+    h1 {
+      text-shadow: 2px 2px 4px rgba(31, 165, 54, 0.5);
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      font-family: $fontPrimary;
+      font-size: $dimensionFive;
+      margin-left: 13px;
+      margin-right: 13px;
+      @media all and (max-width: 505px) {
+        font-size: 45px;
+      }
+      @media all and (max-width: 440px) {
+        font-size: $dimensionheight;
+      }
+      @media all and (max-width: 400px) {
+        font-size: 37px;
+      }
+      @media all and (max-width: 372px) {
+        font-size: 35px;
+        margin-bottom: 50px;
+      }
+      @media all and (max-width: 355px) {
+        font-size: 30px;
+      }
+      @media all and (max-width: 315px) {
+        font-size: $dimension;
+      }
+    }
+    h2 {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      text-shadow: 2px 2px 4px rgba(146, 170, 150, 0.5);
+      font-family: $fontPrimary;
+      font-size: $dimensionsix;
+      margin-left: 13px;
+      margin-right: 13px;
+      @media all and (max-width: 505px) {
+        font-size: 22px;
+      }
+      @media all and (max-width: 440px) {
+        font-size: $dimensionOne;
+      }
+      @media all and (max-width: 355px) {
+        font-size: 16px;
+      }
+      @media all and (max-width: 315px) {
+        margin: 5px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+// imposto i bottoni per le CTA
+
+.ahome {
+  @extend %flexCenter;
+  flex-direction: row;
+  padding-top: 40px;
+  @media all and (max-width: 585px) {
+    flex-direction: column-reverse;
+  }
+  a {
+    text-shadow: 2px 2px 4px rgba(146, 170, 150, 0.5);
+    position: relative;
+    font-family: $fontPrimary;
+    font-size: $dimensionOne;
+    letter-spacing: 3px;
+    font-weight: 800;
+    text-decoration: none;
+    padding: 13px 25px 13px 25px;
+    border-radius: 8px;
+    padding: 13px 25px 13px 25px;
+    border-radius: 8px;
+    @media all and (max-width: 365px) {
+      padding: 7px 10px 7px 10px;
+      font-size: $dimensionFour;
+    }
+  }
+  .leftB {
+    transition: transform 0.3s ease;
+    margin-right: 30px;
+    @media all and (max-width: 585px) {
+      margin-right: 0px;
+    }
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
+  .rightB {
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.15);
+    }
+    @media all and (max-width: 585px) {
+      padding-bottom: 50px;
+    }
+  }
+}
+
+// imposto la main della mia homepage
+
+.homeElement {  
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 100px;
+  position: relative;
+  @media all and (max-width: 1350px) {
+    padding-right: 0px;
+  }
+  @media all and (max-width: 1165px) {
+    padding-bottom: 0px;
+
+  }
+
+
+  // Questo di seguito è lo stile di un h1, creato solo per la semantica (i validatori di html non accettavano un main senza un titolo diretto) tuttavia è nascosto alla vista degli utenti, ma senza usare display none.
+
+  .hiddenTitle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+
+  // impostazioni del paragrafo principale
+  .description {
+    opacity: 0;
+    padding-left: 40px;
+    padding-right: 30px;
+    transform: translateX(-80%);
+    transition: opacity 1s ease-in-out, transform 0.7s ease-in-out;
+    flex-basis: 45%;
+    font-size: $dimensionnine;
+    font-family: $fontSecondary;
+    font-weight: 700;
+    line-height: 30px;
+    letter-spacing: 3px;
+    border-radius: 45px;
+    @media all and (max-width: 1165px) {
+      flex-basis: 100%;
+     padding-left: 60px;
+     padding-right: 60px;
+
+    }
+    @media all and (max-width: 700px) {
+      padding-left: 30px;
+     padding-right: 30px;
+    font-size: $dimensionOne;
+    }
+    @media all and (max-width: 450px) {
+    font-size: $dimensionFour;
+    }
+    @media all and (max-width: 400px) {
+    margin-bottom: 105px;
+    }
+    @media all and (max-width: 350px) {
+    font-size: 13px;
+    padding-left: 16px;
+     padding-right: 10px;
+    }
+    a {
+      color: $greenPrimary;
+      text-decoration: none;
+    }
+
+    p {
+      padding-top: 5px;
+      text-align: start;
+      &:first-letter {
+        font-size: $dimensionheight;
+        @media all and (max-width: 480px) {
+          font-size: 30px;
+        }
+        @media all and (max-width: 360px) {
+          font-size: $dimensionsix;
+        }
+      }
+    }
+  }
+
+  // impostazioni del video di youtube
+  .secondCol {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    flex-basis: 45%;
+    padding-right: 20px;
+
+    @media all and (max-width: 1165px) {
+      flex-basis: 100%;
+      align-items: center;
+    }
+
+    @media all and (max-width: 780px) {
+      padding: 0;
+    }
+    @media all and (max-width: 520px) {
+      margin: 0;
+      padding: 0;
+      width: 200px;
+      position: relative;
+    }
+    
+    
+    iframe {
+      margin-top: 270px;
+    margin-right: 30px;
+    transform: translateX(-100%);;  
+    border: none;
+    border-radius: 40px;
+    box-shadow: $ombraScura; 
+    opacity: 0;
+    transition: 0.8s ease-in-out, opacity 1.6s ease-in-out;
+      &:hover{
+        box-shadow: $ombraTreG;
+      }
+      @media all and (max-width: 1165px) {
+        margin-top: 80px;
+        width: 600px;
+        height: 400px;
+      }
+      @media all and (max-width: 1165px) {
+        margin-top: 80px;
+        width: 600px;
+        height: 400px;
+        margin-left: 50px;
+      }
+      @media all and (max-width: 1065px) {
+        margin-top: 80px;
+        width: 500px;
+        height: 300px;
+      }
+      @media all and (max-width: 630px) {
+        margin-right: 50px;
+        width: 410px;
+        height: 250px;
+      }
+      @media all and (max-width: 630px) {
+        margin-right: 50px;
+        width: 75%;
+        height: 290px;
+      }
+      @media all and (max-width: 485px) {
+        height: 220px;
+      }
+      @media all and (max-width: 400px) {
+        height: 220px;
+        width: 95%;
+        position: absolute;
+      }
+      @media all and (max-width: 335px) {
+        bottom: -240px;
+      }
+      
+
+     
+
+     
+
+      @media all and (max-width: 335px) {
+        width: 85%;
+        height: 290px;
+      }
+    }
+
+    //codice per quando parte e si attiva il video youtube
+    .secondCol iframe.active {
+      display: block;  
+      opacity: 1;  
+      transform: translateX(0);  
+  }
+
+
+    
+  }
+}
+
+//stile span che permette il cambio di colore con i cookie
+.click {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  z-index: -1;
+  transition: transform 0.3s ease;
+}
+
+.centerC:hover{
+    transform: scale(1.15);
+  transition: transform 0.3s ease;
+
+}
+
+.prototipo{
+  text-decoration: none;
+}
+
+//stile div che contiene il pendolo
+.cradle {
+	display: flex;
+  margin-top: 80px;
+  width: fit-content;
+  border-radius: 5px;
+  transform: scale(0.9);
+  @media all and (max-width: 1165px) {
+    padding-left: 0px;
+  margin-top: 100px;
+  }
+  @media all and (max-width: 705px) {
+    transform: scale(0.7);
+  margin-top: 85px;
+  border-radius: 5px;
+  margin-left: 20px;
+  }
+  @media all and (max-width: 600px) {
+    margin: 0;
+  }
+  @media all and (max-width: 380px) {
+    transform: scale(0.6);
+  }
+  @media all and (max-width: 328px) {
+    transform: scale(0.5);
+  }
+}
+
+//stile contenitore per centrare il pendolo in schermi piccoli
+.flexNew{
+  @media all and (max-width: 600px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+//stile pendolo linee
+.cradle span {
+	display: block;
+	width: 2px;
+	height: 200px;
+	margin: 0 22px;
+	position: relative;
+	transform-origin: top;
+}
+
+//stile pendolo palle
+.cradle span:before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	transform: translateX(-50%);
+}
+
+//inizializzo le animazioni delle due estremità del pendolo
+.cradle span:first-child {
+	animation: left-arm 2.5s ease-in infinite;
+}
+
+.cradle span:last-child {
+	animation: right-arm 2.5s ease-in infinite 1.25s;
+}
+
+//animazioni pendolo
+@keyframes left-arm {
+	0% { transform: rotate(0deg); opacity: 1; }
+	25% { transform: rotate(60deg); opacity: 0.3;}
+	50% { transform: rotate(0deg); opacity: 1 }
+	100% { transform: rotate(0deg); }
+}
+
+@keyframes right-arm {
+	0% { transform: rotate(0deg); opacity: 1; }
+	25% { transform: rotate(-60deg); opacity: 0.3; }
+	50% { transform: rotate(0deg); opacity: 1; }
+	100% { transform: rotate(0deg); }
+}
+
+//contenitore pendolo
+.newton{
+  position: relative;
+  margin: 0;
+  margin-top: 120px;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 100px;
+  width: 100%;
+  padding-left: 90px;
+  
+  @media all and (max-width: 1165px) {
+    padding-left: 60px;
+  }
+  @media all and (max-width: 705px) {
+    padding-left: 0px;
+    padding-bottom: 160px;
+  }
+  @media all and (max-width: 400px) {
+    margin-top: 230px;
+    }
+    @media all and (max-width: 335px) {
+      margin-top: 360px;
+
+    }
+}
+
+//stile titolo competenze che compare
+.newtonh3{
+  transform: translatey(350px) translatex(-1000px) rotate(-70deg);
+  padding-right: 20px;
+  transition: 1s ease;
+  color: $greenPrimary;
+  font-size: $dimensionheight;
+  font-family: $fontPrimary;
+  left: 50px;
+  bottom: 500px;
+  position: absolute;
+  
+  @media all and (max-width: 705px) {
+  left: 20px;
+  bottom: 540px;
+  font-size: $dimensionundici;
+  transform: translatey(100px) translatex(-1000px) rotate(-100deg);
+
+  }
+  @media all and (max-width: 600px) {
+    bottom: 470px;
+  transform: translatey(300px) translatex(-1000px) rotate(-100deg);
+  }
+  @media all and (max-width: 500px) {
+  transform: translatey(100px) translatex(-1000px) rotate(-100deg);
+  }
+  @media all and (max-width: 430px) {
+  font-size: $dimensionsix;
+  transform: translatey(200px) translatex(-1000px) rotate(-100deg);
+  }
+  @media all and (max-width: 335px) {
+  transform: translatey(100px) translatex(-1000px) rotate(-100deg);
+  }
+  @media all and (max-width: 325px) {
+  font-size: $dimensionnine;
+  }
+} 
+
+
+//stile span che rappresentano li
+.tag{
+  color: $whiteSecondary;
+  font-size: $dimensionTre;
+  font-family: $fontSecondary;
+  text-shadow: 
+        1px 1px 1px #5f5d5da1,  
+        3px 3px 10px rgba(111, 198, 19, 0.618);
+  @media all and (max-width: 600px) {
+    font-size: $dimensionFour;
+    }
+}
+.tagTwo{
+  color: blue;
+  font-size: $dimensionTre; 
+  font-family: $fontSecondary;
+  text-shadow: 
+        1px 1px 1px #5f5d5da1, 
+        3px 3px 10px rgba(111, 198, 19, 0.618);
+        /* Ombra nera leggera per profondità */
+  @media all and (max-width: 600px) {
+    font-size: $dimensionFour;
+    }
+}
+
+
+
+
+
+//stile li che compaiono e scompaiono
+.competenze li{
+  text-align: center;
+  transition: color 1s ease-in-out;
+  padding-right: 20px;
+  font-weight: bold;
+  font-size: $dimensionTwo;
+  font-family: $fontPrimary;
+  position: absolute;  
+  list-style: none;
+  text-shadow: 3px 3px 10px rgba(120, 218, 15, 0.7);
+  @media all and (max-width: 705px) {
+    font-size: $dimensionOne;
+    }
+}
+//stile e animazione primo messaggio
+@keyframes one {
+	0% { opacity: 0; transform: scale(0.9); }
+	4%  { opacity: 1; }
+	6%  { opacity: 1; transform: scale(1.1);}
+	12%  { opacity: 0; transform: scale(1.0)}
+	100% { opacity: 0; }
+}
+
+// HTML 
+.competenze li:first-child{
+  bottom: 220px;
+  left: 375px;
+  animation: one 12.5s ease-in-out infinite;
+  @media all and (max-width: 905px) {
+   left: 295px;
+  }
+  @media all and (max-width: 760px) {
+    bottom: 191px;  
+  }
+  @media all and (max-width: 705px) {
+    bottom: 190px;
+   left: 275px;
+  }
+  @media all and (max-width: 600px) {
+    bottom: 150px;
+   left: 70px;
+  }
+  @media all and (max-width: 475px) {
+    bottom: 100px;
+   left: 20px;
+   }
+   @media all and (max-width: 420px) {
+    bottom: 120px;
+  }
+  @media all and (max-width: 380px) {
+    bottom: 130px;
+  }
+}
+//stile e animazione secondo messaggio
+@keyframes two {
+	0% { opacity: 0; }
+	10%  { opacity: 0;transform: scale(0.9); }
+  14%  { opacity: 1; }
+  16%  { opacity: 1; transform: scale(1.1); }
+	22%  { opacity: 0; transform: scale(1.0)}
+	100% { opacity: 0; }
+}
+
+// PHOTOSHOP 
+.competenze li:nth-child(2){
+  bottom: 260px;
+  left: 430px;
+  animation: two 12.5s ease-in-out infinite;
+  @media all and (max-width: 905px) {
+    left: 319px;
+   }
+   @media all and (max-width: 835px) {
+    bottom: 230px;
+  left: 400px;
+  }
+  @media all and (max-width: 770px) {
+    bottom: 185px;  
+  }
+  @media all and (max-width: 705px) {
+    bottom: 320px;
+   left: 350px;
+  }
+  @media all and (max-width: 685px) {
+    bottom: 320px;
+   left: 280px;
+  }
+  @media all and (max-width: 620px) {
+    left: 240px;
+  }
+  @media all and (max-width: 600px) {
+    bottom: 77px;
+   left: 139px;
+  }
+  @media all and (max-width: 475px) {
+    left: 70px;
+    bottom: 104px;
+   }
+  @media all and (max-width: 395px) {
+    left: 35px;
+   }
+   @media all and (max-width: 380px) {
+    bottom: 130px;
+  }
+  
+}
+//stile e animazione terzo messaggio
+@keyframes tre {
+	0% { opacity: 0; }
+	20%  { opacity: 0;transform: scale(0.9); }
+	24%  { opacity: 1; }
+	26%  { opacity: 1; transform: scale(1.1);}
+	32%  { opacity: 0; transform: scale(1.0)}
+	100% { opacity: 0; }
+}
+
+// SASS 
+.competenze li:nth-child(3){
+  bottom: 225px;
+  left: 368px;
+  animation: tre 12.5s ease-in-out infinite;
+  @media all and (max-width: 835px) {
+    bottom: 155px;
+  }
+  @media all and (max-width: 705px) {
+    bottom: 170px;
+   left: 300px;
+  }
+  @media all and (max-width: 665px) {
+    bottom: 170px;
+   left: 270px;
+  }
+  @media all and (max-width: 600px) {
+    bottom: 130px;
+   left: 80px;
+  }
+  @media all and (max-width: 420px) {
+    bottom: 100px;
+   left: 30px;
+  }
+  @media all and (max-width: 380px) {
+    bottom: 150px;
+  }
+  @media all and (max-width: 335px) {
+    bottom: 142px;
+  }
+  
+}
+//stile e animazione quarto messaggio
+@keyframes quattro {
+	0% { opacity: 0; }
+	30%  { opacity: 0;transform: scale(0.8); }
+	34%  { opacity: 1; }
+	36%  { opacity: 1; transform: scale(1.1);}
+	42%  { opacity: 0; transform: scale(1.0)}
+	100% { opacity: 0; }
+}
+
+// PHP
+.competenze li:nth-child(4){
+  bottom: 270px;
+  left: 415px;
+  animation: quattro 12.5s ease-in-out infinite;
+  @media all and (max-width: 835px) {
+    bottom: 200px;
+  left: 400px;
+  }
+  @media all and (max-width: 705px) {
+    bottom: 350px;
+   left: 205px;
+  }
+  @media all and (max-width: 600px) {
+    bottom: 161px;
+   left: 195px;
+  }
+  @media all and (max-width: 475px) {
+    left: 85px;
+    bottom: 147px;
+   }
+   @media all and (max-width: 420px) {
+    bottom: 118px;
+  }
+  @media all and (max-width: 380px) {
+    bottom: 127px;
+  }
+  @media all and (max-width: 355px) {
+    bottom: 127px;
+    left: 35px;
+  }
+}
+//stile e animazione quinto messaggio
+@keyframes cinque {
+	0% { opacity: 0; }
+	40%  { opacity: 0;transform: scale(0.9); }
+	44%  { opacity: 1; }
+	46%  { opacity: 1; transform: scale(1.1);}
+	52%  { opacity: 0; transform: scale(1.0) }
+	100% { opacity: 0; }
+}
+// JS
+.competenze li:nth-child(5){
+  bottom: 90px;
+  left: 378px;
+  animation: cinque 12.5s ease-in-out infinite;
+  @media all and (max-width: 760px) {
+    left: 290px;
+  
+  }
+  @media all and (max-width: 705px) {
+    bottom: 280px;
+   left: 280px;
+  }
+  @media all and (max-width: 659px) {
+    bottom: 280px;
+   left: 240px;
+  }
+  @media all and (max-width: 600px) {
+    bottom: 100px;
+   left: 95px;
+  }
+  @media all and (max-width: 600px) {
+   left: 25px;
+  }
+  @media all and (max-width: 380px) {
+    bottom: 152px;
+  }
+  @media all and (max-width: 322px) {
+    bottom: 145px;
+  }
+  @media all and (max-width: 315px) {
+    bottom: 134px;
+  }
+}
+//stile e animazione sesto messaggio
+@keyframes sei {
+	0% { opacity: 0; }
+	50%  { opacity: 0;transform: scale(0.9); }
+	54%  { opacity: 1; }
+	56%  { opacity: 1; transform: scale(1.1);}
+	62%  { opacity: 0; transform: scale(1.0)}
+	100% { opacity: 0; }
+}
+//illustrator
+.competenze li:nth-child(6){
+  bottom: 280px;
+  left: 419px;
+  animation: sei 12.5s ease-in-out infinite;
+  @media all and (max-width: 960px) {
+    bottom: 260px;
+   }
+  @media all and (max-width: 905px) {
+    left: 305px;
+   }
+   @media all and (max-width: 835px) {
+    bottom: 245px;
+  }
+  @media all and (max-width: 770px) {
+    bottom: 185px;  
+  }
+  @media all and (max-width: 705px) {
+    bottom: 334px;
+   left: 270px;
+  }
+  @media all and (max-width: 659px) {
+    left: 240px;
+
+  }
+  @media all and (max-width: 600px) {
+    bottom: 76px;
+   left: 149px;
+  }
+  @media all and (max-width: 495px) {
+   left: 90px;
+   bottom: 86px;
+  }
+  @media all and (max-width: 450px) {
+   left: 30px;
+  }
+  @media all and (max-width: 380px) {
+    bottom: 144px;
+  }
+
+  
+  
+}
+//stile e animazione settimo messaggio
+@keyframes sette {
+	0% { opacity: 0; }
+	60%  { opacity: 0;transform: scale(0.8); }
+	64%  { opacity: 1; }
+	66%  { opacity: 1; transform: scale(1.1);}
+	72%  { opacity: 0; transform: scale(1.0)}
+	100% { opacity: 0; }
+}
+// UX ui
+.competenze li:nth-child(7){
+  bottom: 250px;
+  left: 378px;
+  animation: sette 12.5s ease-in-out infinite;
+  @media all and (max-width: 835px) {
+    bottom: 145px;
+  }
+  @media all and (max-width: 705px) {
+    bottom: 167px;
+    left: 310px;
+  }
+  @media all and (max-width: 600px) {
+    bottom: 160px;
+   left: 147px;
+  }
+  @media all and (max-width: 470px) {
+    bottom: 130px;
+   
+  }
+  @media all and (max-width: 370px) {
+    left: 47px;
+   
+  }
+
+}
+//stile e animazione ottavo messaggio
+@keyframes otto {
+	0% { opacity: 0; }
+	70%  { opacity: 0;transform: scale(0.9); }
+	74%  { opacity: 1; }
+	76%  { opacity: 1; transform: scale(1.1);}
+	82%  { opacity: 0; transform: scale(1.0)}
+	100% { opacity: 0; }
+}
+// WORDPRESS
+.competenze li:nth-child(8){
+  bottom: 265px;
+  left: 450px;
+  animation: otto 12.5s ease-in-out infinite;
+  @media all and (max-width: 905px) {
+    left: 305px;
+   }
+
+   @media all and (max-width: 835px) {
+    bottom: 245px;
+  }
+  @media all and (max-width: 760px) {
+    bottom: 195px;  
+  }
+  @media all and (max-width: 705px) {
+    bottom: 300px;
+   left: 289px;
+  }
+  @media all and (max-width: 659px) {
+    left: 240px;
+
+  }
+  @media all and (max-width: 600px) {
+    bottom: 131px;
+   left: 140px;
+  }
+  @media all and (max-width: 475px) {
+    left: 80px;
+   }
+  @media all and (max-width: 421px) {
+    left: 25px;
+   }
+   @media all and (max-width: 600px) {
+    bottom: 141px;
+  }
+
+}
+//stile e animazione nono messaggio
+@keyframes nove {
+	0% { opacity: 0; }
+	80%  { opacity: 0;transform: scale(0.8); }
+	84%  { opacity: 1; }
+	86%  { opacity: 1; transform: scale(1.1);}
+	92%  { opacity: 0; transform: scale(1.0)}
+	100% { opacity: 0; }
+}
+// GIT 
+.competenze li:nth-child(9){
+  bottom: 92px;
+  left: 378px;
+  animation: nove 12.5s ease-in-out infinite;
+  
+  @media all and (max-width: 705px) {
+    bottom: 360px;
+    left: 250px;
+  }
+  @media all and (max-width: 600px) {
+    bottom: 154px;
+   left: 155px;
+  }
+  @media all and (max-width: 420px) {
+    bottom: 120px;
+   left: 40px;
+  }
+  @media all and (max-width: 380px) {
+    bottom: 154px;
+   left: 60px;
+
+  }
+}
+
+//stile e animazione decimo messaggio
+@keyframes dieci {
+  0% { opacity: 0.4; transform: scale(1.07) }
+  3% { opacity: 0;transform: scale(1) }
+	90%  { opacity: 0;transform: scale(0.8) }
+	94%  { opacity: 1;}
+	96%  { opacity: 1;transform: scale(1.1)}
+	100%  { opacity: 0.5;transform: scale(1.08)}
+}
+// sql
+
+.competenze li:nth-child(10){
+  bottom: 260px;
+  left: 435px;
+  animation: dieci 12.5s ease-in-out infinite;
+  @media all and (max-width: 835px) {
+    bottom: 245px;
+  left: 330px;
+  }
+  @media all and (max-width: 659px) {
+    left: 260px;
+    bottom: 279px;
+
+  }
+   @media all and (max-width: 600px) {
+    bottom: 90px;
+   left: 200px;
+  }
+  @media all and (max-width: 475px) {
+    left: 80px;
+   }
+   @media all and (max-width: 380px) {
+    bottom: 138px;
+  }
+   @media all and (max-width: 355px) {
+    bottom: 129px;
+    left: 35px;
+
+  }
+}
+
+//animazione apertura ul
+@keyframes float0 {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.05);
+  }
+}
+//animazione chiusura ul
+@keyframes float {
+  0%, 100% {
+    transform: scale(1.3) translateY(0);
+  }
+  50% {
+    transform: scale(1.3) translateY(-5px) rotate(3deg);
+  }
+}
+//animazione titolo uno
+@keyframes floatR {
+  0% {
+    transform: translateY(-1px) rotate(0.0deg);
+  }
+  50% {
+    transform: translateY(-7px) rotate(0.7deg);
+  }
+    
+  100% {
+    transform: translateY(-1px) rotate(0.0deg);
+  }
+}
+//animazione titolo 2
+@keyframes float2 {
+  0%, 100% {
+    transform: scale(1.2) translateY(0);
+  }
+  50% {
+    transform: scale(1.2) translateY(-5px) rotate(3deg);
+  }
+}
+//animazione titolo 3
+@keyframes floatB {
+  0%, 100% {
+    transform: scale(1.4) translateY(0);
+  }
+  45% {
+    transform: scale(1.4) translateY(3px) rotate(-2deg);
+  }
+}
+//animazione titolo 4
+@keyframes floatB2 {
+  0%, 100% {
+    transform: scale(1.3) translateY(0);
+  }
+  45% {
+    transform: scale(1.3) translateY(3px) rotate(-2deg);
+  }
+}
+
+//stile tag apertura 
+.apertura{
+  animation: float 5s ease-out infinite;
+  position: absolute;
+  top: 35px;
+  left: 300px;
+  text-shadow: 
+  1px 1px 1px #0b0b0bd6,   
+  2px 2px 1px #0b0b0bd6,   
+  3px 3px 1px #0b0b0bd6,  
+  3px 3px 10px rgb(111, 198, 19);
+        @media all and (max-width: 1165px) {
+          top: 80px;
+          left: 310px;
+          }
+          @media all and (max-width: 705px) {
+            animation: float2 5s ease-out infinite;
+            top: 50px;
+            left: 170px;
+          }
+          @media all and (max-width: 600px) {
+            top: 148px;  
+          left: 35px;
+          }
+          @media all and (max-width: 460px) {
+            top: 170px;  
+          left: 15px;
+          }
+          @media all and (max-width: 460px) {
+            top: 155px;  
+          }
+}
+
+//stile tag chiusura
+.chiusura{
+  position: absolute;
+  bottom: 10px;
+  margin-bottom: 19px;
+  left: 600px;
+  animation: floatB 4s ease-out infinite;
+  text-shadow: 
+        1px 1px 1px #0b0b0bd6,   
+        2px 2px 1px #0b0b0bd6,   
+        3px 3px 1px #0b0b0bd6,   
+        3px 3px 10px rgb(111, 198, 19);
+        @media all and (max-width: 1250px) {
+          left: 70%;
+        }
+        @media all and (max-width: 1165px) {
+          top: 350px;
+          left: 60%;
+          }
+          
+          @media all and (max-width: 705px) {
+            animation: floatB2 4s ease-out infinite;
+          top: 300px;
+          }
+          @media all and (max-width: 600px) {
+          top: 310px;
+          }
+          @media all and (max-width: 400px) {
+          top: 290px;
+          }
+          @media all and (max-width: 380px) {
+            top: 265px;  
+          }
+          
+}
+
+//stile speciale bottone prototipo
+.centerC {
+  position: absolute;
+  bottom: 200px;
+  right: 70px;
+  margin-bottom: 50px;
+  padding: 10px 20px;
+  letter-spacing: 3px;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 7px;
+  font-family: $fontPrimary;
+  font-size: $dimensionOne;
+  margin-right: 40px;
+  margin-top: 55px;
+  box-shadow: $ombraScura;
+  transition: transform 0.3s ease;
+  @media all and (max-width: 1165px) {
+    position: relative;
+    margin-right: 0px;
+    margin-left: 0px;
+    bottom: 0px;
+  right: 0px;
+
+  }
+  @media all and (max-width: 705px) {
+    margin-top: 0px;
+
+  }
+  @media all and (max-width: 500px) {
+    font-size: $dimensionFour;
+  }
+  @media all and (max-width: 400px) {
+    width: 70%;
+    font-size: 13px;
+  }
+  
+}
+
+//stile speciale contenitore per centrare pulsante prototipo
+.figma{
+  @media all and (max-width: 1165px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    }
+}
+
+//stile prima svg animazione
+#Livello_1{
+  position: absolute;
+  width: 100%;
+  height: 77%;
+  bottom: 0;
+  @media all and (max-width: 400px) {
+    bottom: -100px;
+  }
+}
+.cls-1{
+  fill: none;
+  stroke: #24922023;
+  stroke-miterlimit: 100;
+  stroke-width: 1;
+  stroke-dasharray: 100; // lunghezza
+  transition: stroke-dashoffset 2s; //transizione
+}
+//stile seconda svg animazione
+#Livello_2{
+  position: absolute;
+  width: 100%;
+  height: 84%;
+  bottom: 0;
+  @media all and (max-width: 400px) {
+    bottom: -100px;
+  }
+}
+.cls-2{
+  fill: none;
+  stroke: #4a4e4a2a;
+  stroke-miterlimit: 100;
+  stroke-width: 2;
+  stroke-dasharray: 200; // lunghezza
+  transition: stroke-dashoffset 2s; //transizione
+}
+//stile tre svg animazione
+#Livello_3{
+  position: absolute;
+  transform: rotate(180deg);
+  width: 90%;
+  height: 90%;
+  bottom: 0;
+  @media all and (max-width: 400px) {
+    bottom: -100px;
+  }
+}
+.cls-3{
+  fill: none;
+  stroke: #12121208;
+  stroke-miterlimit: 10000;
+  stroke-width: 0.6;
+  stroke-dasharray: 32; // lunghezza
+  transition: stroke-dashoffset 3s; //transizione
+}
+

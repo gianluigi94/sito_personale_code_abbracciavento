@@ -1,0 +1,99 @@
+{
+    "h1": "Cosa dicono di me",
+    "p": "Per il momento non ho molte recensioni visto il numero modesto di progetti che ho sviluppato, ma allo stesso tempo non mi tiro indietro se qualcuno mi commissiona un lavoro.",
+    "nascostoUno": "Grazie per il tuo commento!",
+    "nascostoDue": "Il testo è stato salvato in un file.txt e ora è in fase di approvazione per la sua pubblicazione",
+    
+        "recensioni": {
+            "TotoPixel": {
+                "nome": "Toto Pixel",
+                "foto": "assets/toto_foto.png",
+                "testo": "Estremamente soddisfatto del risultato finale, logo trasformato in vettoriale in maniera eccelsa con addirittura più      versioni e colorazioni, in modo da essere già tutto pronto per essere utilizzato in ogni possibile soluzione. Anche la versione creata da zero è molto bella e sia adatta al mio stile e lavoro. Super consigliato.",
+                "social": {
+                    "youtube": {
+                        "url": "https://www.youtube.com/@TotoPixel",
+                        "txt": "Youtube",
+                        "title": "Social Toto"
+                    }
+                }
+            },
+            "LaMondarella": {
+                "nome": "La Mondarella B&B",
+                "foto": "assets/loredana.jpg",
+                "testo": "Sei riuscito a cogliere in pieno ciò che desideravamo: un logo che descrivesse con semplicità la nostra attività.<br>Ti aspettiamo anche per la realizzazione del futuro sito del B&B.❤️",
+                "social": {
+                    "Facebook": {
+                        "url": "https://www.facebook.com/profile.php?id=61556090439225",
+                            "txt": "Facebook",
+                            "title": "Social B&B"
+                    }
+                }
+            } 
+        
+    },
+    "form": {
+        "textarea": {
+            "name": "commentoRe",
+            "id": "commentoRe",
+            "placeholder": "Commento..."
+        },
+        "input": {
+            "for": "foto",
+            "text": "Invia foto",
+            "spanClass": "opzionale",
+            "spanTxt": "(opzionale, png o jpeg, max size 4MB)",
+            "type": "file",
+            "id": "foto",
+            "name": "foto"
+        },
+        "check": {
+            "for": "accettazione",
+            "class": "customChecbox",
+            "type": "checkbox",
+            "inpClass": "hidenCheckbox",
+            "id": "accettazione",
+            "name": "accettazione",
+            "spanClass": "checkmark",
+            "text": "Ho preso visione della privacy policy e acconsento al trattamento dei dati personali"
+        },
+        "button": {
+            "type": "submit",
+            "txt": "Invia messaggio",
+            "txtDue": "Inviami un nuovo messaggio",
+            "svg": "<svg class='airp w-6 h-6' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' d='M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5' /></svg>"
+        },
+        "nome":{
+            "type": "text",
+            "id": "nomeRe",
+            "name": "nomeRe",
+            "placeholder": "Nome..."
+        },
+        "hidden":{
+            "type": "hidden",
+            "name": "inviato",
+            "value": 1
+        }
+    },
+    "titolo": {
+        "h2": "Lascia anche tu un commento:"
+    },
+    "output" : {
+        "checkF": "<p class='%s' id='cheRecH'><span class ='msgBk %s'></span>Devi accettare e spuntare la casella</p>",
+        "generale": "<p class='%s'><span class ='msgBk %s'></span>Attenzione è presente un errore nel caricamento dell'immagine. Nessun dato è stato inviato</p>",
+        "estensioni": "<p class='%s' id='hOtto'><span class ='msgBk %s'></span>Errore immagine: seleziona un formato valido. NESSUN dato è stato inviato</p>",
+        "grandezza": "<p class='%s' id='hNove'><span class ='msgBk %s'></span>Errore immagine: La grandezza è superiore al limite di 4 MB. Nessun dato è stato inviato </p>",
+        "presenza": "<p class='%s'><span class ='msgBk %s'></span>Errore immagine: %s esiste già. NESSUN dato è stato inviato</p>",
+        "successoTxt": "<p class='secret'><span class ='msgBk %s'></span>Grazie! Il tuo messaggio è stato salvato sul database. Ora è in attesa di approvazione. Ecco una panoramica: </p>",
+        "successoTxtDue": "<p class='secret'><span class ='msgBk %s'></span>Grazie! Il tuo messaggio è stato salvato in un file txt e ora è in attesa di approvazione. Ecco il riepilogo:<br><br><u>Nome:</u><br>%s<br><br><u>Testo:</u><br>%s<br><br>%s<br><br><br></p>",
+        "successoImg": "<p class='secret'><span class ='msgBk %s'></span>La tua immagine %s è stata caricata con successo!<br><br><br></p>",
+        "successoNoImg": "<p class='secret'><span class ='msgBk %s'></span>Non hai inviato nessun immagine, se desideri associare il tuo commento ad una foto, invia un nuovo messaggio<br><br><br></p>",
+        "noPerfect": "<p class='%s'><span class ='msgBk %s'></span>Compila corettamente il form e poi prova a ricaricare la tua foto<br></p>",
+        "nomeV": "<p class='%s' id='hUno'><span class ='msgBk %s'></span>Devi compilare il campo 'nome'<br></p>",
+        "nomeIn": "<p class='%s' id='hDue'><span class ='msgBk %s'></span>Il campo 'nome' può contenere solo dai 2 ai 20 caratteri<br></p>",
+        "txtV": "<p class='%s' id='hTre'><span class ='msgBk %s'></span>Devi compilare il campo 'commento'<br></p>",
+        "txtIn": "<p class='%s' id='hQuattro'><span class ='msgBk %s'></span>Il campo 'commento' può contenere dai 2 ai 600 caratteri<br></p>",
+        "socialV": "<p class='%s' id='hCinque'><span class ='msgBk %s'></span>Seleziona la tua pagina social o non compilare questo campo<br></p>",
+        "socialEr": "<p class='%s' id='hSei'><span class ='msgBk %s'></span>La lunghezza minima è di almeno 7 caratteri<br></p>",
+        "socialErTwo": "<p class='%s' id='hSette'><span class ='msgBk %s'></span>Inserisci il link della pagina o non compilare questo campo<br></p>"
+    }
+}

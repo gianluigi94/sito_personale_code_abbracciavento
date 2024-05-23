@@ -1,0 +1,109 @@
+{
+    "h1": "Contatti",
+    "iframe":{
+        "url": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90708.72157601382!2d7.334092992309494!3d44.72680422133416!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cd339e28a911ef%3A0x405e67d473ca330!2s12032%20Barge%20CN!5e0!3m2!1sit!2sit!4v1698120340020!5m2!1sit!2sit",
+        "title": "mappa",
+        "attributi": "allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'"
+    },
+    "form": {
+        "legend": "Inviami una email",
+        "nome":{
+            "for": "nome",
+            "txt": "Nome",
+            "spanclass": "opzionale",
+            "spanText": "*",
+            "type": "text",
+            "id": "nome",
+            "name": "nome"
+        },
+        "cognome":{
+            "for": "cognome",
+            "txt": "Cognome",
+            "spanclass": "opzionale",
+            "spanText": "*",
+            "type": "text",
+            "id": "cognome",
+            "name": "cognome"
+        },
+        "email":{
+            "for": "email",
+            "txt": "Email",
+            "spanclass": "opzionale",
+            "spanText": "*",
+            "type": "email",
+            "id": "email",
+            "name": "email"
+        },
+        "tel":{
+            "for": "tel",
+            "txt": "Numero di telefono",
+            "spanclass": "opzionale",
+            "spanText": "(opzionale)",
+            "type": "tel",
+            "id": "tel",
+            "name": "tel"
+        },
+        "argomento":{
+            "for": "argomento",
+            "txt": "Scegli il tipo di argomento",
+            "spanclass": "opzionale",
+            "spanText": "*",
+            "name": "argomento",
+            "id": "argomento",
+            "v1": "",
+            "v1txt": "Seleziona un argomento",
+            "v2": "2",
+            "v2txt": "Informazioni",
+            "v3": "3",
+            "v3txt": "Assistenza"
+        },
+        "textarea":{
+            "for": "messaggio",
+            "txt": "Inserisci il tuo messaggio",
+            "spanclass": "opzionale",
+            "spanText": "*",
+            "name": "messaggio",
+            "id": "messaggio",
+            "dimension": "cols='30' rows='10'"
+        },
+        "check": {
+                "for": "accettazione",
+                "class": "customChecboxTwo",
+                "type": "checkbox",
+                "inpClass": "hidenCheckbox",
+                "id": "accettazione",
+                "name": "accettazione",
+                "spanClass": "checkmark",
+                "text": "Ho preso visione della privacy policy e acconsento al trattamento dei dati personali"
+        },
+        "button": {
+            "type": "submit",
+            "txt": "Invia messaggio",
+            "txtDue": "Invia una nuova email",
+            "class": "buttonTwo",
+            "svg": "<svg class='airp w-6 h-6' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor'><path stroke-linecap='round' stroke-linejoin='round' d='M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5' /></svg>"
+        },
+        "hidden":{
+            "type": "hidden",
+            "name": "inviato",
+            "value": 1
+        },
+        "output" : {
+            "checkF": "<p class='%s' id='trediciH'><span class ='msgBk %s'></span>Devi accettare e spuntare la casella</p>",
+            "successoTxt": "<p class='secret'><span class ='msgBk %s'></span><strong>Grazie!</strong> Una copia della tua email è stata salvata in un file txt.<br> Ecco qui sotto un riepilogo:<br><br>%s</p>",
+            "nomeV": "<p class='%s' id='unoH'><span class ='msgBk %s'></span>Devi compilare il campo 'nome'<br></p>",
+            "nomeIn": "<p class='%s' id='dueH'><span class ='msgBk %s'></span>Il campo 'nome' può contenere solo dai 2 ai 20 caratteri<br></p>",
+            "cognomeV": "<p class='%s' id='treH'><span class ='msgBk %s'></span>Devi compilare il campo 'cognome'<br></p>",
+            "cognomeIn": "<p class='%s' id='quattroH'><span class ='msgBk %s'></span>Il campo 'cognome' può contenere solo dai 2 ai 20 caratteri<br></p>",
+            "emailV": "<p class='%s' id='setteH'><span class ='msgBk %s'></span>Devi compilare il campo 'email'<br></p>",
+            "emailIn": "<p class='%s' id='ottoH'><span class ='msgBk %s'></span>Il campo 'email' può contenere solo dai 8 ai 55 caratteri<br></p>",
+            "emailErr": "<p class='%s' id='noveH'><span class ='msgBk %s'></span>Non hai inserito un'email valida<br></p>",
+            "telV": "<p class='%s'><span class ='msgBk %s'></span>Devi compilare il campo 'telefono'<br></p>",
+            "telIn": "<p class='%s' id='dieciH'><span class ='msgBk %s'></span>Il campo 'telefono' può contenere solo dai 7 ai 17 caratteri, se preferisci puoi lasciarlo vuoto<br></p>",
+            "telCaratteri": "<p class='%s' id='undiciH'><span class ='msgBk %s'></span>Hai digitato uno o più caratteri non validi, se preferisci puoi lasciare vuoto il campo 'telefono'<br></p>",
+            "txtV": "<p class='%s' id='cinqueH'><span class ='msgBk %s'></span>Devi compilare il campo 'messaggio'<br></p>",
+            "txtIn": "<p class='%s' id='seiH'><span class ='msgBk %s'></span>Il campo 'commento' può contenere dai 2 ai 600 caratteri<br></p>",
+            "argV": "<p class='%s' id='dodiciH'><span class ='msgBk %s'></span>Devi selezionare un argomento<br></p>"
+        }
+    }
+}

@@ -1,0 +1,83 @@
+//pagina necessaria per lo stile del logo che appare al caricamento di schermata
+.logo {
+    height: 350px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.logoLoad {
+    height: 250px;
+    animation: rotate 5.5s infinite linear;
+}
+
+//animazione rotazione logo
+@keyframes rotate {
+
+    0%,1%,
+    100% {
+        transform: rotateY(0deg);
+    }
+
+    50% {
+        transform: rotateY(-350deg);
+    }
+}
+
+.loading{
+    display: flex;
+
+}
+
+//linee caricamento
+.objDe{
+    width: 3px;
+    height: 30px;
+    margin: 0 3px;
+    border-radius: 10px;
+    animation: loading 0.8s linear infinite;
+}
+
+//ritardo linee caricamento
+.objDe:nth-child(2){
+    animation-delay: 0.4s;
+}
+.objDe:nth-child(3){
+    animation-delay: 0.5s;
+}
+.objDe:nth-child(4){
+    animation-delay: 0.6s;
+}
+.objDe:nth-child(5){
+    animation-delay: 0.7s;
+}
+.objDe:nth-child(6){
+    animation-delay: 0.1s;
+}
+.objDe:nth-child(7){
+    animation-delay: 0.2s;
+}
+.objDe:nth-child(8){
+    animation-delay: 0.3s;
+}
+
+@keyframes loading {
+    0% { transform: scaley(0);}
+    50% {transform: scale(1);}
+    100% { transform: scaley(0);}
+}
+//stile pagina che copre pagina principale che fa da sfondo al logo
+#loadingPage{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3000;
+    margin: 0;
+    padding: 0;  
+}
+

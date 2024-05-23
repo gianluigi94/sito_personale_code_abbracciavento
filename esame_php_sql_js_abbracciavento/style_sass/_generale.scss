@@ -1,0 +1,238 @@
+// In questa pagina imposto tutte quelle generalità che sono presenti in tutte le pagine del sito
+
+* {
+  padding: 0;
+  margin: 0;
+
+}
+
+body {
+  background-color: $blackPrimary;
+  @extend %dwsfondo;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+
+// codice per migliorare la navigazione dei punti di ancoraggio
+html {
+  scroll-behavior: smooth;
+  
+}
+
+// stile del titolo principale che compare in tutte le pagine tranne che nella home
+
+.titoloPr {
+  text-shadow: 2px 2px 4px rgba(146, 170, 150, 0.5);
+  transform: translateX(-20%);
+  transition: 0.6s ease-in-out;
+  opacity: 0;
+  color: $greenPrimary;
+  font-size: $dimensiondodici;
+  font-family: $fontPrimary;
+  padding-top: 160px;
+  padding-left: 50px;
+  padding-right: 40px;
+  @media all and (max-width: 555px) {
+    padding-left: 20px;
+    padding-right: 15px;
+  }
+  @media all and (max-width: 332px) {
+    padding-left: 18px;
+    font-size: 45px;
+  }
+}
+
+h3{
+  text-shadow: 2px 2px 4px rgba(146, 170, 150, 0.5);
+}
+
+// stile legato all'id dell'immagine del logo
+
+#logo {
+  transform: scale(1);
+  z-index: 350;
+}
+
+// stile della spunta che compare nelle checkbox dei miei form
+
+.hidenCheckbox:checked ~ .checkmark::before,
+.hidenCheckbox:checked ~ .checkmarkEr::before,
+.hidenCheckbox:checked ~ .checkmarkTwo::before,
+.hidenCheckbox:checked ~ .checkmarkTwoEr::before {
+  content: "✓";
+  display: block;
+  text-align: center;
+  line-height: 16px;
+  color: $greenPrimary;
+  font-weight: bold;
+  font-size: $dimension;
+}
+
+// creo un mixin per gestire lo stile delle immagini di sfondo delle varie pagine
+
+@mixin sfondoImg($imageName) {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background: url(../assets/#{$imageName});
+}
+
+.sfondoimgsei {
+  @include sfondoImg("sfondolavori.png");
+}
+
+.sfondoimgsette {
+  @include sfondoImg("email.png");
+}
+
+.sfondoimgotto {
+  @include sfondoImg("cite.png");
+}
+
+.sfondoimguno {
+  @include sfondoImg("grafica.png");
+}
+
+.sfondoimgdue {
+  @include sfondoImg("e_commerce.png");
+}
+
+.sfondoimgtre {
+  @include sfondoImg("scacchi_sfondo.png");
+}
+
+.sfondoimgquattro {
+  @include sfondoImg("socials.png");
+}
+
+.sfondoimgcinque {
+  @include sfondoImg("cripto.png");
+}
+
+// l'immagine di sfondo della home page lavora diversamente dalle altre
+.sfondoimgnove {
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: url(../assets/homeb.png);
+  
+}
+
+// Creo un mixing per gestire i messaggi di output
+@mixin responseStyle($color) {
+  position: relative;
+  color: $color;
+  font-family: $fontSecondary;
+  font-size: $dimensionOne;
+  margin: 0px 30px 25px 0px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  width: fit-content;
+
+  @media all and (max-width: 570px) {
+    border-radius: 150px;
+  }
+  @media all and (max-width: 555px) {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  @media all and (max-width: 400px) {
+    font-size: 17px;
+  }
+  
+}
+
+.formEr {
+  @include responseStyle($error);
+}
+.formErr {
+  @include responseStyle($error);
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.formErHid {
+  @include responseStyle($error);
+  display: none;
+}
+
+.secret {
+  @include responseStyle($greenPrimary);
+  margin-left: 50px;
+  @media all and (max-width: 390px) {
+    word-break: break-all;
+  }
+}
+// classi speciali per il body, di default e noscroll (per non scorrere la pagina mentre si carica e appare il logo)
+.noscroll{
+  overflow: hidden;
+} 
+.scroll{
+  overflow-y: scroll;
+}
+
+// codice per la scrollbar
+::-webkit-scrollbar {
+  width: 6px; //larghezza
+}
+::-webkit-scrollbar-track {
+  background: $whiteSecondary; //sfondo e bordi del "dietro"
+  border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb {
+  
+  border-radius: 10px; 
+  background: rgb(76, 87, 76) // hover
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $darkMenuHover; //sfondo e bordi del "davanti"
+}
+
+.hidElement {
+  display: none;
+}
+
+.iub__us-widget{
+ 
+  background-color: #4a485d;
+  @media all and (max-width: 640px) {
+    font-size: 10px;
+
+  }
+}
+#iubenda{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 20px;
+  bottom: -40px;
+  @media all and (max-width: 930px) {
+    bottom: 80px;
+  }
+  @media all and (max-width: 640px) {
+    left: 300px;
+    bottom: 36px;
+  }
+  @media all and (max-width: 445px) {
+    left: 0px;
+    bottom: 300px;
+  }
+  @media all and (max-width: 340px) {
+    width: 130px;
+    left: -15px;
+  }
+}

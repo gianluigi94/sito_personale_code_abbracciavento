@@ -1,0 +1,98 @@
+//in questa pagina gestisco lo stile del pulsante per il passaggio dalla dark alla light mode
+
+//stile contenitore label collegata all input checkbox
+.horse { 
+    position: fixed;
+    left: 5px;
+    top: 4px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    @extend %flexCenter;
+    z-index: 100;
+}
+
+//stile input checkbox
+.dLHorse {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 99;
+
+}
+
+//stile immagine cavallo bianco
+.sun {
+    height: 34px;
+    position: absolute;
+    transform: scale(0);
+    transition: 1s ease;
+    opacity: 0.8;
+    z-index: 98;
+
+}
+
+//stile immagine cavallo nero
+.moon {
+    height: 34px;
+    transition: 1s ease;
+    opacity: 0.8;
+    z-index: 98;
+}
+
+//questo span è grande quanto la label è de qui che gestisco sul colore di sfondo
+.toggle {
+    position: absolute;
+    display: block;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: $horseTwo;
+    cursor: pointer;
+    z-index: -1;
+    transition: 1s;
+    opacity: 0.5;
+    z-index: 97;
+}
+
+//elenco delle varie animazioni e cambi di effetti sia del colore di sfondo del bottone e sia delle animazioni delle immagini che fungono da icone
+.dLHorse:checked~.sun {
+    transform: scale(1) rotate(360deg);
+}
+
+.dLHorse:checked~.moon {
+    transform: rotate(360deg) scale(0);
+}
+
+.dLHorse:checked~.toggle {
+    background: $horseOne;
+}
+
+//stile dello sfondo bianco che è uno span grande come la pagina
+.animateBg {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background: $light;
+    z-index: -200;
+    transition: clip-path 1s ease-out, opacity 0.5s ease-in-out;
+}
+
+//elenco delle dimensioni della clip-path di .animateBg, l'alternare delle classi con js, permette l'effetto di transizione
+.min {
+    clip-path: circle(0% at 0% 0%);
+    
+}
+
+.max {
+    clip-path: circle(100% at 50% 50%)
+}
+
+//classe necessaria per evitare transizioni indesiderate al riavvio della pagina dal tema bianco.
+//la classe notransition viene tolta con js dopo 100ms
+.notransition{
+    transition: none;
+}

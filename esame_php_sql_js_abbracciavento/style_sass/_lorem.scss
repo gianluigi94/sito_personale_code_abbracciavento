@@ -1,0 +1,83 @@
+// In questa pagina gestisco lo stile dei progetti segnaposto, sono formati da due sezioni all'interno di un contenitore, il primo contiene i paragrafi il secondo l'immagine di esempio
+
+
+// Inizio gestendo il contenitore generale
+.container {
+  @extend %dwtestoDue;
+  font-family: $fontSecondary;
+  font-size: $dimensionOne;
+  margin-left: 50px;
+  display: flex;
+  margin-top: 70px;
+  
+  @media all and (max-width: 950px) {
+    flex-direction: column;
+  }
+  @media all and (max-width: 555px) {
+    margin-left: 20px;
+  }
+
+  // ora gestisco i paragrafi
+  .uno {
+    flex-basis: 70%;
+    @media all and (max-width: 950px) {
+      margin-right: 30px;
+    }
+    @media all and (max-width: 555px) {
+      margin-right: 20px;
+    }
+
+    @media all and (max-width: 950px) {
+      flex-basis: 100%;
+    }
+
+    
+
+    p {
+      opacity: 0;
+      transition: opacity 1.9s ease-in-out;
+      position: relative;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      &::first-letter {
+        font-size: $dimensionundici;
+        font-weight: 400;
+        font-style: italic;
+      }
+      .it {
+        font-style: italic;
+        font-weight: 500;
+      }
+      .strong {
+        font-weight: bolder;
+      }
+      .green {
+        color: $greenPrimary;
+        font-weight: 500;
+      }
+    }
+  }
+  // infine gestisco l'immagine
+  .due {
+    flex-basis: 30%;
+    @extend %flexCenter;
+    margin-right: 15px;
+    @media all and (max-width: 950px) {
+      flex-basis: 100%;
+    }
+    img {
+      width: 320px;
+      height: 320px;
+      @media all and (max-width: 375px) {
+        width: 280px;
+        height: 280px;
+      }
+
+      @media all and (max-height: 535px) {
+        width: 250px;
+        height: 250px;
+      }
+    }
+  }
+}

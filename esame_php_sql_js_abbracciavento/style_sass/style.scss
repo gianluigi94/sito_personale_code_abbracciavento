@@ -1,0 +1,25 @@
+// Questa è la pagina principale dove gestisco lo stile in Sass. Definisco quale dei due template utilizzare e collego gli altri file di stile ora però funziona male gestito da qua, perché è stato sostituito con js il cambio di tema (scelto dall'utente)
+
+
+
+$template: dark;
+// $template: light;    
+
+@import "variabili";
+@import "condizioni";
+@import "placeholder";
+@import "generale";
+@import "menu";
+@import "footer";
+@import "home";
+@import "progetti";
+@import "portfolio";
+@import "aside";
+@import "lorem";
+@import "recensioni";
+@import "contatti";
+@import "horse";
+@import "loading";
+@import "db";
+
+

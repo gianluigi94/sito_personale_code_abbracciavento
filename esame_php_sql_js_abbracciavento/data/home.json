@@ -1,0 +1,46 @@
+{
+    "p_uno": "Benvenuto sul mio secondo sito sviluppato in PHP e Vanilla JavaScript.",
+    "p_due": "Se non lo hai ancora fatto puoi dare un'occhiata al mio <a href='https://www.gianluigiabbracciavento.it/' class='link' title='sito WordPress' target='_blank'>sito in WordPress</a>, che ho realizzato come esercitazione per l'accademia Glam. <br> Mi chiamo Gianluigi e sono un appassionato di informatica e grafica e attualmente sto studiando programmazione presso l'accademia code, quindi tenete d'occhio i miei siti e la mia pagina <a href='http://www.linkedin.com/in/gianluigi-abbracciavento-b661a8284' class='link' title='pagina social' target='_blank'>Linkedin</a> per scoprire le mie ultime novità.",
+    "p_tre": "Sono entusiasta di potervi mostrare i miei progetti e sarei felice di ricevere i vostri pareri per migliorare come professionista.",
+    "video": 
+        {
+            "url": "assets/sesantaquattro.webm",
+            "attributi": "autoplay loop muted",
+            "alt": "Il tuo browser non supporta questo videoheader"
+        },
+    "H1": "Gianluigi Abbracciavento",
+    "H2": "Aspirante web developer e web desiner",
+    "youtube": 
+        {
+            "dimension": "width='500' height='315'",
+            "url": "https://www.youtube.com/embed/kqLYcNH2l60?loop=1&playlist=kqLYcNH2l60&autoplay=1&mute=1",
+            "allow": "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+            "attributi": "allowfullscreen",
+            "title": "YouTube video player"
+        },
+    "bottoneUno": 
+        {
+            "url": "contatti.php",
+            "class": "leftB",
+            "title": "Pagina contatti",
+            "testo": "Contattami",
+            "classDue": "progetti"
+        },
+    "bottoneDue": 
+        {
+            "url": "progetti.php?progetto=tutti_i_progetti",
+            "class": "rightB",
+            "title": "pagina progetti",
+            "testo": "Guarda i miei progetti",
+            "classDue": "progetti"
+
+        },
+    "bottoneTre": 
+        {
+            "url": "https://xd.adobe.com/view/da29ab1c-e6f2-47dc-b964-e8fc9c3a5b83-8f7a/",
+            "class": "prototipo",
+            "title": "Progetto adobe XD",
+            "testo": "Guarda il prototipo del sito"
+        }
+    
+}

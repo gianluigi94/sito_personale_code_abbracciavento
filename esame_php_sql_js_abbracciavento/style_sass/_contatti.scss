@@ -1,0 +1,333 @@
+// In questa pagina imposto lo stile per la pagina contatti
+
+// La pagina è divisa in due sezioni ed inizio impostando il contenitore che li contiene entrambi
+.twopage {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 60px;
+  margin-left: 50px;
+  align-items: center;
+  justify-content: space-between;
+  @media all and (max-width: 555px) {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  @media all and (max-width: 380px) {
+    margin-left: 25px;
+  }
+
+  @media all and (max-width: 342px) {
+    margin-left: 15px;
+  }
+
+  @media all and (max-width: 309px) {
+    margin-left: 9px;
+  }
+
+  // Proseguo impostando lo stile del primo contenitore ovvero il form
+
+  form {
+    flex-basis: 45%;
+    margin-right: 50px;
+    @media all and (max-width: 953px) {
+      flex-basis: 100%;
+    }
+    fieldset {
+      margin: 0;
+      @extend %fieldset;
+
+      legend {
+        border-radius: 35px;
+        padding-top: 17px;
+        @extend %legend;
+        animation: floatR 7s ease-in-out infinite;
+      }
+
+      //  I vari elementi sono presenti in due versioni, dichiarati con due classi distinte: la versione normale e la versione "errore".
+      //  Ho "esteso" gli elementi in comune il più possibile, ricordando che nel sito è presente un secondo form nella pagina recensioni, con stili simili, ma differenti per alcuni aspetti
+
+      // stile label normale
+      .labelTwo {
+        @extend %impostaLabel;
+        padding-top: 25px;
+        border-radius: 35px;
+        @extend %dwsdarkspecial;
+      }
+      // stile label errore
+      .labelTwoEr {
+        @extend %impostaLabel;
+        padding-top: 25px;
+        border-radius: 35px;
+        @extend %dwsdarkspecial;
+        color: $error;
+      }
+
+      // stile degli input
+      .inpTwo {
+        @extend %imposttaInput;
+        @extend %inputa;
+        transition: 0.4s ease-in-out;
+        width: 96%;
+        margin: 0;
+        &:focus {
+          outline: none;
+          border: $borderGr;
+        }
+        @media all and (max-width: 380px) {
+          width: 280px;
+        }
+
+        @media all and (max-width: 380px) {
+          width: 260px;
+        }
+      }
+      // stile input errore
+      .inpTwoEr {
+        @extend %imposttaInput;
+        @extend %inputaEr;
+        width: 96%;
+        margin: 0;
+        &:focus {
+          outline: none;
+        }
+        @media all and (max-width: 380px) {
+          width: 280px;
+        }
+
+        @media all and (max-width: 380px) {
+          width: 260px;
+        }
+      }
+      @extend %opzionale;
+      
+      
+      // stile della textarea
+      .txtDue {
+        @extend %inputext;
+        @extend %impostaTxt;
+        &:focus {
+          outline: none;
+          border: $borderGr;
+        }
+        @media all and (max-width: 380px) {
+          width: 270px;
+        }
+
+        @media all and (max-width: 330px) {
+          width: 260px;
+        }
+      }
+      // stile textarea sbagliata
+      .txtDueEr {
+        @extend %impostaTxt;
+        @extend %inputextEr;
+        &:focus {
+          outline: none;
+        }
+        @media all and (max-width: 380px) {
+          width: 270px;
+        }
+
+        @media all and (max-width: 330px) {
+          width: 260px;
+        }
+      }
+      // stile del pulsante
+      .buttonTwo {
+        width: 80%;
+        margin: auto;
+        margin-top: 50px;
+        @extend %inputa;
+        @extend %impostaButton;
+        &:hover {
+          border: $borderGr;
+        }
+        @extend %icon;
+      }
+      // stile checkbox
+      .customChecboxTwo {
+        @extend %labelCheck;
+        margin-top: 10px;
+      }
+
+      // stile label con cui ho personalizzato la checkbox
+      .checkmarkTwo {
+        margin-top: 27px;
+        transition: 0.4s ease-in-out;
+        @extend %inputC;
+        @extend %check;
+      }
+      // la checkbox versione errore  
+      .checkmarkTwoEr {
+        margin-top: 27px;
+        @extend %inputCer;
+        @extend %check;
+      }
+    }
+  }
+
+  // Ora imposto lo stile della seconda sezione: la mappa
+
+  .mappa{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 45%;
+    width: fit-content;
+    margin-top: -50px;
+    height: 600px;
+    @media all and (max-width: 953px) {
+      flex-basis: 80%;
+      margin-top: 20px;
+      margin-left: 100px;
+    }
+
+    @media all and (max-width: 895px) {
+      flex-basis: 100%;
+      margin-left: 0px;
+    }
+    @media all and (max-width: 450px) {
+      margin-top: 0px;
+
+    }
+
+    @media all and (max-width: 380px) {
+      flex-basis: 90%;
+    }
+
+    @media all and (max-width: 330px) {
+      width: 260px;
+      margin-left: 15px;
+    }
+  }
+  .sectiontwo {
+    border: 0cap;
+    border-radius: 32px 100px 40px 100px;
+    box-shadow: $ombraTreIf;
+    position: relative;
+    animation: floatMap 6s ease-in-out infinite;
+    width: 100%;
+    height: 100%;
+    @media all and (max-width: 953px) {
+      height: 80%;
+    }
+    @media all and (max-width: 555px) {
+      width: 80%;
+    }
+    @media all and (max-width: 380px) {
+      width: 100%;
+      margin-left: 20px;
+    }
+    @media all and (max-width: 330px) {
+      width: 100%;
+      margin-left: 00px;
+    }
+  }
+
+
+}
+
+// stile per il bottone per inviare una nuovo messaggio
+.buttTre {
+  width: 300px;
+  margin-bottom: 30px;
+  @extend %impostaButton;
+  @extend %inputa;
+  margin-left: 50px;
+  @media all and (max-width: 455px) {
+    width: 85%;
+    margin-left: 20px;
+    margin-right: 0;
+  }
+  &:hover {
+    border: $borderGr;
+  }
+  @extend %icon;
+}
+
+//ombra della mappa
+
+.ombraSpan{
+  width: 100%;
+  height: 6px;
+  
+  background: linear-gradient(to bottom, rgba(43, 42, 42, 0) 0%, rgba(117, 117, 117, 0)0%);
+  box-shadow: 10px 70px 15px  rgb(97, 96, 96);
+  
+  border-radius: 80%;
+  animation: ombraMap 6s ease-in infinite;
+}
+
+
+//animazione mappa 
+@keyframes floatMap {
+  0% {
+    transform: translateY(0) rotate(0.6deg);
+  }
+  50% {
+    transform: translateY(12px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0.6deg);
+  }
+}
+
+//animazione ombra mappa
+@keyframes ombraMap {
+  0% {
+    transform: scaleX(1) rotate(1.5deg);
+  }
+  
+  50% {
+    transform: scalex(0.8) rotate(0deg);
+  }
+  
+  100% {
+    transform: scalex(1) rotate(1.5deg);
+  }
+}
+
+// stile della select
+.select {
+  @extend %impostaSelect;
+  @extend %inputa;
+
+  &:focus {
+    outline: none;
+    border: $borderGr;
+  }
+  @media all and (max-width: 380px) {
+    width: 292px;
+  }
+
+  @media all and (max-width: 330px) {
+    width: 280px;
+  }
+}
+.selectEr {
+  @extend %impostaSelect;
+  @extend %inputaEr;
+
+  &:focus {
+    @extend %dwInputTwo;
+    outline: none;
+  }
+  @media all and (max-width: 380px) {
+    width: 292px;
+  }
+
+  @media all and (max-width: 330px) {
+    width: 280px;
+  }
+}
+
+// stile delle opzioni
+option {
+  color: $greenPrimary;
+  font-weight: bolder;
+  font-family: $fontPrimary;
+}

@@ -1,0 +1,152 @@
+// In questa pagina gestisco i placeHolder usati per ridurre le ripetizioni di codice nelle altre pagine (principalmente per i due form), ma ho scelto di non gestire qui i mixing, perche li preferisco avere vicino al codice di stile interessato
+
+// codice per input dei due form 
+
+%inputC {
+  border-top: $borderOne;
+  border-left: $borderOne;
+  border-bottom: $borderTwo;
+  border-right: $borderTwo;
+  box-shadow: $ombraOne;
+}
+
+// codici per ombre e bordi dei due form + versione errori
+
+%inputCer {
+  border: $borderError;
+  box-shadow: $ombraOne;
+}
+
+%inputa {
+  box-shadow: $ombraTwo;
+  @extend %inputC;
+}
+
+%inputaEr {
+  box-shadow: $ombraTwo;
+  border: $borderError;
+}
+
+%inputext {
+  border-top: $borderOne;
+  border-left: $borderOne;
+  border-bottom: $borderTre;
+  border-right: $borderTre;
+  box-shadow: $ombraTre;
+}
+%inputextEr {
+  border: $borderError;
+  box-shadow: $ombraTre;
+}
+
+// codice usato per elementi in comune dei due form 
+%legend {
+  font-family: $fontPrimary;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+%fieldset {
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+%impostaLabel {
+  font-family: $fontSecondary;
+  font-size: $dimensionTre;
+  padding-bottom: 5px;
+}
+
+%imposttaInput {
+  height: 25px;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: $dimensionOne;
+  font-family: $fontSecondary;
+  transition: 0.4s ease-in-out;
+}
+
+%impostaSelect {
+  cursor: pointer;
+  height: 47px;
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: $dimensionOne;
+  font-family: $fontSecondary;
+  transition: 0.4s ease-in-out;
+}
+
+%impostaTxt {
+  transition: 0.4s ease-in-out;
+  resize: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: $dimensionOne;
+  font-family: $fontSecondary;
+}
+
+%impostaButton {
+  margin-top: 20px;
+  transition: 0.4s ease-in-out;
+  height: 45px;
+  font-family: $fontSecondary;
+  font-weight: 500;
+  font-size: $dimensionOne;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+// stile per icona aeroplanino usata per i form
+%icon {
+  .airp {
+    width: 20px;
+    color: $greenPrimary;
+    position: relative;
+    top: 4px;
+  }
+}
+
+// codice che gestisce i checkbox presenti sui due form del sito
+%labelCheck {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding-left: 40px;
+  padding-right: 40px;
+  transition: 0.4s ease-in-out;
+  @media all and (max-width: 485px) {
+    font-size: $dimensionFour;
+  }
+  .hidenCheckbox {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+  }
+}
+
+%check {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  border-radius: 5px;
+}
+
+// classe che gestisce gli span dei form delle scritte opzionali ed obbligatori"*"
+%opzionale {
+  .opzionale {
+    font-size: $dimensionFour;
+    color: $greenPrimary;
+  }
+}
+
+// ripetizione più comune per i flex box
+%flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

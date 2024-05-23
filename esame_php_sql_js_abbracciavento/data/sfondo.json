@@ -1,0 +1,27 @@
+{
+
+    "index.php": "sfondoimgnove",
+    "contatti.php": "sfondoimgsette",
+    "progetti.php?progetto=space_chess_dolor": "sfondoimgtre",
+    "progetti.php?progetto=socialorem": "sfondoimgquattro",
+    "recensioni.php": "sfondoimgotto",
+    "progetti.php?progetto=tutti_i_progetti": "sfondoimgsei",
+    "progetti.php?progetto=portfolio_grafico": "sfondoimguno",
+    "progetti.php?progetto=lorem_cripto_dolor": "sfondoimgcinque",
+    "progetti.php?progetto=ipsum-commerce": "sfondoimgdue",
+
+    "sfondoCavalloNero":{
+        "src": "assets/cavallo_nero.png",
+        "alt": "icona cavallo nero",
+        "class": "moon notransition"
+    },
+    "sfondoCavalloBianco":{
+        "src": "assets/cavallo_bianco.png",
+        "alt": "icona cavallo bianco",
+        "class": "sun notransition"
+    }
+        
+    
+
+}
+

@@ -1,0 +1,293 @@
+// In questa pagina imposto le condizioni che danno vita al cambio di tema sia gestito col vecchio metodo del sass e sia col nuovo con il cambio claasi
+
+
+//condizioni con il vecchio metodo del cambio tema direttamente da sass
+
+// cambio lo sfondo del sito nero scuro a bianco chiaro
+%dwsfondo {
+  @if $template == dark {
+    background: $dark;
+  } @else {
+    background: $light;
+  }
+}
+
+// cambio il colore del menu da grigio scuro a verde acqua
+%dwsfondoMenu {
+  @if $template == dark {
+    background: $darkMenu;
+  } @else {
+    background: $lightMenu;
+  }
+}
+
+// cambio il colore del menu a tendina da grigio scuro a grigio chiaro
+%dwsfondoMenuTwo {
+  @if $template == dark {
+    background: $darkMenuTwo;
+  } @else {
+    background: $lightMenuTwo;
+  }
+}
+
+// cambio il colore hover del menu a tendina da grigio scuro a grigio chiaro
+%dwsfondoMenuHover {
+  @if $template == dark {
+    background: $darkMenuHover;
+  } @else {
+    background: $lightMenuHover;
+  }
+}
+
+// cambio il colore dei pulsati da grigio a verde chiaro
+%dwsbutton {
+  @if $template == dark {
+    background: $darkButton;
+  } @else {
+    background: $lightButton;
+  }
+}
+
+// cambio lo sfondo di alcuni elementi decorativi da nero a verde chiaro
+%dwslightdark {
+  @if $template == dark {
+    background: $darkDark;
+  } @else {
+    background: $lightLight;
+  }
+}
+
+// aggiungo alcuni elementi di sfondo decorativi verde chiaro, ma solo nel tema chiaro, nel tema scuro non saranno presenti
+%dwsdarkspecial {
+  @if $template == dark {
+    background: none;
+  } @else {
+    background: $lightLight;
+  }
+}
+
+// cambio il colore dell'ombra interna del menu da nera a bianca
+%dwombraMenu {
+  @if $template == dark {
+    box-shadow: $shadowDarkMenu;
+  } @else {
+    box-shadow: $shadowLightMenu;
+  }
+}
+
+// cambio il colore degli elementi del form da grigio scuro a bianco 
+%dwInput {
+  @if $template == dark {
+    background-color: $input;
+  } @else {
+    background-color: $inputWhite;
+  }
+}
+
+// cambio il colore delle opzioni della select da grigio scuro a grigio chiaro
+%dwOption {
+  @if $template == dark {
+    background-color: $blackSecondary;
+  } @else {
+    background-color: $whiteSecondary;
+  }
+}
+
+// cambio il colore degli elementi dei form in focus da nero a verde acqua
+%dwInputTwo {
+  @if $template == dark {
+    background-color: $inputHover;
+  } @else {
+    background-color: $inputWhiteHover;
+  }
+}
+
+// cambio il colore dei testi principali da bianco a nero
+%dwtesto {
+  @if $template == dark {
+    color: $whitePrimary;
+  } @else {
+    color: $blackPrimary;
+  }
+}
+
+// cambio il colore dei testi secondari da bianco a nero
+%dwtestoDue {
+  @if $template == dark {
+    color: $whiteSecondary;
+  } @else {
+    color: $blackSecondary;
+  }
+}
+
+// cambio il riquadro che contiene la recensione da bianco a nero
+%dwrecensioni {
+  @if $template == dark {
+    border-bottom: $borderRecTwo;
+    border-right: $borderRecTwo;
+    border-top: $borderRec;
+    border-left: $borderRec;
+  } @else {
+    border-bottom: $borderRecFour;
+    border-right: $borderRecFour;
+    border-top: $borderRecTre;
+    border-left: $borderRecTre;
+  }
+}
+
+
+//elenco cambio classi
+
+//classe con hover mer le voci del menu nere
+.darkGreen{
+  color: $blackSecondary;
+  transition: color 0.2s ease-in-out; //imposto una transizione specifica
+  &:hover{  //è importante impostare ache un hover altrimenti verà perso con il cambio dato dal js
+    color: $greenPrimary;
+  }
+}
+
+//classe con hover mer le voci del menu bianche
+.whiteGreen{
+  color: $whiteSecondary;
+  transition: color 0.2s ease-in-out;
+  &:hover{
+    color: $greenPrimary;
+  }
+}
+//classi che gestiscono il colore di sfondo della selection nei vari teme
+.optionCoockieWhite{
+  background: $whiteSecondary;
+}
+.optionCoockieBlack{
+  background: $blackSecondary;
+}
+
+//classi per gli sfondi di testi diversi per tema 
+.lightLight {
+  background: $lightLight;
+}
+
+.darkDark{
+  background: linear-gradient(to right, #12131383 0%, #0b0f0c85 0%);
+}
+
+.noneBackground {
+  background: none;
+}
+
+//stile per i bottoni per il vari temi 
+
+.darkButton {
+  background: $darkButton;
+}
+
+.lightButton {
+  background: $lightButton;
+}
+
+//classi per il bordo superiore del pendolo cambio classi con cambio tema
+.bordoBianco{
+  border-top: 5px solid $whiteSecondary;
+  transition: border-color 1.5s ease;
+}
+.bordoNero{
+  border-top: 5px solid $blackSecondary;
+  transition: border-color 0.5s ease;
+}
+
+
+//liste di classi per gestire il cambio di colore del pendolo con il cambio di tema
+.whiteBefore{
+  background: $whiteSecondary;
+  transition: background-color 1.5s ease, box-shadow 1.5s ease;
+
+}
+
+.whiteBefore:before{
+	background: $whiteSecondary;
+  box-shadow: $ombraTreGg;
+  transition: background-color 1.5s ease, box-shadow 1.5s ease;
+}
+
+.darkBefore{
+  background: $blackSecondary;
+  transition: background-color 0.9s ease, box-shadow 1.5s ease;
+
+}
+.darkBefore:before{
+  background: $blackSecondary;
+  box-shadow: $ombraTreGgg;
+  transition: background-color 0.9s ease, box-shadow 1.5s ease;
+}
+
+//sfondi pagina che copre progetto principale con cambio di tema
+.backBlack{
+  background: $dark;
+}
+
+.backLight{
+  background: $light;
+}
+
+//colori delle bare di caricamento che cambiano con il tema
+.lineLoadWhite{
+  background:$hamburgerGrLight;
+}
+.lineLoadBlack{
+  background:$hamburgerGr;
+}
+
+
+//stili bordi che cambiano colore col cambiare del tema
+.borderLight {
+  border-bottom: $borderRecFour;
+  border-right: $borderRecFour;
+  border-top: $borderRecTre;
+  border-left: $borderRecTre;
+}
+
+.borderDark {
+  border-bottom: $borderRecTwo;
+  border-right: $borderRecTwo;
+  border-top: $borderRec;
+  border-left: $borderRec;
+}
+
+//stili input che cambiano colore
+.inputBkLight {
+  background: $inputWhite;
+  color: $blackSecondary;
+
+  &:focus {
+    background: $inputWhiteHover;
+    outline: none;
+  }
+}
+.inputBkLightInv {
+  background: $inputWhite;
+  color: $blackSecondary;
+  transition: 0.3s ease;
+  &:hover {
+    background: $inputWhiteHover;
+    outline: none;
+  }
+}
+
+.inputBkDark {
+  background: $input;
+  color: $whiteSecondary;
+  &:focus {
+    background: $inputHover;
+    outline: none;
+  }
+}
+.inputBkDarkInv {
+  background: $input;
+  color: $whiteSecondary;
+  transition: 0.3s ease;
+  &:hover {
+    background: $inputHover;
+    outline: none;
+  }
+}

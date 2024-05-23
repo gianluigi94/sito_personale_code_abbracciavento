@@ -1,0 +1,80 @@
+// In questa pagina gestisco tutte le variabili utilizzate nello stile dei due template del mio sito
+
+// I due font utilizzati
+$fontPrimary: "Courier New", Courier, monospace;
+$fontSecondary: Verdana, Geneva, Tahoma, sans-serif;
+
+// Le grandezze utilizzate 
+$dimensionFour: 15px;
+$dimensionOne: 18px;
+$dimensionTre: 20px;
+$dimensionnine :22px;
+$dimensionTwo: 25px;
+$dimensionsix :27px;
+$dimension: 28px;
+$dimensionundici: 32px;
+$dimensiontredici: 34px;
+$dimensionheight :40px;
+$dimensiondodici :50px;
+$dimensionFive :52px;
+
+// I colori utilizzati
+$whitePrimary: #ffffff;
+$whiteSecondary: #cdcdcd;
+$blackPrimary: #111111;
+$blackSecondary: #404040;
+$input: rgba(87, 87, 87, 0.392);
+$inputWhite: #dad8d864;
+$inputWhiteHover: #cef6d4a2;
+$inputHover: #26262682;
+$greenPrimary: #208b08;
+$error: #ff0000;
+$darkGallery:#000000e9;
+$lightGallery:#ffffffe9;
+
+// Le sfumature utilizzate
+$darkMenu: linear-gradient(to right, #454545f2, #000000f2,#000000f2, #363535f2);
+$lightMenu: linear-gradient(to right, #f5fffcf1,#f5fffcf1, #b2cfb9f1,#b2cfb9f1,#d4e2def1,#d4e2def1 );
+$lightMenuTwo : linear-gradient(to right, #e6f1eaf7 0%, #cfe3def0 100%);
+$darkMenuTwo: linear-gradient(to right, #2b2a2afa, #515151fa, #2b2a2afa);
+$darkMenuHover: linear-gradient(to right, #38383882,  #26262682);
+$lightMenuHover: linear-gradient(to right, #d0dcdeef 0%, #b1bec0eb 100%);
+$darkButton: linear-gradient(to right, #6e6e6e7d, #6666667d, #5f5f5f7d, #5757577d, #5050507d, #4949497d, #4242427d, #4b4b4b7d);
+$lightButton: linear-gradient(to right, rgba(235, 244, 223, 0.936) 0%, rgba(210, 222, 197, 0.922) 100%);
+$dark: linear-gradient(to right, #202020, #000000);
+$light: linear-gradient(to right, #ffffff,#ffffff,#f5fdf4,#f5fdf4 , #e6f8e2,); 
+$lightLight: linear-gradient(to right, #52f8a020, #369a5720);
+$darkDark: linear-gradient(to right, #12131383 0%, #0b0f0c85 0%);
+$hamburgerGr: linear-gradient(45deg, $greenPrimary, $blackPrimary);
+$hamburgerGrLight: linear-gradient(45deg, $greenPrimary, #edf3f5);
+$horseOne: radial-gradient(circle, #000000,#000000,#060606, #777777,#ffffff);
+$horseTwo: radial-gradient(circle, #ffffff, #000000);
+
+// I bordi utilizzati
+$hamurgerSh: 0 0 2px $greenPrimary, 0 0 2px $greenPrimary;
+$borderRecTwo: $whiteSecondary solid 2px;
+$borderRec: $whiteSecondary solid 2px;
+$borderRecTre: $blackSecondary solid 2px;
+$borderRecFour: $blackSecondary solid 3px;
+$borderGr: 2px solid $greenPrimary;
+$borderError: 2px solid $error;
+$borderOne: 2px solid #131313ab;
+$borderTwo: 2px solid #a0a0a062;
+$borderTre: 2px solid #a0a0a077;
+
+// Le ombre utilizzate
+$ombra: 3px 3px 7px #8f8f8fb8;
+$ombraDue: 2px 2px 4px #8f8f8fb8;
+$ombraScura: 5px 5px 9px #3a3a3a9b;
+$ombraChiara: 5px 5px 9px #7b7b7b9b;
+$shadowLightMenu: inset 1px -3px 10px #2141214d;
+$shadowDarkMenu: inset -1px -2px 10px #8f8f8f4f;
+$ombraOne: inset 2px 2px 5px #131313b2, inset -1px -1px 1px #a0a0a08b;
+$ombraTwo: inset 2px 2px 5px #131313b2, inset -1px -1px 1px #a0a0a08b, 3px 3px 4px #5b5b5b71;
+$ombraTre: inset 3px 3px 10px #131313c2, inset -1px -1px 1px #a0a0a0a3, 4px 4px 5px #5b5b5b71;
+$ombraTreG: inset 3px 3px 10px #217a32c2, inset -1px -1px 1px #149f5ea3, 4px 4px 5px #0b980e71;
+$ombraTreGg: inset 3px 3px 10px #526155c2, 1px 1px 3px $greenPrimary, 0px 50px 25px -7px rgba(74, 74, 74, 0.288);
+$ombraTreIf: 25px 0px 45px -20px rgb(87, 86, 86);
+$ombraTreGgg: inset 3px 3px 10px #cfd1d0c2, 1px 1px 3px $greenPrimary, 0px 50px 25px -7px rgba(74, 74, 74, 0.288);
+
+

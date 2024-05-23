@@ -1,0 +1,279 @@
+{
+    "progettiSegnaposto": {
+        "pagina": {
+            "testo": "Lorem<span class='it green'> ciclo for </span> ipsum dolor sit amet consectetur adipisicing elit. Non omnis, aut optio iure laborum amet libero deserunt iste? Illum asperiores quo repellat, error vitae <span class='strong'>perspiciatis praesentium iusto,</span> in, delectus impedit velit sed! Fugiat sed cumque laboriosam corrupti magni, nobis tenetur<span class='green'> culpa qui nesciunt</span> laudantium in minus quia aperiam quaeratd."
+        },
+        "immagineCripto": {
+            "pagina": "progetti.php?progetto=lorem_cripto_dolor",
+            "urlImg": "assets/grafico.png",
+            "alt": "Grafico immagine",
+            "title": "Immagine grafico"
+        },
+        "immagineScacchi": {
+            "pagina": "progetti.php?progetto=space_chess_dolor",
+            "urlImg": "assets/scacchispaziali.png",
+            "alt": "Scacchi immagine",
+            "title": "Immagine scacchi"
+        },
+        "immagineNegozio": {
+            "pagina": "progetti.php?progetto=ipsum-commerce",
+            "urlImg": "assets/negozionline.png",
+            "alt": "Negozio online immagine",
+            "title": "Immagine negozio online"
+        },
+        "immagineSocial": {
+            "pagina": "progetti.php?progetto=socialorem",
+            "urlImg": "assets/telefono.png",
+            "alt": "Telefono immagine",
+            "title": "Immagine social"
+        }
+    },
+    "portfolio": {
+        "pagina": {
+            "h1": "Portfolio Grafico",
+            "class": "titler",
+            "id": "titlerlong"
+        },
+        "progetti": [
+            {
+                "id": 1,
+                "url": "assets/portfolio/spacetime.webp",
+                "title": "Progetto misto",
+                "h3": "Spacetime",
+                "paragrafo": "Foto inserimento di diversi elementi realizzato con Photoshop, ma terminato con scritte vettoriali su Illustrator",
+                "alt": "Spacetime"
+            },
+            {
+                "id": 2,
+                "url": "assets/portfolio/bicchiere.webp",
+                "title": "Progetto Photoshop",
+                "h3": "Città nel bicchiere",
+                "paragrafo": "Foto inserimento fantasioso realizzato con Photoshop",
+                "alt": "Città nel bicchiere"
+            },
+            {
+                "id": 3,
+                "url": "assets/portfolio/blu.webp",
+                "title": "Progetto Photoshop",
+                "h3": "Blue",
+                "paragrafo": "Digitalizzazione di un disegno realizzato a mano da Matteo Silvestri",
+                "alt": "Blue"
+            },
+            {
+                "id": 4,
+                "url": "assets/portfolio/carosello.webp",
+                "title": "Progetto Illustration",
+                "h3": "Carosello Vivace",
+                "paragrafo": "Carosello realizzato con immagini raster e figure geometriche vettoriali",
+                "alt": "Carosello Vivace"
+            },
+            {
+                "id": 5,
+                "url": "assets/portfolio/febe.webp",
+                "title": "Progetto Photoshop",
+                "h3": "Logo Febe",
+                "paragrafo": "Logo Febe digitalizzato con giochi di luci e ombre per creare un effetto 3D.",
+                "alt": "Logo FEBE"
+            },
+            {
+                "id": 6,
+                "url": "assets/portfolio/cama.webp",
+                "title": "Progetto Photoshop",
+                "h3": "Logo Cama",
+                "paragrafo": "Logo Cama digitalizzato con giochi di luci e ombre per creare un effetto 3D",
+                "alt": "Logo Cama"
+            },
+            {
+                "id": 7,
+                "url": "assets/portfolio/fotoinserimentoragazza.webp",
+                "title": "Progetto Photoshop",
+                "h3": "Foto inserimento Conterranea",
+                "paragrafo": "Inserimento di un logo sopra un vestito con Photoshop",
+                "alt": "Foto inserimento logo"
+            },
+            {
+                "id": 8,
+                "url": "assets/portfolio/post_quadrato.webp",
+                "title": "Progetto Photoshop",
+                "h3": "Corso Diamond",
+                "paragrafo": "Post di dimensioni quadrate realizzato con Photoshop",
+                "alt": "Corso Diamond"
+            },
+            {
+                "id": 9,
+                "url": "assets/portfolio/torre.webp",
+                "title": "Progetto Photoshop",
+                "h3": "Torre di acciaio",
+                "paragrafo": "Disegno ricalcato con Photoshop partendo da un'immagine digitale",
+                "alt": "Torre di acciaio"
+            },
+            {
+                "id": 10,
+                "url": "assets/portfolio/storia_verticale.webp",
+                "title": "Progetto Photoshop",
+                "h3": "Podcast, ma in verticale",
+                "paragrafo": "Storia in formato verticale per social",
+                "alt": "Esempio storia verticale"
+            },
+            {
+                "id": 11,
+                "url": "assets/portfolio/happyflame.webp",
+                "title": "Progetto Illustration",
+                "h3": "Happy Flame",
+                "paragrafo": "Disegno in vettoriale realizzato con Illustrator",
+                "alt": "Disegno fiamma"
+            },
+            {
+                "id": 12,
+                "url": "assets/portfolio/negativo.webp",
+                "title": "Progetto Illustration",
+                "h3": "La Muntagnina",
+                "paragrafo": "Disegno vettoriale realizzato per una cliente",
+                "alt": "La Muntagnina"
+            },
+            {
+                "id": 13,
+                "url": "assets/portfolio/nave_linee.webp",
+                "title": "Progetto Illustration",
+                "h3": "Nave in linee art",
+                "paragrafo": "Disegno realizzato su illustrator, successivamente animato su After Effects per l'header di questo sito",
+                "alt": "Nave in linee art"
+            },
+            {
+                "id": 14,
+                "url": "assets/portfolio/melabanan.webp",
+                "title": "Progetto Illustration",
+                "h3": "Frutta non di stagione",
+                "paragrafo": "Disegno vettoriale realizzato con lo strumento trama di Illustration",
+                "alt": "Mela banana"
+            },
+            {
+                "id": 15,
+                "url": "assets/portfolio/ghiacciolo.webp",
+                "title": "Progetto Illustration",
+                "h3": "Ghiacciolo alla fragola",
+                "paragrafo": "Disegno vettoriale, composto da diverse figure geometriche combinate con Illustration",
+                "alt": "Disegno ghiacciolo"
+            },
+            {
+                "id": 16,
+                "url": "assets/portfolio/logoregina.webp",
+                "title": "Progetto Illustration",
+                "h3": "Logo MiddleGame",
+                "paragrafo": "Il mio logo personale, realizzato in Illustration",
+                "alt": "Regina scacchi"
+            },
+            {
+                "id": 17,
+                "url": "assets/portfolio/totomaiker.webp",
+                "title": "Progetto Illustration",
+                "h3": "Toto Maker",
+                "paragrafo": "Logo vettoriale realizzato per un cliente",
+                "alt": "Logo rosso"
+            },
+            {
+                "id": 18,
+                "url": "assets/portfolio/alumni.webp",
+                "title": "Progetto Illustration",
+                "h3": "Progetto Alumni",
+                "paragrafo": "Esercitazione logo a tema accademia greca",
+                "alt": "Logo Alumni"
+            },
+            {
+                "id": 19,
+                "url": "assets/portfolio/conterraneatrep.webp",
+                "title": "Progetto Illustration",
+                "h3": "Conterranea",
+                "paragrafo": "Prima proposta di logo tra cui scegliere elaborata per un ipotetico cliente",
+                "alt": "Scritta Conterranea logo"
+            },
+            {
+                "id": 20,
+                "url": "assets/portfolio/logospina.webp",
+                "title": "Progetto Illustration",
+                "h3": "Conterranea",
+                "paragrafo": "Seconda proposta di logo tra cui scegliere elaborata per un ipotetico cliente",
+                "alt": "Scritta Conterranea logo"
+            },
+            {
+                "id": 21,
+                "url": "assets/portfolio/ct.webp",
+                "title": "Progetto Illustration",
+                "h3": "Conterranea",
+                "paragrafo": "Terza proposta di logo tra cui scegliere elaborata per un ipotetico cliente",
+                "alt": "Scritta Conterranea logo"
+            },
+            {
+                "id": 22,
+                "url": "assets/portfolio/conterranea_mano.webp",
+                "title": "Progetto Illustration",
+                "h3": "Conterranea",
+                "paragrafo": "Quarta proposta di logo tra cui scegliere elaborata per un ipotetico cliente",
+                "alt": "Scritta Conterranea logo"
+            },
+            {
+                "id": 23,
+                "url": "assets/portfolio/conterranea_ultimo.webp",
+                "title": "Progetto Illustration",
+                "h3": "Conterranea definitivo",
+                "paragrafo": "Quinta proposta di logo tra cui scegliere elaborata per un ipotetico cliente",
+                "alt": "Scritta Conterranea logo"
+            },
+            {
+                "id": 24,
+                "url": "assets/portfolio/la_mondarella.jpg",
+                "title": "Progetto Illustration",
+                "h3": "La Mondarella",
+                "paragrafo": "Logo per un B&B commissionato da una cliente",
+                "alt": "Mondarella logo"
+            }
+        ]
+    },
+    "principale": {
+        "progetti": [
+            {
+                "url": "progetti.php?progetto=portfolio_grafico",
+                "title": "Portfolio grafico",
+                "h3": "Portfolio Grafico",
+                "immagine": "assets/penna.png",
+                "alt": "immagine penna grafica",
+                "paragrafo": "Raccolta dei miei lavori con Photoshop e Illustrator"
+            },
+            {
+                "url": "progetti.php?progetto=lorem_cripto_dolor",
+                "title": "Progetto tema finanziario",
+                "h3": "Lorem Cripto Dolor",
+                "immagine": "assets/grafico.png",
+                "alt": "Immagine grafico",
+                "paragrafo": "Progetto ipotetico a tema finanziario"
+            },
+            {
+                "url": "progetti.php?progetto=socialorem",
+                "title": "Progetto tema social network",
+                "h3": "SociaLorem",
+                "immagine": "assets/telefono.png",
+                "alt": "immagine telefono",
+                "paragrafo": "Progetto ipotetico a tema social network"
+            },
+            {
+                "url": "progetti.php?progetto=ipsum-commerce",
+                "title": "Progetto tema negozio online",
+                "h3": "Ipsum-Commerce",
+                "immagine": "assets/negozionline.png",
+                "alt": "Immagine negozionline",
+                "paragrafo": "Progetto ipotetico a tema negozio online"
+            },
+            {
+                "url": "progetti.php?progetto=space_chess_dolor",
+                "title": "Progetto scacchistico",
+                "h3": "Space Chess Dolor",
+                "immagine": "assets/scacchispaziali.png",
+                "alt": "mano che muove pezzo di scacchi",
+                "paragrafo": "Progetto ipotetico a tema scacchistico"
+            }
+        ],
+        "pagina": {
+            "h1": "Progetti"
+        }
+    }
+}

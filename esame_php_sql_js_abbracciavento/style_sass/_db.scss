@@ -1,0 +1,554 @@
+// in questa pagina gestisco lo stile degli span su cui si agganciano le tabelle
+#tabellaContainer,
+#tabellaContainerProg,
+#tabellaContainerRec,
+#tabellaContainerUt,
+#tabellaContainerMes {
+  width: 100%;
+  transition: width 1s ease-in-out;
+  pointer-events: auto;
+  display: none;
+}
+
+// stile del form di login
+#formAdmin {
+  position: absolute;
+  right: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  max-width: 600px;
+  color: $greenPrimary;
+  margin-right: 120px;
+  transition: right 1s ease-in-out;
+  margin-top: 150px;
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    flex-wrap: wrap;
+    border: none;
+    legend {
+      font-size: $dimensiontredici;
+      position: absolute;
+      top: -85px;
+      font-family: $fontPrimary;
+      text-shadow: 2px 2px 7px #6d6d6db8;
+    }
+    button,
+    input {
+      background-color: $blackPrimary;
+      color: $whitePrimary;
+      font-family: $fontSecondary;
+      padding: 8px;
+      margin-bottom: 10px;
+      font-weight: 400;
+      border: 1px solid $blackSecondary;
+      box-shadow: $ombraScura;
+      width: 300px;
+      cursor: pointer;
+    }
+    button {
+      width: 318px;
+      color: $greenPrimary;
+      margin-top: 5px;
+    }
+    input {
+      margin-bottom: 27px;
+    }
+  }
+}
+
+//stile immagine di sfondo
+#sfondoRegina {
+  width: 100px;
+  position: absolute;
+  top: 120px;
+  left: 420px;
+  opacity: 0.05;
+  transform: rotate(-20deg);
+  z-index: -2;
+}
+
+// stile di tutti i form con cui ci si relaziona al database per le varie azioni
+#formInsertf,
+#formUpdate,
+#formUpdateMes,
+#formUpdateUt,
+#formInsertProg,
+#formUpdateProg,
+#formInsertRec,
+#formInsertUt,
+#formUpdateRec {
+  position: absolute;
+  right: -800px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  max-width: 600px;
+  color: $greenPrimary;
+  margin-right: 120px;
+  transition: right 1s ease-in-out;
+  margin-top: 150px;
+  .annullaInsertf,
+  .annullaUpdatef,
+  .annullaUpdateUt,
+  .annullaInserty,
+  .annullaInsertUt,
+  .annullaUpdatey,
+  .annullaInsertz,
+  .annullaUpdatez,
+  .annullaUpdate {
+    color: red;
+  }
+  div {
+    flex: 1 1 48%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    &:first-child {
+      margin-right: 4%;
+    }
+  }
+  input,
+  textarea,
+  button {
+    background-color: $blackPrimary;
+    color: $whitePrimary;
+    font-family: $fontSecondary;
+    padding: 8px;
+    margin-bottom: 10px;
+    font-weight: 400;
+    border: 1px solid $blackSecondary;
+    box-shadow: $ombraScura;
+    width: 300px;
+    cursor: pointer;
+  }
+  p {
+    font-size: 20px;
+    padding-bottom: 20px;
+    text-decoration-line: underline;
+  }
+  button {
+    color: $greenPrimary;
+    margin-left: 12px;
+  }
+  textarea {
+    height: 220px;
+    resize: none;
+    cursor: text;
+  }
+}
+
+// stile classe particolare per il body della tabella
+.dbBody {
+  background: $dark;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+//stile tabelle
+.table,
+.tableProg,
+.tableRec,
+.tableUt,
+.tableMes {
+  color: white;
+  width: 88%;
+  margin-left: 50px;
+  margin-top: 150px;
+  display: table;
+  box-shadow: $ombraScura;
+  transition: margin-left 0.8s ease-in-out;
+  background-color: rgba(0, 0, 0, 0.175);
+  tbody tr {
+    transition: background-color 0.3s ease-in-out;
+  }
+  tbody tr:hover {
+    background-color: rgb(2, 63, 32);
+  }
+  th,
+  td {
+    text-align: left;
+    padding: 8px;
+    width: auto;
+    word-wrap: break-word;
+    box-shadow: $ombraScura;
+
+    div {
+      max-height: 100px;
+      overflow-y: auto;
+      display: block;
+    }
+  }
+  thead {
+    color: $greenPrimary;
+    display: table;
+    width: calc(100% - 6px);
+    box-sizing: border-box;
+    font-size: 18px;
+    font-weight: bolder;
+    text-align: center;
+  }
+// stile body di default
+  tbody {
+    display: block;
+    max-height: calc(50vh - 40px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 100%;
+    font-size: 20px;
+  }
+
+  tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+}
+
+//stile colonne tabelle
+.table th:nth-child(1),
+.tableUt th:nth-child(1),
+.tableRec td:nth-child(1),
+.tableRec th:nth-child(1),
+.tableMes th:nth-child(1),
+.tableUt td:nth-child(1),
+.tableMes td:nth-child(1) {
+  width: 2%;
+}
+
+.tableUt th:nth-child(4),
+.tableUt td:nth-child(4){
+  width: 6%;
+}
+.tableUt th:nth-child(3),
+.tableUt td:nth-child(3){
+  width: 60%;
+}
+
+
+.table th:last-child,
+.tableMes th:last-child,
+.table td:last-child,
+.tableProg th:last-child,
+.tableProg td:last-child,
+.tableRec th:last-child,
+.tableRec td:last-child {
+  width: 7%;
+}
+
+.table th:nth-child(4),
+.table td:nth-child(4) {
+  width: 30%;
+}
+.table th:nth-child(1),
+.table td:nth-child(1) {
+  width: 2%;
+}
+.table th:nth-child(4),
+.table td:nth-child(4) {
+  width: 40%;
+}
+.tableProg th:nth-child(3),
+.tableProg td:nth-child(3) {
+  width: 28%;
+}
+.tableMes th:nth-child(3),
+.tableMes td:nth-child(3) {
+  width: 42%;
+}
+.tableMes th:nth-child(3),
+.tableMes td:nth-child(3) {
+  width: 42%;
+}
+.tableMes th:nth-child(2),
+.tableMes td:nth-child(2) {
+  width: 14%;
+}
+.tableMes th:nth-child(4),
+.tableMes td:nth-child(4) {
+  width: 14%;
+}
+
+.tableProg th:nth-child(1),
+.tableProg td:nth-child(1),
+.tableProg th:nth-child(4),
+.tableProg td:nth-child(4) {
+  width: 2%;
+}
+
+.tableRec th:nth-child(3),
+.tableRec td:nth-child(3) {
+  width: 32%;
+}
+
+.insertySvg,
+.deleteSvg,
+.updateSvg,
+.insertSvg {
+  stroke: white;
+  stroke-linecap: round;
+  stroke-miterlimit: 10;
+  stroke-width: 1.5px;
+  fill: none;
+  top: 5px;
+  left: 12px;
+  position: absolute;
+}
+
+.updateSvg {
+  stroke-width: 2.1px;
+}
+.delete,
+.deleteTwo,
+.deleteTre,
+.deleteQuattro,
+.deleteCinque,
+.insert,
+.insertUt,
+.accept,
+.insertf,
+.inserty,
+.update,
+.hid_sho {
+  border: none;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  height: 30px;
+  width: 47px;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  transition: width 0.3s ease-in-out;
+}
+
+//stile bottoni tabelle con le loro icone
+.hid_sho img {
+  width: 29px;
+  position: absolute;
+  left: 7px;
+  top: 0px;
+}
+.deleteSvg {
+  width: 17px;
+  height: auto;
+}
+.updateSvg {
+  width: 20px;
+  height: auto;
+}
+
+.insertSvg {
+  width: 16px;
+  height: auto;
+}
+
+.delete {
+  background: linear-gradient(to right, #ff0000, #c2262682);
+}
+.deleteTwo {
+  background: linear-gradient(to right, #ff0000, #c2262682);
+}
+.deleteTre {
+  background: linear-gradient(to right, #ff0000, #c2262682);
+}
+.deleteQuattro {
+  background: linear-gradient(to right, #ff0000, #c2262682);
+}
+.deleteCinque {
+  background: linear-gradient(to right, #ff0000, #c2262682);
+}
+.insert,
+.insertUt,
+.inserty,
+.insertf,
+.accept {
+  background: linear-gradient(to right, #0f81eb, #1c0756);
+}
+.update {
+  background: linear-gradient(to right, #94bc11, #3ab10b);
+}
+.hid_sho {
+  background: linear-gradient(to right, #bc06bf, #6d04a9);
+}
+.delete span,
+.deleteTwo span,
+.deleteTre span,
+.deleteCinque span,
+.deleteQuattro span,
+.update span,
+.insert span,
+.insertUt span,
+.accept span,
+.insertf span,
+.inserty span,
+.hid_sho span {
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  top: 8px;
+  left: 37px;
+  opacity: 0;
+}
+
+.delete:hover,
+.deleteTwo:hover,
+.deleteTre:hover,
+.deleteCinque:hover,
+.deleteQuattro:hover,
+.update:hover,
+.insert:hover,
+.insertf:hover,
+.accept:hover,
+.insertUt:hover,
+.inserty:hover,
+.hid_sho:hover {
+  width: 85px;
+}
+
+.accept:hover span,
+.delete:hover span,
+.deleteTwo:hover span,
+.deleteCinque:hover span,
+.deleteTre:hover span,
+.deleteQuattro:hover span,
+.update:hover span,
+.insert:hover span,
+.insertf:hover span,
+.insertUt:hover span,
+.inserty:hover span,
+.hid_sho:hover span {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  transition-delay: 0.1s;
+}
+
+.cancelMes,
+.cancelMesUt,
+.cancelMesz,
+.cancelMesy {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  color: $greenPrimary;
+  background-color: $blackSecondary;
+  height: 150px;
+  width: 250px;
+  border-radius: 20px;
+  box-shadow: $ombraScura;
+  border: 2px solid $blackPrimary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-family: $fontSecondary;
+  transition: transform 0.5s ease-in-out;
+}
+
+.cancelMes button,
+.cancelMesUt button,
+.cancelMesz button,
+.cancelMesy button {
+  margin-top: 20px;
+  cursor: pointer;
+  background: $darkMenuHover;
+  color: #ff0000;
+  padding: 8px;
+  font-family: $fontSecondary;
+  box-shadow: $ombraScura;
+}
+.noRec {
+  position: absolute;
+  font-family: "Courier New", Courier, monospace;
+  font-size: $dimensionTwo;
+  color: $whitePrimary;
+  top: 550px;
+  left: 55px;
+}
+
+.errorDb,
+.errorDbU {
+  color: red;
+  position: absolute;
+  top: 430px;
+  left: 600px;
+}
+
+.errorDbU {
+  top: 350px;
+}
+
+
+//stile menu del database
+#menuDb {
+  position: fixed;
+  top: 10px;
+  left: 30px;
+  ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    li {
+      margin-top: 15px;
+      font-family: $fontPrimary;
+      a {
+        text-decoration: none;
+        color: $whitePrimary;
+        font-size: $dimensionOne;
+        padding: 15px;
+        letter-spacing: -1px;
+        border-radius: 20px;
+        transition: 0.1s ease-in-out;
+        font-weight: 600;
+        &:hover {
+          background: $darkMenuHover;
+          color: $greenPrimary;
+          box-shadow: $ombraScura;
+        }
+      }
+    }
+  }
+}
+
+#menuDb > ul > li > .menuDbSelect {
+  background: $darkMenuHover;
+  color: $greenPrimary;
+  box-shadow: $ombraScura;
+}
+
+//stile titolo delle pagine del database
+.dbTitolo {
+  position: absolute;
+  color: $greenPrimary;
+  font-family: $fontPrimary;
+  font-size: $dimensionundici;
+  top: 200px;
+  left: 50px;
+  display: none;
+}
+
+#exit{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: rgb(222, 64, 64);
+  background: $darkMenuHover;
+  box-shadow: $ombraScura;
+  font-size: $dimensionOne;
+  font-weight: 600;
+  font-family: $fontPrimary;
+  border: none;
+  padding: 15px;
+  border-radius: 20px;
+  cursor: pointer;
+}
